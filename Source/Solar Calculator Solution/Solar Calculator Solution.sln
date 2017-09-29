@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.16
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Innovative.Geometry.Angle", "Angle\Innovative.Geometry.Angle.csproj", "{078F3720-46BC-4536-819B-021FC8EEC1CC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Innovative.Geometry.Angle.UnitTests", "Angle.UnitTests\Innovative.Geometry.Angle.UnitTests.csproj", "{8EBE06B0-157E-48E9-9168-9B9979812C23}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Innovative.SolarCalculator", "Solar-Calculator\Innovative.SolarCalculator.csproj", "{645C1D0C-5E77-48BE-A29B-D6301B73E925}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Innovative.SolarCalculator.UnitTests", "Innovative.SolarCalculator.UnitTests\Innovative.SolarCalculator.UnitTests.csproj", "{3880FECE-2640-4025-81CB-0F926B251E70}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{078F3720-46BC-4536-819B-021FC8EEC1CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{078F3720-46BC-4536-819B-021FC8EEC1CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{078F3720-46BC-4536-819B-021FC8EEC1CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{078F3720-46BC-4536-819B-021FC8EEC1CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8EBE06B0-157E-48E9-9168-9B9979812C23}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8EBE06B0-157E-48E9-9168-9B9979812C23}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8EBE06B0-157E-48E9-9168-9B9979812C23}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8EBE06B0-157E-48E9-9168-9B9979812C23}.Release|Any CPU.Build.0 = Release|Any CPU
+		{645C1D0C-5E77-48BE-A29B-D6301B73E925}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{645C1D0C-5E77-48BE-A29B-D6301B73E925}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{645C1D0C-5E77-48BE-A29B-D6301B73E925}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{645C1D0C-5E77-48BE-A29B-D6301B73E925}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3880FECE-2640-4025-81CB-0F926B251E70}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3880FECE-2640-4025-81CB-0F926B251E70}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3880FECE-2640-4025-81CB-0F926B251E70}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3880FECE-2640-4025-81CB-0F926B251E70}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F442E1BB-8B0A-4EC7-A1B5-71940F1001D3}
+	EndGlobalSection
+EndGlobal

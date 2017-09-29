@@ -1,0 +1,56 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard1.2</TargetFramework>
+    <AssemblyName>Innovative.SolarCalculator</AssemblyName>
+    <RootNamespace>Innovative.SolarCalculator</RootNamespace>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <PackageId>SolarCalculator</PackageId>
+    <Version>2.0.0</Version>
+    <Authors>Daniel M. Porrey</Authors>
+    <Company>Daniel M. Porrey</Company>
+    <Product>Solar Calculator</Product>
+    <PackageIconUrl>https://download-codeplex.sec.s-msft.com/Download?ProjectName=solarcalculator&amp;DownloadId=671699&amp;Build=20474</PackageIconUrl>
+    <PackageProjectUrl>https://solarcalculator.codeplex.com/</PackageProjectUrl>
+    <PackageLicenseUrl>https://solarcalculator.codeplex.com/license</PackageLicenseUrl>
+    <Copyright>Copyright © 2013-2017 Daniel M. Porrey</Copyright>
+    <Description>Calculates the sunrise and sunset for a given date and location (using geo coordinates). This library uses the method outlined NOAA Solar Calculations Day spreadsheet found at http://www.esrl.noaa.gov/gmd/grad/solcalc/calcdetails.html. Calculations are based on the book "Astronomical Algorithms" by Jean Meeus.</Description>
+    <PackageReleaseNotes>v.2.0.0 Converted to .NET Standard/Moved to GitHub. Changed license to GNU Public 3.0.
+v 1.0.8 
+Added multiple .NET versions.
+
+
+v1.0.7 
+Removed Angle class and referenced it from NuGet library.
+
+
+v1.0.6
+ Updated NuGet package only.
+
+
+v1.0.5
+ Added a class/data type called Angle to handle computations and conversions. This class inherently behaves as a type double so that pre-existing code is not broken.
+
+
+v1.0.4 
+Change the type of ForDate to DateTimeOffset due to improper handling of Time Zone. This does not affected code already written against this method.
+
+
+v1.0.3 
+Corrected a time issue causing the wrong sunrise and sunset times to be returned. All test cases passed.
+
+
+v1.02 
+Added XML comments file
+
+
+v1.0.1 
+Updated license and project URL's in package.</PackageReleaseNotes>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Angle\Innovative.Geometry.Angle.csproj" />
+  </ItemGroup>
+
+</Project>
