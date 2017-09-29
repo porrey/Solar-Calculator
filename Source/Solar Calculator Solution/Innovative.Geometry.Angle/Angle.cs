@@ -11,7 +11,7 @@
 // ***
 // *** Licensed under Microsoft Public License (Ms-PL)
 // *** This license governs use of the accompanying software. If you use the software, you accept this license. If you do not accept the license, 
-// *** do not use the software. Full license details can be found at https://angle.codeplex.com/license.
+// *** do not use the software. Full license details can be found at https://raw.githubusercontent.com/porrey/Solar-Calculator/master/LICENSE.
 // ***
 using System;
 using System.Runtime.CompilerServices;

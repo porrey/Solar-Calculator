@@ -1,5 +1,5 @@
 ﻿// ***
-// *** Copyright (C) 2013, Daniel M. Porrey.  All rights reserved.
+// *** Copyright (C) 2013-2017, Daniel M. Porrey.  All rights reserved.
 // *** Written By Daniel M. Porrey
 // ***
 // *** This software is provided "AS IS," without a warranty of any kind. ALL EXPRESS OR IMPLIED CONDITIONS, REPRESENTATIONS AND WARRANTIES, 
@@ -11,7 +11,7 @@
 // ***
 // *** Licensed under Microsoft Reciprocal License (Ms-RL)
 // *** This license governs use of the accompanying software. If you use the software, you accept this license. If you do not accept the license, 
-// *** do not use the software. Full license details can be found at https://solarcalculator.codeplex.com/license.
+// *** do not use the software. Full license details can be found at https://raw.githubusercontent.com/porrey/Solar-Calculator/master/LICENSE.
 // ***
 using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
