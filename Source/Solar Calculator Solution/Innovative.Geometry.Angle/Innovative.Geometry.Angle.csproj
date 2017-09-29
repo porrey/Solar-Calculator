@@ -15,12 +15,9 @@
     <PackageLicenseUrl>https://github.com/porrey/Solar-Calculator/blob/master/LICENSE</PackageLicenseUrl>
     <Copyright>Copyright © 2013-2017 Daniel M. Porrey</Copyright>
     <PackageTags>Angle Math Arcminute Arcsecond Degree</PackageTags>
-    <PackageReleaseNotes>v.2.0.0 Converted to .NET Standard/Moved to GitHub. Changed license to GNU Public 3.0.
+    <PackageReleaseNotes>v.2.0.0 Converted to .NET Standard/Moved to GitHub. Changed license to GNU Public 3.0. 
 v1.0.2 Added multiple .NET versions. Completed units test and corrected minor issues.
-
-
-v1.0.1 
-Changed namespace to Innovative.Geometry</PackageReleaseNotes>
+v1.0.1 Changed namespace to Innovative.Geometry</PackageReleaseNotes>
     <NeutralLanguage>en-US</NeutralLanguage>
     <AssemblyVersion>2.0.0.0</AssemblyVersion>
     <FileVersion>2.0.0.0</FileVersion>
@@ -29,5 +26,9 @@ Changed namespace to Innovative.Geometry</PackageReleaseNotes>
     <RepositoryUrl>https://github.com/porrey/Solar-Calculator.git</RepositoryUrl>
     <RepositoryType>GitHub</RepositoryType>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
 
 </Project>
