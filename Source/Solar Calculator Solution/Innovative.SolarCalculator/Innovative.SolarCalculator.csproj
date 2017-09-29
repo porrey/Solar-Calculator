@@ -11,13 +11,13 @@
     <Authors>Daniel M. Porrey</Authors>
     <Company>Daniel M. Porrey</Company>
     <Product>Solar Calculator</Product>
-    <PackageIconUrl>https://download-codeplex.sec.s-msft.com/Download?ProjectName=solarcalculator&amp;DownloadId=671699&amp;Build=20474</PackageIconUrl>
-    <PackageProjectUrl>https://solarcalculator.codeplex.com/</PackageProjectUrl>
-    <PackageLicenseUrl>https://solarcalculator.codeplex.com/license</PackageLicenseUrl>
+    <PackageIconUrl>https://github.com/porrey/Solar-Calculator/raw/master/Images/Solar-Calculator.png</PackageIconUrl>
+    <PackageProjectUrl>https://github.com/porrey/Solar-Calculator</PackageProjectUrl>
+    <PackageLicenseUrl>https://github.com/porrey/Solar-Calculator/blob/master/LICENSE</PackageLicenseUrl>
     <Copyright>Copyright © 2013-2017 Daniel M. Porrey</Copyright>
     <Description>Calculates the sunrise and sunset for a given date and location (using geo coordinates). This library uses the method outlined NOAA Solar Calculations Day spreadsheet found at http://www.esrl.noaa.gov/gmd/grad/solcalc/calcdetails.html. Calculations are based on the book "Astronomical Algorithms" by Jean Meeus.</Description>
-    <PackageReleaseNotes>v.2.0.0 Converted to .NET Standard/Moved to GitHub. Changed license to GNU Public 3.0.
-v 1.0.8 
+    <PackageReleaseNotes>v2.0.0 Converted to .NET Standard/Moved to GitHub. Changed license to GNU Public 3.0.
+v1.0.8 
 Added multiple .NET versions.
 
 
@@ -44,13 +44,16 @@ Corrected a time issue causing the wrong sunrise and sunset times to be returned
 v1.02 
 Added XML comments file
 
-
+.
 v1.0.1 
 Updated license and project URL's in package.</PackageReleaseNotes>
+    <RepositoryUrl>https://github.com/porrey/Solar-Calculator.git</RepositoryUrl>
+    <RepositoryType>GitHub</RepositoryType>
+    <PackageTags>sunrise sunset</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Angle\Innovative.Geometry.Angle.csproj" />
+    <ProjectReference Include="..\Innovative.Geometry.Angle\Innovative.Geometry.Angle.csproj" />
   </ItemGroup>
 
 </Project>

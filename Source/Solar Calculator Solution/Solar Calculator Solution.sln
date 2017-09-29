@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26730.16
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Innovative.Geometry.Angle", "Angle\Innovative.Geometry.Angle.csproj", "{078F3720-46BC-4536-819B-021FC8EEC1CC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Innovative.Geometry.Angle", "Innovative.Geometry.Angle\Innovative.Geometry.Angle.csproj", "{078F3720-46BC-4536-819B-021FC8EEC1CC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Innovative.Geometry.Angle.UnitTests", "Angle.UnitTests\Innovative.Geometry.Angle.UnitTests.csproj", "{8EBE06B0-157E-48E9-9168-9B9979812C23}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Innovative.Geometry.Angle.UnitTests", "Innovative.Geometry.Angle.UnitTests\Innovative.Geometry.Angle.UnitTests.csproj", "{8EBE06B0-157E-48E9-9168-9B9979812C23}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Innovative.SolarCalculator", "Solar-Calculator\Innovative.SolarCalculator.csproj", "{645C1D0C-5E77-48BE-A29B-D6301B73E925}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Innovative.SolarCalculator", "Innovative.SolarCalculator\Innovative.SolarCalculator.csproj", "{645C1D0C-5E77-48BE-A29B-D6301B73E925}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Innovative.SolarCalculator.UnitTests", "Innovative.SolarCalculator.UnitTests\Innovative.SolarCalculator.UnitTests.csproj", "{3880FECE-2640-4025-81CB-0F926B251E70}"
 EndProject

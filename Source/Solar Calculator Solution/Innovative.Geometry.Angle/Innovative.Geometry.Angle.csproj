@@ -10,9 +10,9 @@
     <Version>2.0.0.0</Version>
     <Authors>Daniel M. Porrey</Authors>
     <Company>Daniel M. Porrey</Company>
-    <PackageIconUrl>https://www.codeplex.com/Download?ProjectName=angle&amp;DownloadId=678439</PackageIconUrl>
-    <PackageProjectUrl>https://angle.codeplex.com/</PackageProjectUrl>
-    <PackageLicenseUrl>https://angle.codeplex.com/license</PackageLicenseUrl>
+    <PackageIconUrl>https://github.com/porrey/Solar-Calculator/raw/master/Images/Angle.png</PackageIconUrl>
+    <PackageProjectUrl>https://github.com/porrey/Solar-Calculator</PackageProjectUrl>
+    <PackageLicenseUrl>https://github.com/porrey/Solar-Calculator/blob/master/LICENSE</PackageLicenseUrl>
     <Copyright>Copyright © 2013-2017 Daniel M. Porrey</Copyright>
     <PackageTags>Angle Math Arcminute Arcsecond Degree</PackageTags>
     <PackageReleaseNotes>v.2.0.0 Converted to .NET Standard/Moved to GitHub. Changed license to GNU Public 3.0.
@@ -26,6 +26,8 @@ Changed namespace to Innovative.Geometry</PackageReleaseNotes>
     <FileVersion>2.0.0.0</FileVersion>
     <Product>Angle</Product>
     <Description>Defines a type for a geometric angle that allows various ways of setting and converting the values from and to different modes. Angle inherently is a double and can be used in place of a double when specifically referring to a geometric angle with the value being the degrees of the angle.</Description>
+    <RepositoryUrl>https://github.com/porrey/Solar-Calculator.git</RepositoryUrl>
+    <RepositoryType>GitHub</RepositoryType>
   </PropertyGroup>
 
 </Project>

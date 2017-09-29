@@ -64,11 +64,11 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Angle\Innovative.Geometry.Angle.csproj">
+    <ProjectReference Include="..\Innovative.Geometry.Angle\Innovative.Geometry.Angle.csproj">
       <Project>{078F3720-46BC-4536-819B-021FC8EEC1CC}</Project>
       <Name>Innovative.Geometry.Angle</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Solar-Calculator\Innovative.SolarCalculator.csproj">
+    <ProjectReference Include="..\Innovative.SolarCalculator\Innovative.SolarCalculator.csproj">
       <Project>{645c1d0c-5e77-48be-a29b-d6301b73e925}</Project>
       <Name>Innovative.SolarCalculator</Name>
     </ProjectReference>

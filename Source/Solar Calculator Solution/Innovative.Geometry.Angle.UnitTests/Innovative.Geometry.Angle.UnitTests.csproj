@@ -62,7 +62,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Angle\Innovative.Geometry.Angle.csproj">
+    <ProjectReference Include="..\Innovative.Geometry.Angle\Innovative.Geometry.Angle.csproj">
       <Project>{078f3720-46bc-4536-819b-021fc8eec1cc}</Project>
       <Name>Innovative.Geometry.Angle</Name>
     </ProjectReference>
