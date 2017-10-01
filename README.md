@@ -1,6 +1,11 @@
 # Solar-Calculator #
 Calculates the sunrise and sunset for a given date and location (using geo coordinates). This library uses the method outlined NOAA Solar Calculations Day spreadsheet found at http://www.esrl.noaa.gov/gmd/grad/solcalc/calcdetails.html.
 
+# Installing #
+Add this to your project in Visual Studio using NuGet Package Manager UI and ID **SolarCalculator** or using the Package Manager Console.
+
+    PM> Install-Package SolarCalculator
+
 # Sample Code #
 
 The sample code below shows how to initialize and call the Solar Calculator to get the sunrise and sunset for the given location.
