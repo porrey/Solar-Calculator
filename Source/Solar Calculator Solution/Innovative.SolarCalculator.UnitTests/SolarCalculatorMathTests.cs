@@ -36,7 +36,7 @@ namespace Innovative.SolarCalculator.Tests
 		}
 
 		[TestMethod]
-		[TestCategory("Solar Calculation Tests")]
+		[TestCategory("Solar Calculation Math Tests")]
 		[DeploymentItem("NOAA Solar Calculations Test Data.xlsx")]
 		[DataSource("System.Data.OleDb", "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=NOAA Solar Calculations Test Data.xlsx;Extended Properties=\"Excel 12.0;HDR=YES\"", "Calculations$", DataAccessMethod.Sequential)]
 		public void JulianDayComparisonTest()
@@ -50,7 +50,7 @@ namespace Innovative.SolarCalculator.Tests
 		}
 
 		[TestMethod]
-		[TestCategory("Solar Calculation Tests")]
+		[TestCategory("Solar Calculation Math Tests")]
 		[DeploymentItem("NOAA Solar Calculations Test Data.xlsx")]
 		[DataSource("System.Data.OleDb", "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=NOAA Solar Calculations Test Data.xlsx;Extended Properties=\"Excel 12.0;HDR=YES\"", "Calculations$", DataAccessMethod.Sequential)]
 		public void JulianCenturyComparisonTest()
@@ -64,7 +64,7 @@ namespace Innovative.SolarCalculator.Tests
 		}
 
 		[TestMethod]
-		[TestCategory("Solar Calculation Tests")]
+		[TestCategory("Solar Calculation Math Tests")]
 		[DeploymentItem("NOAA Solar Calculations Test Data.xlsx")]
 		[DataSource("System.Data.OleDb", "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=NOAA Solar Calculations Test Data.xlsx;Extended Properties=\"Excel 12.0;HDR=YES\"", "Calculations$", DataAccessMethod.Sequential)]
 		public void SunGeometricMeanLongitudeComparisonTest()
@@ -78,7 +78,7 @@ namespace Innovative.SolarCalculator.Tests
 		}
 
 		[TestMethod]
-		[TestCategory("Solar Calculation Tests")]
+		[TestCategory("Solar Calculation Math Tests")]
 		[DeploymentItem("NOAA Solar Calculations Test Data.xlsx")]
 		[DataSource("System.Data.OleDb", "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=NOAA Solar Calculations Test Data.xlsx;Extended Properties=\"Excel 12.0;HDR=YES\"", "Calculations$", DataAccessMethod.Sequential)]
 		public void SunMeanAnomalyComparisonTest()
@@ -92,7 +92,7 @@ namespace Innovative.SolarCalculator.Tests
 		}
 
 		[TestMethod]
-		[TestCategory("Solar Calculation Tests")]
+		[TestCategory("Solar Calculation Math Tests")]
 		[DeploymentItem("NOAA Solar Calculations Test Data.xlsx")]
 		[DataSource("System.Data.OleDb", "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=NOAA Solar Calculations Test Data.xlsx;Extended Properties=\"Excel 12.0;HDR=YES\"", "Calculations$", DataAccessMethod.Sequential)]
 		public void EccentricityOfEarthOrbitComparisonTest()
@@ -106,7 +106,7 @@ namespace Innovative.SolarCalculator.Tests
 		}
 
 		[TestMethod]
-		[TestCategory("Solar Calculation Tests")]
+		[TestCategory("Solar Calculation Math Tests")]
 		[DeploymentItem("NOAA Solar Calculations Test Data.xlsx")]
 		[DataSource("System.Data.OleDb", "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=NOAA Solar Calculations Test Data.xlsx;Extended Properties=\"Excel 12.0;HDR=YES\"", "Calculations$", DataAccessMethod.Sequential)]
 		public void SunEquationOfCenterComparisonTest()
@@ -120,7 +120,7 @@ namespace Innovative.SolarCalculator.Tests
 		}
 
 		[TestMethod]
-		[TestCategory("Solar Calculation Tests")]
+		[TestCategory("Solar Calculation Math Tests")]
 		[DeploymentItem("NOAA Solar Calculations Test Data.xlsx")]
 		[DataSource("System.Data.OleDb", "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=NOAA Solar Calculations Test Data.xlsx;Extended Properties=\"Excel 12.0;HDR=YES\"", "Calculations$", DataAccessMethod.Sequential)]
 		public void SunTrueLongitudeComparisonTest()
@@ -134,7 +134,7 @@ namespace Innovative.SolarCalculator.Tests
 		}
 
 		[TestMethod]
-		[TestCategory("Solar Calculation Tests")]
+		[TestCategory("Solar Calculation Math Tests")]
 		[DeploymentItem("NOAA Solar Calculations Test Data.xlsx")]
 		[DataSource("System.Data.OleDb", "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=NOAA Solar Calculations Test Data.xlsx;Extended Properties=\"Excel 12.0;HDR=YES\"", "Calculations$", DataAccessMethod.Sequential)]
 		public void SunApparentLongitudeComparisonTest()
@@ -148,7 +148,7 @@ namespace Innovative.SolarCalculator.Tests
 		}
 
 		[TestMethod]
-		[TestCategory("Solar Calculation Tests")]
+		[TestCategory("Solar Calculation Math Tests")]
 		[DeploymentItem("NOAA Solar Calculations Test Data.xlsx")]
 		[DataSource("System.Data.OleDb", "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=NOAA Solar Calculations Test Data.xlsx;Extended Properties=\"Excel 12.0;HDR=YES\"", "Calculations$", DataAccessMethod.Sequential)]
 		public void MeanEclipticObliquityComparisonTest()
@@ -162,7 +162,7 @@ namespace Innovative.SolarCalculator.Tests
 		}
 
 		[TestMethod]
-		[TestCategory("Solar Calculation Tests")]
+		[TestCategory("Solar Calculation Math Tests")]
 		[DeploymentItem("NOAA Solar Calculations Test Data.xlsx")]
 		[DataSource("System.Data.OleDb", "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=NOAA Solar Calculations Test Data.xlsx;Extended Properties=\"Excel 12.0;HDR=YES\"", "Calculations$", DataAccessMethod.Sequential)]
 		public void ObliquityCorrectionComparisonTest()
@@ -176,7 +176,7 @@ namespace Innovative.SolarCalculator.Tests
 		}
 
 		[TestMethod]
-		[TestCategory("Solar Calculation Tests")]
+		[TestCategory("Solar Calculation Math Tests")]
 		[DeploymentItem("NOAA Solar Calculations Test Data.xlsx")]
 		[DataSource("System.Data.OleDb", "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=NOAA Solar Calculations Test Data.xlsx;Extended Properties=\"Excel 12.0;HDR=YES\"", "Calculations$", DataAccessMethod.Sequential)]
 		public void SolarDeclinationComparisonTest()
@@ -190,7 +190,7 @@ namespace Innovative.SolarCalculator.Tests
 		}
 
 		[TestMethod]
-		[TestCategory("Solar Calculation Tests")]
+		[TestCategory("Solar Calculation Math Tests")]
 		[DeploymentItem("NOAA Solar Calculations Test Data.xlsx")]
 		[DataSource("System.Data.OleDb", "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=NOAA Solar Calculations Test Data.xlsx;Extended Properties=\"Excel 12.0;HDR=YES\"", "Calculations$", DataAccessMethod.Sequential)]
 		public void VarYComparisonTest()
@@ -204,7 +204,7 @@ namespace Innovative.SolarCalculator.Tests
 		}
 
 		[TestMethod]
-		[TestCategory("Solar Calculation Tests")]
+		[TestCategory("Solar Calculation Math Tests")]
 		[DeploymentItem("NOAA Solar Calculations Test Data.xlsx")]
 		[DataSource("System.Data.OleDb", "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=NOAA Solar Calculations Test Data.xlsx;Extended Properties=\"Excel 12.0;HDR=YES\"", "Calculations$", DataAccessMethod.Sequential)]
 		public void EquationOfTimeComparisonTest()
@@ -218,7 +218,7 @@ namespace Innovative.SolarCalculator.Tests
 		}
 
 		[TestMethod]
-		[TestCategory("Solar Calculation Tests")]
+		[TestCategory("Solar Calculation Math Tests")]
 		[DeploymentItem("NOAA Solar Calculations Test Data.xlsx")]
 		[DataSource("System.Data.OleDb", "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=NOAA Solar Calculations Test Data.xlsx;Extended Properties=\"Excel 12.0;HDR=YES\"", "Calculations$", DataAccessMethod.Sequential)]
 		public void HourAngleSunriseComparisonTest()
@@ -232,7 +232,7 @@ namespace Innovative.SolarCalculator.Tests
 		}
 
 		[TestMethod]
-		[TestCategory("Solar Calculation Tests")]
+		[TestCategory("Solar Calculation Math Tests")]
 		[DeploymentItem("NOAA Solar Calculations Test Data.xlsx")]
 		[DataSource("System.Data.OleDb", "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=NOAA Solar Calculations Test Data.xlsx;Extended Properties=\"Excel 12.0;HDR=YES\"", "Calculations$", DataAccessMethod.Sequential)]
 		public void SolarNoonComparisonTest()
@@ -249,7 +249,7 @@ namespace Innovative.SolarCalculator.Tests
 		}
 
 		[TestMethod]
-		[TestCategory("Solar Calculation Tests")]
+		[TestCategory("Solar Calculation Math Tests")]
 		[DeploymentItem("NOAA Solar Calculations Test Data.xlsx")]
 		[DataSource("System.Data.OleDb", "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=NOAA Solar Calculations Test Data.xlsx;Extended Properties=\"Excel 12.0;HDR=YES\"", "Calculations$", DataAccessMethod.Sequential)]
 		public void SunriseComparisonTest()
@@ -266,7 +266,7 @@ namespace Innovative.SolarCalculator.Tests
 		}
 
 		[TestMethod]
-		[TestCategory("Solar Calculation Tests")]
+		[TestCategory("Solar Calculation Math Tests")]
 		[DeploymentItem("NOAA Solar Calculations Test Data.xlsx")]
 		[DataSource("System.Data.OleDb", "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=NOAA Solar Calculations Test Data.xlsx;Extended Properties=\"Excel 12.0;HDR=YES\"", "Calculations$", DataAccessMethod.Sequential)]
 		public void SunsetComparisonTest()
@@ -283,7 +283,7 @@ namespace Innovative.SolarCalculator.Tests
 		}
 
 		[TestMethod]
-		[TestCategory("Solar Calculation Tests")]
+		[TestCategory("Solar Calculation Math Tests")]
 		[DeploymentItem("NOAA Solar Calculations Test Data.xlsx")]
 		[DataSource("System.Data.OleDb", "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=NOAA Solar Calculations Test Data.xlsx;Extended Properties=\"Excel 12.0;HDR=YES\"", "Calculations$", DataAccessMethod.Sequential)]
 		public void SunlightDurationComparisonTest()
@@ -300,7 +300,7 @@ namespace Innovative.SolarCalculator.Tests
 		}
 
 		[TestMethod]
-		[TestCategory("Solar Calculation Tests")]
+		[TestCategory("Solar Calculation Math Tests")]
 		[DeploymentItem("NOAA Solar Calculations Test Data.xlsx")]
 		[DataSource("System.Data.OleDb", "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=NOAA Solar Calculations Test Data.xlsx;Extended Properties=\"Excel 12.0;HDR=YES\"", "Calculations$", DataAccessMethod.Sequential)]
 		public void TrueSolarTimeComparisonTest()

@@ -55,7 +55,8 @@
     <Compile Include="CustomAssert.cs" />
     <Compile Include="ExcelFormulaeTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SolarCalculatorTests.cs" />
+    <Compile Include="SolarCalculatorOutputMathTests.cs" />
+    <Compile Include="SolarCalculatorMathTests.cs" />
     <Compile Include="TestDirector.cs" />
   </ItemGroup>
   <ItemGroup>

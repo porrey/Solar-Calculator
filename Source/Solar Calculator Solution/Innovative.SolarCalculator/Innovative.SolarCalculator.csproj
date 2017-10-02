@@ -7,7 +7,7 @@
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <PackageId>SolarCalculator</PackageId>
-    <Version>2.0.1</Version>
+    <Version>2.0.2</Version>
     <Authors>Daniel M. Porrey</Authors>
     <Company>Daniel M. Porrey</Company>
     <Product>Solar Calculator</Product>
@@ -17,7 +17,8 @@
     <Copyright>Copyright © 2013-2017 Daniel M. Porrey</Copyright>
 		<Summary>This library is a port of the Excel spreadsheet found at NOAA to calculate the sunrise and sunset for a given date and location (using Geographic Coordinates).</Summary>
     <Description>Calculates the sunrise and sunset for a given date and location (using Geographic Coordinates). This library uses the method outlined NOAA Solar Calculations Day spreadsheet found at http://www.esrl.noaa.gov/gmd/grad/solcalc/calcdetails.html. Calculations are based on the book "Astronomical Algorithms" by Jean Meeus.</Description>
-    <PackageReleaseNotes>v2.0.1 Corrected date portion of SolarNoon date and time. It was showing the correct time but the wrong day.
+    <PackageReleaseNotes>v2.0.2 Corrected date portion of SolarNoon date and time. It was showing the correct time but the wrong day.
+v2.0.1 Change default value for SolarNoon to the ForDate property.
 v2.0.0 Converted to .NET Standard/Moved to GitHub. Changed license to GNU Public 3.0.
 v1.0.8 Added multiple .NET versions.
 v1.0.7 Removed Angle class and referenced it from NuGet library.
@@ -30,8 +31,8 @@ v1.0.1 Updated license and project URL's in package.</PackageReleaseNotes>
     <RepositoryUrl>https://github.com/porrey/Solar-Calculator.git</RepositoryUrl>
     <RepositoryType>GitHub</RepositoryType>
     <PackageTags>Sunrise Sunset Calculator Jean Meeus Solar Angle Algorithms Astronomical</PackageTags>
-    <AssemblyVersion>2.0.1.0</AssemblyVersion>
-    <FileVersion>2.0.1.0</FileVersion>
+    <AssemblyVersion>2.0.2.0</AssemblyVersion>
+    <FileVersion>2.0.2.0</FileVersion>
   </PropertyGroup>
 
   <ItemGroup>

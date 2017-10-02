@@ -494,7 +494,7 @@ namespace Innovative.SolarCalculator
 				DateTime returnValue = this.ForDate.Date;
 
 				decimal dayFraction = (720M - (4M * this.Longitude) - this.EquationOfTime + (this.TimeZoneOffset * 60M)) / 1440M;
-				returnValue = DateTime.Now.Date.Add(DecimalTimeSpan.FromDays(dayFraction));
+				returnValue = this.ForDate.Date.Add(DecimalTimeSpan.FromDays(dayFraction));
 
 				return returnValue;
 			}
