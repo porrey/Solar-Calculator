@@ -561,7 +561,7 @@ namespace Innovative.Geometry
 		{
 			int returnValue = 0;
 
-			if ((double)angle < 0)
+			if ((decimal)angle < 0)
 			{
 				returnValue = (int)Math.Ceiling((decimal)angle);
 			}
@@ -583,7 +583,7 @@ namespace Innovative.Geometry
 		{
 			int returnValue = 0;
 
-			decimal degreesDecimal = angle - (double)angle.Degrees;
+			decimal degreesDecimal = (decimal)angle - (decimal)angle.Degrees;
 
 			if (degreesDecimal < 0)
 			{
@@ -608,7 +608,7 @@ namespace Innovative.Geometry
 		{
 			decimal returnValue = 0M;
 
-			decimal degreesDecimal = angle - (double)angle.Degrees;
+			decimal degreesDecimal = (decimal)angle - (decimal)angle.Degrees;
 			decimal totalMinutes = degreesDecimal * 60;
 			decimal secondsDecimal = 0;
 
