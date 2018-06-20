@@ -1,4 +1,4 @@
-// ***
+﻿// ***
 // *** Copyright (C) 2013-2017, Daniel M. Porrey.  All rights reserved.
 // *** Written By Daniel M. Porrey
 // ***
@@ -553,6 +553,29 @@ namespace Innovative.SolarCalculator
 			get
 			{
 				return new Angle(90) - this.SolarZenith;
+			}
+		}
+
+		/// <summary>
+		/// Solar Azimuth (degrees)
+		/// (Spreadsheet Column AH)
+		/// </summary>
+		public Angle SolarAzimuth
+		{
+			get
+			{
+				var angle = Angle.FromRadians(Universal.Math.Acos(
+						((Universal.Math.Sin(this.Latitude.Radians) * Universal.Math.Cos(this.SolarZenith.Radians)) - 
+							Universal.Math.Sin(this.SolarDeclination.Radians)) /
+					 	(Universal.Math.Cos(this.Latitude.Radians) * Universal.Math.Sin(this.SolarZenith.Radians))));
+				if(this.HourAngleDegrees > 0.0)
+				{
+					return Angle.Reduce(angle + new Angle(180.0));
+				}
+				else
+				{
+					return Angle.Reduce(new Angle(540.0) - angle);
+				}
 			}
 		}
 		#endregion
