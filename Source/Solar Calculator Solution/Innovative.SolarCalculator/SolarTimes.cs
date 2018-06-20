@@ -1,4 +1,4 @@
-﻿// ***
+// ***
 // *** Copyright (C) 2013-2017, Daniel M. Porrey.  All rights reserved.
 // *** Written By Daniel M. Porrey
 // ***
@@ -513,6 +513,46 @@ namespace Innovative.SolarCalculator
 				returnValue = DecimalTimeSpan.FromMinutes(8M * this.HourAngleSunrise);
 
 				return returnValue;
+			}
+		}
+
+		/// <summary>
+		/// Hour Angle (degrees)
+		/// (Spreadsheet Column AC)
+		/// </summary>
+		public Angle HourAngleDegrees
+		{
+			get
+			{
+				var temp = this.TrueSolarTime / 4;
+				return temp < 0 ? temp + 180 : temp - 180;
+			}
+		}
+
+		/// <summary>
+		/// Solar Zenith (degrees)
+		/// (Spreadsheet Column AD)
+		/// </summary>
+		public Angle SolarZenith
+		{
+			get
+			{
+				return Angle.FromRadians(
+					Universal.Math.Acos(Universal.Math.Sin(this.Latitude.Radians) * Universal.Math.Sin(this.SolarDeclination.Radians) +
+					Universal.Math.Cos(this.Latitude.Radians) * Universal.Math.Cos(this.SolarDeclination.Radians) *  Universal.Math.Cos(this.HourAngleDegrees.Radians))
+					);
+			}
+		}
+
+		/// <summary>
+		/// Solar Elevation (degrees)
+		/// (Spreadsheet Column AE)
+		/// </summary>
+		public Angle SolarElevation
+		{
+			get
+			{
+				return new Angle(90) - this.SolarZenith;
 			}
 		}
 		#endregion
