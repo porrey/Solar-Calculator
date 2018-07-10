@@ -515,6 +515,69 @@ namespace Innovative.SolarCalculator
 				return returnValue;
 			}
 		}
+
+		/// <summary>
+		/// Hour Angle (degrees)
+		/// (Spreadsheet Column AC)
+		/// </summary>
+		public Angle HourAngleDegrees
+		{
+			get
+			{
+				var temp = this.TrueSolarTime / 4;
+				return temp < 0 ? temp + 180 : temp - 180;
+			}
+		}
+
+		/// <summary>
+		/// Solar Zenith (degrees)
+		/// (Spreadsheet Column AD)
+		/// </summary>
+		public Angle SolarZenith
+		{
+			get
+			{
+				return Angle.FromRadians(
+					Universal.Math.Acos(Universal.Math.Sin(this.Latitude.Radians) * Universal.Math.Sin(this.SolarDeclination.Radians) +
+					Universal.Math.Cos(this.Latitude.Radians) * Universal.Math.Cos(this.SolarDeclination.Radians) *  Universal.Math.Cos(this.HourAngleDegrees.Radians))
+					);
+			}
+		}
+
+		/// <summary>
+		/// Solar Elevation (degrees)
+		/// (Spreadsheet Column AE)
+		/// </summary>
+		public Angle SolarElevation
+		{
+			get
+			{
+				return new Angle(90) - this.SolarZenith;
+			}
+		}
+
+		/// <summary>
+		/// Solar Azimuth (degrees)
+		/// (Spreadsheet Column AH)
+		/// </summary>
+		public Angle SolarAzimuth
+		{
+			get
+			{
+				var angle = Angle.FromRadians(Universal.Math.Acos(
+						((Universal.Math.Sin(this.Latitude.Radians) * Universal.Math.Cos(this.SolarZenith.Radians)) - 
+							Universal.Math.Sin(this.SolarDeclination.Radians)) /
+					 	(Universal.Math.Cos(this.Latitude.Radians) * Universal.Math.Sin(this.SolarZenith.Radians))));
+				if(this.HourAngleDegrees > 0.0)
+				{
+					return Angle.Reduce(angle + new Angle(180.0));
+				}
+				else
+				{
+					return Angle.Reduce(new Angle(540.0) - angle);
+				}
+			}
+		}
 		#endregion
 
 		#region Obsolete Members
