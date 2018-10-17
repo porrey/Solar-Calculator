@@ -7,7 +7,7 @@
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <PackageId>SolarCalculator</PackageId>
-    <Version>2.0.3</Version>
+    <Version>2.0.4</Version>
     <Authors>Daniel M. Porrey</Authors>
     <Company>Daniel M. Porrey</Company>
     <Product>Solar Calculator</Product>
@@ -17,7 +17,8 @@
     <Copyright>Copyright © 2013-2018 Daniel M. Porrey</Copyright>
 		<Summary>This library is a port of the Excel spreadsheet found at NOAA to calculate the sunrise and sunset for a given date and location (using Geographic Coordinates).</Summary>
     <Description>Calculates the sunrise and sunset for a given date and location (using Geographic Coordinates). This library uses the method outlined NOAA Solar Calculations Day spreadsheet found at http://www.esrl.noaa.gov/gmd/grad/solcalc/calcdetails.html. Calculations are based on the book "Astronomical Algorithms" by Jean Meeus.</Description>
-    <PackageReleaseNotes>v2.0.3 Added azimuth calculation - GeorgeHahn
+    <PackageReleaseNotes>v2.0.4 Bug Fix - Removed internal date setting by string that was not compatible in all locales - t1m0thyj
+v2.0.3 Added azimuth calculation - GeorgeHahn
 v2.0.2 Corrected date portion of SolarNoon date and time. It was showing the correct time but the wrong day.
 v2.0.1 Change default value for SolarNoon to the ForDate property.
 v2.0.0 Converted to .NET Standard/Moved to GitHub. Changed license to GNU Public 3.0.
@@ -29,11 +30,11 @@ v1.0.4 Change the type of ForDate to DateTimeOffset due to improper handling of 
 v1.0.3 Corrected a time issue causing the wrong sunrise and sunset times to be returned. All test cases passed.
 v1.02 Added XML comments file.
 v1.0.1 Updated license and project URL's in package.</PackageReleaseNotes>
-    <RepositoryUrl>https://github.com/porrey/Solar-Calculator.git</RepositoryUrl>
+    <RepositoryUrl>https://github.com/porrey/Solar-Calculator</RepositoryUrl>
     <RepositoryType>GitHub</RepositoryType>
     <PackageTags>Sunrise Sunset Calculator Jean Meeus Solar Angle Algorithms Astronomical</PackageTags>
-    <AssemblyVersion>2.0.3.0</AssemblyVersion>
-    <FileVersion>2.0.3.0</FileVersion>
+    <AssemblyVersion>2.0.4.0</AssemblyVersion>
+    <FileVersion>2.0.4.0</FileVersion>
     <NeutralLanguage>en-US</NeutralLanguage>
   </PropertyGroup>
 
