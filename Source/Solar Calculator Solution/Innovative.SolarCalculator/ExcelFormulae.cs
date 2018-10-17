@@ -37,7 +37,7 @@ namespace Innovative.SolarCalculator
 		{
 			decimal returnValue = 0;
 
-			if (value.Date <= DateTime.Parse("1/1/1900"))
+			if (value.Date <= new DateTime(1900, 1, 1))
 			{
 				decimal d = value.ToOleAutomationDate();
 				decimal c = (decimal)Math.Floor((double)d);
