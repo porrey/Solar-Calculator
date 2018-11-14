@@ -225,7 +225,7 @@ namespace Innovative.SolarCalculator
 				// ***
 				// *** .1 / 24
 				// ***
-				returnValue = DateTime.Parse("12/30/1899  12:00:00 AM").Add(this.ForDate.TimeOfDay).ToOleAutomationDate();
+				returnValue = (new DateTime(1899, 12, 30, 0, 0, 0)).Add(this.ForDate.TimeOfDay).ToOleAutomationDate();
 
 				return returnValue;
 			}
