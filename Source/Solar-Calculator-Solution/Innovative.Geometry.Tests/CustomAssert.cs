@@ -14,7 +14,7 @@
 // *** do not use the software. Full license details can be found at https://raw.githubusercontent.com/porrey/Solar-Calculator/master/LICENSE.
 // ***
 using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 
 namespace Innovative.Geometry.Tests
 {
@@ -26,7 +26,7 @@ namespace Innovative.Geometry.Tests
 
 			if (difference > delta)
 			{
-				string message = string.Format("Expected  {0}, Actual = {1}, Difference = {2} which is greater than the delta of {3}", expected, actual, difference, delta);
+				string message = String.Format($"Expected {expected}, Actual = {actual}, Difference = {difference} which is greater than the delta of {delta}");
 				Assert.Fail(message);
 			}
 		}
