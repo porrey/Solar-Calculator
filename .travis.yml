@@ -2,7 +2,7 @@ language: csharp
 solution: Solar-Calculator/Source/Solar Calculator Solution/Solar Calculator Solution.sln
 
 install:
-    - nuget "Solar-Calculator/Source/Solar Calculator Solution/Solar Calculator Solution.sln"
+    - nuget restore "Solar-Calculator/Source/Solar Calculator Solution/Solar Calculator Solution.sln"
   
 script:
     - msbuild /t:"Innovative_Geometry_Angle" /p:BuildProjectReferences=true /p:Configuration=Release "Solar Calculator Solution.sln"
