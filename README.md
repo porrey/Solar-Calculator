@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/porrey/Solar-Calculator.svg?branch=master)](https://travis-ci.com/porrey/Solar-Calculator)
+
 # Solar-Calculator #
 Calculates the sunrise and sunset for a given date and location (using geo coordinates). This library uses the method outlined NOAA Solar Calculations Day spreadsheet found at http://www.esrl.noaa.gov/gmd/grad/solcalc/calcdetails.html.
 
