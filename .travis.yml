@@ -1,5 +1,8 @@
 language: csharp
 solution: Source/Solar-Calculator-Solution/Solar-Calculator-Solution.sln
+install:
+  - nuget restore Source/Solar-Calculator-Solution/Solar-Calculator-Solution.sln
+  - nuget install xunit.runners -Version 3.10.1 -OutputDirectory testrunner
 script:
   - xbuild /p:Configuration=Release Source/Solar-Calculator-Solution/Solar-Calculator-Solution.sln
-  - mono ./testrunner/NUnit.Runners.*/tools/nunit-console.exe ./Innovative.Geometry.Tests/bin/Release/Innovative.Geometry.Tests.dll
+  - mono ./testrunner/NUnit.Runners.3.10.1/tools/nunit-console.exe ./Innovative.Geometry.Tests/bin/Release/Innovative.Geometry.Tests.dll
