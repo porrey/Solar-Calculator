@@ -48,7 +48,7 @@ namespace Innovative.SolarCalculator.Tests
 
 			if (difference != 0M)
 			{
-				Assert.Fail("Taking the square of the number {0} 27 times should result in {1}. The actual value ({2}) differs by {3}.", baseNumber, expectedValue, actualValue, difference);
+				Assert.Inconclusive("Taking the square of the number {0} 27 times should result in {1}. The actual value ({2}) differs by {3}.", baseNumber, expectedValue, actualValue, difference);
 			}
 		}
 
@@ -98,7 +98,7 @@ namespace Innovative.SolarCalculator.Tests
 
 			if (difference != 0M)
 			{
-				Assert.Fail("The result of incrementing a counter from 0 to 100 by .1 should result in {0} after 100 steps. The actual value ({1}) differs by {2}.", expectedValue, actualValue, difference);
+				Assert.Inconclusive("The result of incrementing a counter from 0 to 100 by .1 should result in {0} after 100 steps. The actual value ({1}) differs by {2}.", expectedValue, actualValue, difference);
 			}
 		}
 
@@ -113,7 +113,7 @@ namespace Innovative.SolarCalculator.Tests
 
 			if (difference != 0M)
 			{
-				Assert.Fail("The result of the equation 3 * (1/3) should be {0}. The actual value ({1}) differs by {2}.", expectedValue, actualValue, difference);
+				Assert.Inconclusive("The result of the equation 3 * (1/3) should be {0}. The actual value ({1}) differs by {2}.", expectedValue, actualValue, difference);
 			}
 		}
 
