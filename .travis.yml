@@ -1,2 +1,5 @@
 language: csharp
 solution: Source/Solar-Calculator-Solution/Solar-Calculator-Solution.sln
+script:
+  - xbuild /p:Configuration=Release Source/Solar-Calculator-Solution/Solar-Calculator-Solution.sln
+  - mono ./testrunner/NUnit.Runners.*/tools/nunit-console.exe ./Innovative.Geometry.Tests/bin/Release/Innovative.Geometry.Tests.dll
