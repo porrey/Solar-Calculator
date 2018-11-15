@@ -2,5 +2,5 @@ language: csharp
 solution: Source/Solar Calculator Solution/Solar Calculator Solution.sln
 
 script:
-    msbuild /p:Configuration=Release /t:Innovative.Geometry.Angle Source/Solar Calculator Solution/Solar Calculator Solution.sln
-    msbuild /p:Configuration=Release /t:Innovative.SolarCalculator Source/Solar Calculator Solution/Solar Calculator Solution.sln
+    - msbuild /p:Configuration=Release /t:Innovative.Geometry.Angle Source/Solar Calculator Solution/Solar Calculator Solution.sln
+    - msbuild /p:Configuration=Release /t:Innovative.SolarCalculator Source/Solar Calculator Solution/Solar Calculator Solution.sln
