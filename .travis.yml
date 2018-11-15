@@ -1,2 +1,2 @@
 language: csharp
-solution: Solar Calculator Solution.sln
+solution: Source/Solar Calculator Solution/Solar Calculator Solution.sln
