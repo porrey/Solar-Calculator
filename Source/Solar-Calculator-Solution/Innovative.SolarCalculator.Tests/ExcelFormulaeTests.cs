@@ -9,57 +9,41 @@
 // *** SPECIAL, CONSEQUENTIAL, INCIDENTAL OR PUNITIVE DAMAGES, HOWEVER CAUSED AND REGARDLESS OF THE THEORY OF LIABILITY, ARISING OUT OF THE USE OF 
 // *** OR INABILITY TO USE THIS SOFTWARE, EVEN IF DANIEL M PORREY HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. 
 // ***
-// *** Licensed under Microsoft Reciprocal License (Ms-RL)
+// *** Licensed under Microsoft Public License (Ms-PL)
 // *** This license governs use of the accompanying software. If you use the software, you accept this license. If you do not accept the license, 
 // *** do not use the software. Full license details can be found at https://raw.githubusercontent.com/porrey/Solar-Calculator/master/LICENSE.
 // ***
 using System;
-using System.Collections.Generic;
-using System.Text;
+using NUnit.Framework;
 
-namespace Innovative.SolarCalculator
+namespace Innovative.SolarCalculator.Tests
 {
-	/// <summary>
-	/// Provides common .NET static methods that vary between versions.
-	/// </summary>
-	public static class Universal
+	[TestFixture]
+	public class ExcelFormulaeTests
 	{
-		/// <summary>
-		/// The Math functions in PORTABLE libraries only accept and return double. All other libraries accept
-		/// decimal. The library works in all decimal values. This class provides decimal based Math functions
-		/// for all platforms.
-		/// </summary>
-		public static class Math
-		{
-			public static decimal Sin(decimal value)
-			{
-				return (decimal)System.Math.Sin((double)value);
-			}
+		//[Test]
+		//public void ExcelModuloComparisons()
+		//{
+		//	decimal value1 = Convert.ToDecimal(this.TestContext.DataRow["VALUE1"]);
+		//	decimal value2 = Convert.ToDecimal(this.TestContext.DataRow["VALUE2"]);
+		//	decimal expectedValue = Convert.ToDecimal(this.TestContext.DataRow["MOD"]);
 
-			public static decimal Asin(decimal value)
-			{
-				return (decimal)System.Math.Asin((double)value);
-			}
+		//	decimal actualValue = ExcelFormulae.Mod(value1, value2);
+		//	decimal difference = expectedValue - actualValue;
 
-			public static decimal Tan(decimal value)
-			{
-				return (decimal)System.Math.Tan((double)value);
-			}
+		//	CustomAssert.AreEqual(expectedValue, actualValue, TestDirector.ExcelDecimalDelta);
+		//}
 
-			public static decimal Cos(decimal value)
-			{
-				return (decimal)System.Math.Cos((double)value);
-			}
+		//[Test]
+		//public void ExcelDateValueTest()
+		//{
+		//	DateTime value1 = Convert.ToDateTime(this.TestContext.DataRow["DATE"]);
+		//	decimal expectedValue = Convert.ToDecimal(this.TestContext.DataRow["DATEVALUE"]);
 
-			public static decimal Acos(decimal value)
-			{
-				return (decimal)System.Math.Acos((double)value);
-			}
+		//	decimal actualValue = ExcelFormulae.ToExcelDateValue(value1);
+		//	decimal difference = expectedValue - actualValue;
 
-			public static decimal Sqrt(decimal value)
-			{
-				return (decimal)System.Math.Sqrt((double)value);
-			}
-		}
+		//	CustomAssert.AreEqual(expectedValue, actualValue, TestDirector.ExcelDecimalDelta);
+		//}
 	}
 }
