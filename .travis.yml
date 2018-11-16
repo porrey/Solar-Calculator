@@ -1,2 +1,8 @@
 language: csharp
 solution: Source/Solar-Calculator-Solution/Solar-Calculator-Solution.sln
+dotnet: 2.1
+mono: none
+script:
+  - dotnet restore Source/Solar-Calculator-Solution/Solar-Calculator-Solution.sln
+  - dotnet build Source/Solar-Calculator-Solution/Solar-Calculator-Solution.sln --configuration Release
+  - dotnet test Source/Solar-Calculator-Solution/Solar-Calculator-Solution.sln

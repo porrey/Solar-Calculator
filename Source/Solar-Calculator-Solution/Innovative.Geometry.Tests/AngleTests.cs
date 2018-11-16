@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Globalization;
 using System.Linq;
 using NUnit.Framework;
 
@@ -65,8 +64,8 @@ namespace Innovative.Geometry.Tests
 		public void AngleDecimalConstructorTest(TestData item)
 		{
 			int degrees = Convert.ToInt32(item.Degrees);
-			int arcminute = Convert.ToInt32(item.Minutes);
-			decimal arcsecond = item.Seconds;
+			int arcminute = Convert.ToInt32(item.Arcminute);
+			decimal arcsecond = item.Arcsecond;
 			decimal decimalDegrees = item.Angle1;
 
 			Angle target = new Angle(decimalDegrees);
@@ -81,8 +80,8 @@ namespace Innovative.Geometry.Tests
 		public void AngleDoubleConstructorTest(TestData item)
 		{
 			int degrees = Convert.ToInt32(item.Degrees);
-			int arcminute = Convert.ToInt32(item.Minutes);
-			decimal arcsecond = item.Seconds;
+			int arcminute = Convert.ToInt32(item.Arcminute);
+			decimal arcsecond = item.Arcsecond;
 			double doubleDegrees = Convert.ToDouble(item.Angle1);
 
 			Angle target = new Angle(doubleDegrees);
@@ -97,8 +96,8 @@ namespace Innovative.Geometry.Tests
 		public void AngleThreePartDecimalConstructorTest(TestData item)
 		{
 			int degrees = Convert.ToInt32(item.Degrees);
-			int arcminute = Convert.ToInt32(item.Minutes);
-			decimal arcsecond = item.Seconds;
+			int arcminute = Convert.ToInt32(item.Arcminute);
+			decimal arcsecond = item.Arcsecond;
 			decimal decimalDegrees = item.Angle1;
 
 			Angle target = new Angle(degrees, arcminute, arcsecond);
@@ -111,8 +110,8 @@ namespace Innovative.Geometry.Tests
 		public void AngleThreePartDoubleConstructorTest(TestData item)
 		{
 			int degrees = Convert.ToInt32(item.Degrees);
-			int arcminute = Convert.ToInt32(item.Minutes);
-			decimal arcsecond = item.Seconds;
+			int arcminute = Convert.ToInt32(item.Arcminute);
+			decimal arcsecond = item.Arcsecond;
 			double doubleDegrees = Convert.ToDouble(item.Angle1);
 
 			Angle target = new Angle(degrees, arcminute, arcsecond);
@@ -121,7 +120,7 @@ namespace Innovative.Geometry.Tests
 		}
 		#endregion
 
-				#region Public Member Tests
+		#region Public Member Tests
 		[Test]
 		[TestCaseSource("TestDataItems")]
 		public void DegreesTest(TestData item)
@@ -138,7 +137,7 @@ namespace Innovative.Geometry.Tests
 		public void ArcminuteTest(TestData item)
 		{
 			decimal decimalDegrees = item.Angle1;
-			int arcMinute = Convert.ToInt32(item.Minutes);
+			int arcMinute = Convert.ToInt32(item.Arcminute);
 
 			Angle target = new Angle(decimalDegrees);
 			Assert.AreEqual(arcMinute, target.Arcminute);
@@ -149,7 +148,7 @@ namespace Innovative.Geometry.Tests
 		public void ArcsecondTest(TestData item)
 		{
 			decimal decimalDegrees = item.Angle1;
-			decimal arcSeconds = item.Seconds;
+			decimal arcSeconds = item.Arcsecond;
 
 			Angle target = new Angle(decimalDegrees);
 			CustomAssert.AreEqual(arcSeconds, target.Arcsecond, AngleTests.MathDecimalDelta);
@@ -517,8 +516,8 @@ namespace Innovative.Geometry.Tests
 		public void ToDegreesFromRadiansTest(TestData item)
 		{
 			int degrees = Convert.ToInt32(item.Degrees);
-			int arcminute = Convert.ToInt32(item.Minutes);
-			decimal arcsecond = item.Seconds;
+			int arcminute = Convert.ToInt32(item.Arcminute);
+			decimal arcsecond = item.Arcsecond;
 			decimal decimalDegrees = item.Angle1;
 
 			Angle target = Angle.ToDegrees(degrees, arcminute, arcsecond);
@@ -543,8 +542,8 @@ namespace Innovative.Geometry.Tests
 		{
 			decimal radians = item.Radians;
 			int degrees = Convert.ToInt32(item.Degrees);
-			int arcminute = Convert.ToInt32(item.Minutes);
-			decimal arcsecond = item.Seconds;
+			int arcminute = Convert.ToInt32(item.Arcminute);
+			decimal arcsecond = item.Arcsecond;
 			decimal decimalDegrees = item.Angle1;
 
 			Angle target = Angle.FromRadians(radians);
@@ -570,7 +569,7 @@ namespace Innovative.Geometry.Tests
 		[TestCaseSource("TestDataItems")]
 		public void GetArcminuteTest(TestData item)
 		{
-			int arcminute = Convert.ToInt32(item.Minutes);
+			int arcminute = Convert.ToInt32(item.Arcminute);
 			decimal decimalDegrees = item.Angle1;
 
 			int actual = Angle.GetArcminute(decimalDegrees);
@@ -581,7 +580,7 @@ namespace Innovative.Geometry.Tests
 		[TestCaseSource("TestDataItems")]
 		public void GetArcsecondTest(TestData item)
 		{
-			decimal arcsecond = item.Seconds;
+			decimal arcsecond = item.Arcsecond;
 			decimal decimalDegrees = item.Angle1;
 
 			decimal actual = Angle.GetArcsecond(decimalDegrees);
@@ -644,27 +643,27 @@ namespace Innovative.Geometry.Tests
 		{
 			int degrees1 = -1 * Math.Abs(Convert.ToInt32(item.Degrees));
 			degrees1 = degrees1 == 0 ? degrees1 = -1 : degrees1;
-			int minutes1 = Math.Abs(Convert.ToInt32(item.Minutes));
+			int minutes1 = Math.Abs(Convert.ToInt32(item.Arcminute));
 			minutes1 = minutes1 == 0 ? minutes1 = -1 : minutes1;
-			decimal seconds1 = Math.Abs(item.Seconds);
+			decimal seconds1 = Math.Abs(item.Arcsecond);
 			seconds1 = seconds1 == 0 ? seconds1 = -1 : seconds1;
 			Angle.NormalDirection(ref degrees1, ref minutes1, ref seconds1);
 			Assert.IsTrue(degrees1 <= 0 && minutes1 <= 0 && seconds1 <= 0);
 
 			int degrees2 = Math.Abs(Convert.ToInt32(item.Degrees));
 			degrees2 = degrees2 == 0 ? degrees2 = -1 : degrees2;
-			int minutes2 = -1 * Math.Abs(Convert.ToInt32(item.Minutes));
+			int minutes2 = -1 * Math.Abs(Convert.ToInt32(item.Arcminute));
 			minutes2 = minutes2 == 0 ? minutes2 = -1 : minutes2;
-			decimal seconds2 = Math.Abs(item.Seconds);
+			decimal seconds2 = Math.Abs(item.Arcsecond);
 			seconds2 = seconds2 == 0 ? seconds2 = -1 : seconds2;
 			Angle.NormalDirection(ref degrees2, ref minutes2, ref seconds2);
 			Assert.IsTrue(degrees2 <= 0 && minutes2 <= 0 && seconds2 <= 0);
 
 			int degrees3 = Math.Abs(Convert.ToInt32(item.Degrees));
 			degrees3 = degrees3 == 0 ? degrees3 = -1 : degrees3;
-			int minutes3 = Math.Abs(Convert.ToInt32(item.Minutes));
+			int minutes3 = Math.Abs(Convert.ToInt32(item.Arcminute));
 			minutes3 = minutes3 == 0 ? minutes3 = -1 : minutes3;
-			decimal seconds3 = -1 * Math.Abs(item.Seconds);
+			decimal seconds3 = -1 * Math.Abs(item.Arcsecond);
 			seconds3 = seconds3 == 0 ? seconds3 = -1 : seconds3;
 			Angle.NormalDirection(ref degrees3, ref minutes3, ref seconds3);
 			Assert.IsTrue(degrees3 <= 0 && minutes3 <= 0 && seconds3 <= 0);
@@ -676,27 +675,27 @@ namespace Innovative.Geometry.Tests
 		{
 			decimal hours1 = -1 * Math.Abs(item.Degrees);
 			hours1 = hours1 == 0 ? hours1 = -1 : hours1;
-			int minutes1 = Math.Abs(Convert.ToInt32(item.Minutes));
+			int minutes1 = Math.Abs(Convert.ToInt32(item.Arcminute));
 			minutes1 = minutes1 == 0 ? minutes1 = -1 : minutes1;
-			decimal seconds1 = Math.Abs(item.Seconds);
+			decimal seconds1 = Math.Abs(item.Arcsecond);
 			seconds1 = seconds1 == 0 ? seconds1 = -1 : seconds1;
 			Angle.NormalDirection(ref hours1, ref minutes1, ref seconds1);
 			Assert.IsTrue(hours1 <= 0 && minutes1 <= 0 && seconds1 <= 0);
 
 			decimal hours2 = Math.Abs(item.Degrees);
 			hours2 = hours2 == 0 ? hours2 = -1 : hours2;
-			int minutes2 = -1 * Math.Abs(Convert.ToInt32(item.Minutes));
+			int minutes2 = -1 * Math.Abs(Convert.ToInt32(item.Arcminute));
 			minutes2 = minutes2 == 0 ? minutes2 = -1 : minutes2;
-			decimal seconds2 = Math.Abs(item.Seconds);
+			decimal seconds2 = Math.Abs(item.Arcsecond);
 			seconds2 = seconds2 == 0 ? seconds2 = -1 : seconds2;
 			Angle.NormalDirection(ref hours2, ref minutes2, ref seconds2);
 			Assert.IsTrue(hours2 <= 0 && minutes2 <= 0 && seconds2 <= 0);
 
 			decimal hours3 = Math.Abs(item.Degrees);
 			hours3 = hours3 == 0 ? hours3 = -1 : hours3;
-			int minutes3 = Math.Abs(Convert.ToInt32(item.Minutes));
+			int minutes3 = Math.Abs(Convert.ToInt32(item.Arcminute));
 			minutes3 = minutes3 == 0 ? minutes3 = -1 : minutes3;
-			decimal seconds3 = -1 * Math.Abs(item.Seconds);
+			decimal seconds3 = -1 * Math.Abs(item.Arcsecond);
 			seconds3 = seconds3 == 0 ? seconds3 = -1 : seconds3;
 			Angle.NormalDirection(ref hours3, ref minutes3, ref seconds3);
 			Assert.IsTrue(hours3 <= 0 && minutes3 <= 0 && seconds3 <= 0);
@@ -708,39 +707,30 @@ namespace Innovative.Geometry.Tests
 		[TestCaseSource("TestDataItems")]
 		public void ToStringTest(TestData item)
 		{
-			decimal decimalDegrees = item.Angle1;
-			string shortFormat = Convert.ToString(item.ShortFormat);
-
-			Angle target = new Angle(decimalDegrees);
+			Angle target = new Angle(item.Angle1);
 			string actualValue = target.ToString();
 
-			Assert.AreEqual(shortFormat, actualValue);
+			Assert.AreEqual(item.ShortFormat, actualValue);
 		}
 
 		[Test]
 		[TestCaseSource("TestDataItems")]
 		public void ToShortFormatTest(TestData item)
 		{
-			decimal decimalDegrees = item.Angle1;
-			string shortFormat = Convert.ToString(item.ShortFormat);
-
-			Angle target = new Angle(decimalDegrees);
+			Angle target = new Angle(item.Angle1);
 			string actualValue = target.ToShortFormat();
 
-			Assert.AreEqual(shortFormat, actualValue);
+			Assert.AreEqual(item.ShortFormat, actualValue);
 		}
 
 		[Test]
 		[TestCaseSource("TestDataItems")]
 		public void ToLongFormatTest(TestData item)
 		{
-			decimal decimalDegrees = item.Angle1;
-			string longFormat = Convert.ToString(item.LongFormat);
-
-			Angle target = new Angle(decimalDegrees);
+			Angle target = new Angle(item.Angle1);
 			string actualValue = target.ToLongFormat();
 
-			Assert.AreEqual(longFormat, actualValue);
+			Assert.AreEqual(item.LongFormat, actualValue);
 		}
 		#endregion
 
@@ -784,12 +774,10 @@ namespace Innovative.Geometry.Tests
 		[TestCaseSource("TestDataItems")]
 		public void IFormattableTest(TestData item)
 		{
-			decimal decimalDegrees = item.Angle1;
-			string shortFormat = Convert.ToString(item.ShortFormat);
-			string longFormat = Convert.ToString(item.LongFormat);
+			Angle target = new Angle(item.Angle1);
+			string actualValue = target.ToShortFormat();
 
-			Angle target = new Angle(decimalDegrees);
-			Assert.AreEqual(shortFormat, target.ToString("0°.0000####", CultureInfo.CurrentCulture));
+			Assert.AreEqual(item.ShortFormat, actualValue);
 		}
 		#endregion
 

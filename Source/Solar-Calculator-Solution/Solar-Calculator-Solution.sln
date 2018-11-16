@@ -7,8 +7,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Innovative.Geometry.Angle",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Innovative.SolarCalculator", "Innovative.SolarCalculator\Innovative.SolarCalculator.csproj", "{645C1D0C-5E77-48BE-A29B-D6301B73E925}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Innovative.SolarCalculator.UnitTests", "Innovative.SolarCalculator.UnitTests\Innovative.SolarCalculator.UnitTests.csproj", "{3880FECE-2640-4025-81CB-0F926B251E70}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Innovative.Geometry.Tests", "Innovative.Geometry.Tests\Innovative.Geometry.Tests.csproj", "{D5B30F7E-B13B-4BA7-8EED-267857094F4D}"
 EndProject
 Global
@@ -25,10 +23,6 @@ Global
 		{645C1D0C-5E77-48BE-A29B-D6301B73E925}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{645C1D0C-5E77-48BE-A29B-D6301B73E925}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{645C1D0C-5E77-48BE-A29B-D6301B73E925}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3880FECE-2640-4025-81CB-0F926B251E70}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3880FECE-2640-4025-81CB-0F926B251E70}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3880FECE-2640-4025-81CB-0F926B251E70}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3880FECE-2640-4025-81CB-0F926B251E70}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D5B30F7E-B13B-4BA7-8EED-267857094F4D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D5B30F7E-B13B-4BA7-8EED-267857094F4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D5B30F7E-B13B-4BA7-8EED-267857094F4D}.Release|Any CPU.ActiveCfg = Release|Any CPU

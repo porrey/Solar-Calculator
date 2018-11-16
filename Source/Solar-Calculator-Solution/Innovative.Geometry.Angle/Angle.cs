@@ -28,11 +28,6 @@ namespace Innovative.Geometry
 	/// </summary>
 	public class Angle : IComparable, IFormattable, IComparable<Angle>, IEquatable<Angle>
 	{
-		// ***
-		// *** Represents the internal value of this type. This value is in degrees.
-		// ***
-		private decimal _internalValue = 0M;
-
 		#region Constructors
 		/// <summary>
 		/// Initializes a new instance of the System.Angle class.
@@ -284,7 +279,7 @@ namespace Innovative.Geometry
 		/// <param name="a">The first Angle.</param>
 		/// <param name="b">The second Angle.</param>
 		/// <returns>The result of the first Angle being added to the second Angle.</returns>
-		public static Angle operator +(Angle a, Angle b) 
+		public static Angle operator +(Angle a, Angle b)
 		{
 			return (Angle)(a.InternalValue + b.InternalValue);
 		}
@@ -295,7 +290,7 @@ namespace Innovative.Geometry
 		/// <param name="a">The first Angle.</param>
 		/// <param name="b">The second Angle.</param>
 		/// <returns>The result of the second Angle being subtracted from the first Angle.</returns>
-		public static Angle operator -(Angle a, Angle b) 
+		public static Angle operator -(Angle a, Angle b)
 		{
 			return (Angle)(a.InternalValue - b.InternalValue);
 		}
@@ -671,8 +666,7 @@ namespace Innovative.Geometry
 			bool returnValue = false;
 			result = null;
 
-			decimal value = 0M;
-			if (decimal.TryParse(s, out value))
+			if (Decimal.TryParse(s, out decimal value))
 			{
 				result = new Angle(value);
 				returnValue = true;
@@ -683,17 +677,10 @@ namespace Innovative.Geometry
 		#endregion
 
 		#region Internal Members
-		internal decimal InternalValue
-		{
-			get
-			{
-				return _internalValue;
-			}
-			set
-			{
-				_internalValue = value;
-			}
-		}
+		/// <summary>
+		/// Represents the internal value of this type. This value is in degrees.
+		/// </summary>
+		internal decimal InternalValue { get; set; }
 
 		internal static void NormalDirection(ref int degrees, ref int minutes, ref decimal seconds)
 		{
@@ -758,13 +745,8 @@ namespace Innovative.Geometry
 		/// <returns>The long format string representation of the value of this instance.</returns>
 		public string ToLongFormat()
 		{
-			return string.Format("{0}°{1}´{2:0´´}", this.Degrees, Math.Abs(this.Arcminute), Math.Abs(this.Arcsecond));
+			return $"{this.Degrees:0}°{Math.Abs(this.Arcminute):0}´{Math.Abs(this.Arcsecond):0}´´";
 		}
-
-		//public string ToHourFormat()
-		//{
-		//	return string.Format("{0}ʰ {1}ᵐ {2:0ˢ.#####}", this.Degrees, this.ArcmMinute, this.Arcsecond);
-		//}
 		#endregion
 
 		#region IComparable
@@ -802,7 +784,7 @@ namespace Innovative.Geometry
 		/// <returns>The string representation of the value of this instance as specified by format and provider.</returns>
 		public string ToString(string format, IFormatProvider formatProvider)
 		{
-			string returnValue = string.Empty;
+			string returnValue = String.Empty;
 
 			if (formatProvider != null)
 			{
