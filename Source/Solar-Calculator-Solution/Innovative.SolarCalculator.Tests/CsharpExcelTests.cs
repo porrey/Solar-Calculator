@@ -1,5 +1,5 @@
 ﻿// ***
-// *** Copyright (C) 2013-2018, Daniel M. Porrey.  All rights reserved.
+// *** Copyright (C) 2013-2018, Daniel M. Porrey. All rights reserved.
 // *** Written By Daniel M. Porrey
 // ***
 // *** This software is provided "AS IS," without a warranty of any kind. ALL EXPRESS OR IMPLIED CONDITIONS, REPRESENTATIONS AND WARRANTIES, 
@@ -13,6 +13,7 @@
 // *** This license governs use of the accompanying software. If you use the software, you accept this license. If you do not accept the license, 
 // *** do not use the software. Full license details can be found at https://raw.githubusercontent.com/porrey/Solar-Calculator/master/LICENSE.
 // ***
+using System.Collections.Generic;
 using NUnit.Framework;
 
 namespace Innovative.SolarCalculator.Tests
@@ -20,69 +21,57 @@ namespace Innovative.SolarCalculator.Tests
 	[TestFixture]
 	public class CsharpExcelTests
 	{
-		//[Test]
-		//public void CsharpExcelSineComparisons()
-		//{
-		//	decimal value1 = Convert.ToDecimal(this.TestContext.DataRow["VALUE1"]);
-		//	decimal expectedValue = Convert.ToDecimal(this.TestContext.DataRow["SIN"]);
+		// ***
+		// *** Get the test data.
+		// ***
+		static readonly IEnumerable<ExcelFormulasTestData> TestDataItems = TestDirector.LoadExcelFormulasTestData();
 
-		//	decimal actualValue = Universal.Math.Sin(value1);
-		//	decimal difference = expectedValue - actualValue;
+		[Test]
+		[TestCaseSource("TestDataItems")]
+		public void ExcelModuloComparisons(ExcelFormulasTestData item)
+		{
+			decimal actualValue = ExcelFormulae.Mod(item.Value1, item.Value2);
+			CustomAssert.AreEqual(item.Mod, actualValue, TestDirector.ExcelDecimalDelta);
+		}
 
-		//	CustomAssert.AreEqual(expectedValue, actualValue, TestDirector.CSharpExcelDecimalDelta);
-		//}
+		[Test]
+		[TestCaseSource("TestDataItems")]
+		public void CsharpExcelSineComparisons(ExcelFormulasTestData item)
+		{
+			decimal actualValue = Universal.Math.Sin(item.Value1);
+			CustomAssert.AreEqual(item.Sin, actualValue, TestDirector.CSharpExcelDecimalDelta);
+		}
 
-		//[Test]
-		//public void CsharpExcelASineComparisons()
-		//{
-		//	decimal value1 = Convert.ToDecimal(this.TestContext.DataRow["VALUE1"]);
-		//	decimal sin = Convert.ToDecimal(this.TestContext.DataRow["SIN"]);
-		//	decimal expectedValue = Convert.ToDecimal(this.TestContext.DataRow["ASIN"]);
+		[Test]
+		[TestCaseSource("TestDataItems")]
+		public void CsharpExcelASineComparisons(ExcelFormulasTestData item)
+		{
+			decimal actualValue = Universal.Math.Asin(item.Sin);
+			CustomAssert.AreEqual(item.Asin, actualValue, TestDirector.CSharpExcelDecimalDelta);
+		}
 
-		//	decimal actualValue = Universal.Math.Asin(sin);
-		//	decimal difference = expectedValue - actualValue;
+		[Test]
+		[TestCaseSource("TestDataItems")]
+		public void CsharpExcelCosineComparisons(ExcelFormulasTestData item)
+		{
+			decimal actualValue = Universal.Math.Cos(item.Value1);
+			CustomAssert.AreEqual(item.Cos, actualValue, TestDirector.CSharpExcelDecimalDelta);
+		}
 
-		//	CustomAssert.AreEqual(expectedValue, actualValue, TestDirector.CSharpExcelDecimalDelta);
-		//}
+		[Test]
+		[TestCaseSource("TestDataItems")]
+		public void CsharpExcelACosineComparisons(ExcelFormulasTestData item)
+		{
+			decimal actualValue = Universal.Math.Acos(item.Cos);
+			CustomAssert.AreEqual(item.Acos, actualValue, TestDirector.CSharpExcelDecimalDelta);
+		}
 
-		//[Test]
-		//public void CsharpExcelCosineComparisons()
-		//{
-		//	decimal value1 = Convert.ToDecimal(this.TestContext.DataRow["VALUE1"]);
-		//	decimal value2 = Convert.ToDecimal(this.TestContext.DataRow["VALUE2"]);
-		//	decimal expectedValue = Convert.ToDecimal(this.TestContext.DataRow["COS"]);
-
-		//	decimal actualValue = Universal.Math.Cos(value1);
-		//	decimal difference = expectedValue - actualValue;
-
-		//	CustomAssert.AreEqual(expectedValue, actualValue, TestDirector.CSharpExcelDecimalDelta);
-		//}
-
-		//[Test]
-		//public void CsharpExcelACosineComparisons()
-		//{
-		//	decimal value1 = Convert.ToDecimal(this.TestContext.DataRow["VALUE1"]);
-		//	decimal value2 = Convert.ToDecimal(this.TestContext.DataRow["VALUE2"]);
-		//	decimal cos = Convert.ToDecimal(this.TestContext.DataRow["COS"]);
-		//	decimal expectedValue = Convert.ToDecimal(this.TestContext.DataRow["ACOS"]);
-
-		//	decimal actualValue = Universal.Math.Acos(cos);
-		//	decimal difference = expectedValue - actualValue;
-
-		//	CustomAssert.AreEqual(expectedValue, actualValue, TestDirector.CSharpExcelDecimalDelta);
-		//}
-
-		//[Test]
-		//public void CsharpExcelTangentComparisons()
-		//{
-		//	decimal value1 = Convert.ToDecimal(this.TestContext.DataRow["VALUE1"]);
-		//	decimal value2 = Convert.ToDecimal(this.TestContext.DataRow["VALUE2"]);
-		//	decimal expectedValue = Convert.ToDecimal(this.TestContext.DataRow["TAN"]);
-
-		//	decimal actualValue = Universal.Math.Tan(value1);
-		//	decimal difference = expectedValue - actualValue;
-
-		//	CustomAssert.AreEqual(expectedValue, actualValue, TestDirector.CSharpExcelDecimalDelta);
-		//}
+		[Test]
+		[TestCaseSource("TestDataItems")]
+		public void CsharpExcelTangentComparisons(ExcelFormulasTestData item)
+		{
+			decimal actualValue = Universal.Math.Tan(item.Value1);
+			CustomAssert.AreEqual(item.Tan, actualValue, TestDirector.CSharpExcelDecimalDelta);
+		}
 	}
 }

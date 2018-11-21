@@ -9,57 +9,39 @@
 // *** SPECIAL, CONSEQUENTIAL, INCIDENTAL OR PUNITIVE DAMAGES, HOWEVER CAUSED AND REGARDLESS OF THE THEORY OF LIABILITY, ARISING OUT OF THE USE OF 
 // *** OR INABILITY TO USE THIS SOFTWARE, EVEN IF DANIEL M PORREY HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. 
 // ***
-// *** Licensed under Microsoft Reciprocal License (Ms-RL)
+// *** Licensed under Microsoft Public License (Ms-PL)
 // *** This license governs use of the accompanying software. If you use the software, you accept this license. If you do not accept the license, 
 // *** do not use the software. Full license details can be found at https://raw.githubusercontent.com/porrey/Solar-Calculator/master/LICENSE.
 // ***
 using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace Innovative.SolarCalculator
+namespace Innovative.SolarCalculator.Tests
 {
-	/// <summary>
-	/// Provides common .NET static methods that vary between versions.
-	/// </summary>
-	public static class Universal
+	public class SolarCalculationsTestData
 	{
-		/// <summary>
-		/// The Math functions in PORTABLE libraries only accept and return double. All other libraries accept
-		/// decimal. The library works in all decimal values. This class provides decimal based Math functions
-		/// for all platforms.
-		/// </summary>
-		public static class Math
-		{
-			public static decimal Sin(decimal value)
-			{
-				return (decimal)System.Math.Sin((double)value);
-			}
-
-			public static decimal Asin(decimal value)
-			{
-				return (decimal)System.Math.Asin((double)value);
-			}
-
-			public static decimal Tan(decimal value)
-			{
-				return (decimal)System.Math.Tan((double)value);
-			}
-
-			public static decimal Cos(decimal value)
-			{
-				return (decimal)System.Math.Cos((double)value);
-			}
-
-			public static decimal Acos(decimal value)
-			{
-				return (decimal)System.Math.Acos((double)value);
-			}
-
-			public static decimal Sqrt(decimal value)
-			{
-				return (decimal)System.Math.Sqrt((double)value);
-			}
-		}
+		public DateTime Date { get; set; }
+		public DateTime Time { get; set; }
+		public int TimeZoneOffset { get; set; }
+		public decimal Latitude { get; set; }
+		public decimal Longitude { get; set; }
+		public decimal JulianDay { get; set; }
+		public decimal JulianCentury { get; set; }
+		public decimal GeomMeanLongSun { get; set; }
+		public decimal GeomMeanAnomSun { get; set; }
+		public decimal EccentEarthOrbit { get; set; }
+		public decimal SunEqofCtr { get; set; }
+		public decimal SunTrueLong { get; set; }
+		public decimal SunAppLong { get; set; }
+		public decimal MeanObliqEcliptic { get; set; }
+		public decimal ObliqCorr { get; set; }
+		public decimal SunDeclin { get; set; }
+		public decimal Vary { get; set; }
+		public decimal EqofTime { get; set; }
+		public decimal HaSunrise { get; set; }
+		public DateTime SolarNoon { get; set; }
+		public DateTime SunriseTime { get; set; }
+		public DateTime SunsetTime { get; set; }
+		public double SunlightDuration { get; set; }
+		public decimal TrueSolarTime { get; set; }
 	}
 }

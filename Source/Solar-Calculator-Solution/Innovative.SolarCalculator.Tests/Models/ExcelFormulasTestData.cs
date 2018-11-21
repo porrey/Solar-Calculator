@@ -9,57 +9,24 @@
 // *** SPECIAL, CONSEQUENTIAL, INCIDENTAL OR PUNITIVE DAMAGES, HOWEVER CAUSED AND REGARDLESS OF THE THEORY OF LIABILITY, ARISING OUT OF THE USE OF 
 // *** OR INABILITY TO USE THIS SOFTWARE, EVEN IF DANIEL M PORREY HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. 
 // ***
-// *** Licensed under Microsoft Reciprocal License (Ms-RL)
+// *** Licensed under Microsoft Public License (Ms-PL)
 // *** This license governs use of the accompanying software. If you use the software, you accept this license. If you do not accept the license, 
 // *** do not use the software. Full license details can be found at https://raw.githubusercontent.com/porrey/Solar-Calculator/master/LICENSE.
 // ***
-using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Innovative.SolarCalculator
+namespace Innovative.SolarCalculator.Tests
 {
-	/// <summary>
-	/// Provides common .NET static methods that vary between versions.
-	/// </summary>
-	public static class Universal
+	public class ExcelFormulasTestData
 	{
-		/// <summary>
-		/// The Math functions in PORTABLE libraries only accept and return double. All other libraries accept
-		/// decimal. The library works in all decimal values. This class provides decimal based Math functions
-		/// for all platforms.
-		/// </summary>
-		public static class Math
-		{
-			public static decimal Sin(decimal value)
-			{
-				return (decimal)System.Math.Sin((double)value);
-			}
-
-			public static decimal Asin(decimal value)
-			{
-				return (decimal)System.Math.Asin((double)value);
-			}
-
-			public static decimal Tan(decimal value)
-			{
-				return (decimal)System.Math.Tan((double)value);
-			}
-
-			public static decimal Cos(decimal value)
-			{
-				return (decimal)System.Math.Cos((double)value);
-			}
-
-			public static decimal Acos(decimal value)
-			{
-				return (decimal)System.Math.Acos((double)value);
-			}
-
-			public static decimal Sqrt(decimal value)
-			{
-				return (decimal)System.Math.Sqrt((double)value);
-			}
-		}
+		public decimal Value1 { get; set; }
+		public decimal Value2 { get; set; }
+		public decimal Value3 { get; set; }
+		public decimal Radians { get; set; }
+		public decimal Degrees { get; set; }
+		public decimal Mod { get; set; }
+		public decimal Sin { get; set; }
+		public decimal Asin { get; set; }
+		public decimal Cos { get; set; }
+		public decimal Acos { get; set; }
+		public decimal Tan { get; set; }
 	}
 }

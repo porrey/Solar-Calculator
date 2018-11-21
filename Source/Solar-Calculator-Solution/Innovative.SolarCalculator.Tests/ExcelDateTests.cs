@@ -1,5 +1,5 @@
 ﻿// ***
-// *** Copyright (C) 2013-2018, Daniel M. Porrey. All rights reserved.
+// *** Copyright (C) 2013, Daniel M. Porrey. All rights reserved.
 // *** Written By Daniel M. Porrey
 // ***
 // *** This software is provided "AS IS," without a warranty of any kind. ALL EXPRESS OR IMPLIED CONDITIONS, REPRESENTATIONS AND WARRANTIES, 
@@ -13,53 +13,25 @@
 // *** This license governs use of the accompanying software. If you use the software, you accept this license. If you do not accept the license, 
 // *** do not use the software. Full license details can be found at https://raw.githubusercontent.com/porrey/Solar-Calculator/master/LICENSE.
 // ***
-using System;
 using System.Collections.Generic;
-using System.Text;
+using NUnit.Framework;
 
-namespace Innovative.SolarCalculator
+namespace Innovative.SolarCalculator.Tests
 {
-	/// <summary>
-	/// Provides common .NET static methods that vary between versions.
-	/// </summary>
-	public static class Universal
+	[TestFixture]
+	public class ExcelDateTests
 	{
-		/// <summary>
-		/// The Math functions in PORTABLE libraries only accept and return double. All other libraries accept
-		/// decimal. The library works in all decimal values. This class provides decimal based Math functions
-		/// for all platforms.
-		/// </summary>
-		public static class Math
+		// ***
+		// *** Get the test data.
+		// ***
+		static readonly IEnumerable<DateValueTestData> TestDataItems = TestDirector.LoadDateValueTestData();
+
+		[Test]
+		[TestCaseSource("TestDataItems")]
+		public void ExcelDateValueTest(DateValueTestData item)
 		{
-			public static decimal Sin(decimal value)
-			{
-				return (decimal)System.Math.Sin((double)value);
-			}
-
-			public static decimal Asin(decimal value)
-			{
-				return (decimal)System.Math.Asin((double)value);
-			}
-
-			public static decimal Tan(decimal value)
-			{
-				return (decimal)System.Math.Tan((double)value);
-			}
-
-			public static decimal Cos(decimal value)
-			{
-				return (decimal)System.Math.Cos((double)value);
-			}
-
-			public static decimal Acos(decimal value)
-			{
-				return (decimal)System.Math.Acos((double)value);
-			}
-
-			public static decimal Sqrt(decimal value)
-			{
-				return (decimal)System.Math.Sqrt((double)value);
-			}
+			decimal actualValue = ExcelFormulae.ToExcelDateValue(item.Date);
+			CustomAssert.AreEqual(item.DateValue, actualValue, TestDirector.ExcelDecimalDelta);
 		}
 	}
 }
