@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove=".DS_Store" />
     <None Remove="Data\.DS_Store" />
   </ItemGroup>
 
