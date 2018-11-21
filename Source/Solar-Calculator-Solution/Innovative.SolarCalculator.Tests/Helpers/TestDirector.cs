@@ -28,7 +28,7 @@ namespace Innovative.SolarCalculator.Tests
 		{
 			IEnumerable<SolarCalculationsTestData> returnValue = null;
 
-			string contents = File.ReadAllText(@"Data\SolarCalculationsTestData.csv");
+			string contents = File.ReadAllText(@"Data/SolarCalculationsTestData.csv");
 
 			// ***
 			// ***
@@ -69,7 +69,7 @@ namespace Innovative.SolarCalculator.Tests
 		{
 			IEnumerable<DateValueTestData> returnValue = null;
 
-			string contents = File.ReadAllText(@"Data\DateValueTestData.csv");
+			string contents = File.ReadAllText(@"Data/DateValueTestData.csv");
 
 			// ***
 			// ***
@@ -84,17 +84,17 @@ namespace Innovative.SolarCalculator.Tests
 			return returnValue;
 		}
 
-		public static IEnumerable<ExcelFormulasTestData> LoadExcelFormulasTestData()
+		public static IEnumerable<CsharpExcelTestData> LoadCsharpExcelTestData()
 		{
-			IEnumerable<ExcelFormulasTestData> returnValue = null;
+			IEnumerable<CsharpExcelTestData> returnValue = null;
 
-			string contents = File.ReadAllText(@"Data\ExcelFormulasTestData.csv");
+			string contents = File.ReadAllText(@"Data/CsharpExcelTestData.csv");
 
 			// ***
 			// ***
 			// ***
 			returnValue = (from tbl in TestDirector.ParseCsv(contents)
-						   select new ExcelFormulasTestData()
+						   select new CsharpExcelTestData()
 						   {
 							   Value1 = Convert.ToDecimal(tbl["Value1"]),
 							   Value2 = Convert.ToDecimal(tbl["Value2"]),
@@ -116,7 +116,7 @@ namespace Innovative.SolarCalculator.Tests
 		{
 			IEnumerable<AngleTestData> returnValue = null;
 
-			string contents = File.ReadAllText(@"Data\AngleTestData.csv");
+			string contents = File.ReadAllText(@"Data/AngleTestData.csv");
 
 			// ***
 			// ***

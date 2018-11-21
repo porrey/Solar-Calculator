@@ -15,7 +15,7 @@
 // ***
 namespace Innovative.SolarCalculator.Tests
 {
-	public class ExcelFormulasTestData
+	public class CsharpExcelTestData
 	{
 		public decimal Value1 { get; set; }
 		public decimal Value2 { get; set; }

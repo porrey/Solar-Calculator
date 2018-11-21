@@ -24,11 +24,11 @@ namespace Innovative.SolarCalculator.Tests
 		// ***
 		// *** Get the test data.
 		// ***
-		static readonly IEnumerable<ExcelFormulasTestData> TestDataItems = TestDirector.LoadExcelFormulasTestData();
+		static readonly IEnumerable<CsharpExcelTestData> TestDataItems = TestDirector.LoadCsharpExcelTestData();
 
 		[Test]
 		[TestCaseSource("TestDataItems")]
-		public void ExcelModuloComparisons(ExcelFormulasTestData item)
+		public void ExcelModuloComparisons(CsharpExcelTestData item)
 		{
 			decimal actualValue = ExcelFormulae.Mod(item.Value1, item.Value2);
 			CustomAssert.AreEqual(item.Mod, actualValue, TestDirector.ExcelDecimalDelta);
@@ -36,7 +36,7 @@ namespace Innovative.SolarCalculator.Tests
 
 		[Test]
 		[TestCaseSource("TestDataItems")]
-		public void CsharpExcelSineComparisons(ExcelFormulasTestData item)
+		public void CsharpExcelSineComparisons(CsharpExcelTestData item)
 		{
 			decimal actualValue = Universal.Math.Sin(item.Value1);
 			CustomAssert.AreEqual(item.Sin, actualValue, TestDirector.CSharpExcelDecimalDelta);
@@ -44,7 +44,7 @@ namespace Innovative.SolarCalculator.Tests
 
 		[Test]
 		[TestCaseSource("TestDataItems")]
-		public void CsharpExcelASineComparisons(ExcelFormulasTestData item)
+		public void CsharpExcelASineComparisons(CsharpExcelTestData item)
 		{
 			decimal actualValue = Universal.Math.Asin(item.Sin);
 			CustomAssert.AreEqual(item.Asin, actualValue, TestDirector.CSharpExcelDecimalDelta);
@@ -52,7 +52,7 @@ namespace Innovative.SolarCalculator.Tests
 
 		[Test]
 		[TestCaseSource("TestDataItems")]
-		public void CsharpExcelCosineComparisons(ExcelFormulasTestData item)
+		public void CsharpExcelCosineComparisons(CsharpExcelTestData item)
 		{
 			decimal actualValue = Universal.Math.Cos(item.Value1);
 			CustomAssert.AreEqual(item.Cos, actualValue, TestDirector.CSharpExcelDecimalDelta);
@@ -60,7 +60,7 @@ namespace Innovative.SolarCalculator.Tests
 
 		[Test]
 		[TestCaseSource("TestDataItems")]
-		public void CsharpExcelACosineComparisons(ExcelFormulasTestData item)
+		public void CsharpExcelACosineComparisons(CsharpExcelTestData item)
 		{
 			decimal actualValue = Universal.Math.Acos(item.Cos);
 			CustomAssert.AreEqual(item.Acos, actualValue, TestDirector.CSharpExcelDecimalDelta);
@@ -68,7 +68,7 @@ namespace Innovative.SolarCalculator.Tests
 
 		[Test]
 		[TestCaseSource("TestDataItems")]
-		public void CsharpExcelTangentComparisons(ExcelFormulasTestData item)
+		public void CsharpExcelTangentComparisons(CsharpExcelTestData item)
 		{
 			decimal actualValue = Universal.Math.Tan(item.Value1);
 			CustomAssert.AreEqual(item.Tan, actualValue, TestDirector.CSharpExcelDecimalDelta);
