@@ -1,3 +1,5 @@
+gem 'coveralls', require: false
+
 language: csharp
 solution: Src/Solar-Calculator-Solution/Solar-Calculator-Solution.sln
 dotnet: 3.1
