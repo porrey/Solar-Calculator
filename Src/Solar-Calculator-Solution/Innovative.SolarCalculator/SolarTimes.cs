@@ -26,7 +26,6 @@ namespace Innovative.SolarCalculator
 	public class SolarTimes
 	{
 		private DateTimeOffset _forDate = DateTimeOffset.MinValue;
-		private Angle _atmosphericRefraction = new Angle(0.833d);
 		private Angle _longitude = Angle.Empty;
 		private Angle _latitude = Angle.Empty;
 
@@ -200,17 +199,7 @@ namespace Innovative.SolarCalculator
 		/// the sky than they actually are, and explains how the sun can still be visible after it has physically passed 
 		/// beyond the horizon at sunset. See also apparent sunrise.
 		/// </summary>
-		public Angle AtmosphericRefraction
-		{
-			get
-			{
-				return _atmosphericRefraction;
-			}
-			set
-			{
-				_atmosphericRefraction = value;
-			}
-		}
+		public Angle AtmosphericRefraction { get; set; } = new Angle(0.833d);
 		#endregion
 
 		#region Computational Members
@@ -541,7 +530,7 @@ namespace Innovative.SolarCalculator
 			{
 				return Angle.FromRadians(
 					Universal.Math.Acos(Universal.Math.Sin(this.Latitude.Radians) * Universal.Math.Sin(this.SolarDeclination.Radians) +
-					Universal.Math.Cos(this.Latitude.Radians) * Universal.Math.Cos(this.SolarDeclination.Radians) *  Universal.Math.Cos(this.HourAngleDegrees.Radians))
+					Universal.Math.Cos(this.Latitude.Radians) * Universal.Math.Cos(this.SolarDeclination.Radians) * Universal.Math.Cos(this.HourAngleDegrees.Radians))
 					);
 			}
 		}
@@ -567,10 +556,10 @@ namespace Innovative.SolarCalculator
 			get
 			{
 				var angle = Angle.FromRadians(Universal.Math.Acos(
-						((Universal.Math.Sin(this.Latitude.Radians) * Universal.Math.Cos(this.SolarZenith.Radians)) - 
+						((Universal.Math.Sin(this.Latitude.Radians) * Universal.Math.Cos(this.SolarZenith.Radians)) -
 							Universal.Math.Sin(this.SolarDeclination.Radians)) /
 					 	(Universal.Math.Cos(this.Latitude.Radians) * Universal.Math.Sin(this.SolarZenith.Radians))));
-				if(this.HourAngleDegrees > 0.0)
+				if (this.HourAngleDegrees > 0.0)
 				{
 					return Angle.Reduce(angle + new Angle(180.0));
 				}
