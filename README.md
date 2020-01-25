@@ -1,7 +1,7 @@
 [![Build Status](https://travis-ci.com/porrey/Solar-Calculator.svg?branch=master)](https://travis-ci.com/porrey/Solar-Calculator)
 
 # Solar-Calculator #
-Calculates the sunrise and sunset for a given date and location (using geo coordinates). This library uses the method outlined NOAA Solar Calculations Day spreadsheet found at http://www.esrl.noaa.gov/gmd/grad/solcalc/calcdetails.html.
+Calculates the sunrise and sunset for a given date and location (using GEO coordinates). This library uses the method outlined NOAA Solar Calculations Day spreadsheet found at http://www.esrl.noaa.gov/gmd/grad/solcalc/calcdetails.html.
 
 # Installing #
 Add this to your project in Visual Studio using NuGet Package Manager UI and ID **SolarCalculator** or using the Package Manager Console.
@@ -32,7 +32,7 @@ The sample code below shows how to initialize and call the Solar Calculator to g
     // ***
     // *** Display the sunrise
     // ***
-    Console.WriteLine("View the sunrise across Lake Michigan from Oak Street Beach in Chicago at {0} on {1}.", sunrise.ToLongTimeString(), sunrise.ToLongDateString());
+    Console.WriteLine($"View the sunrise across Lake Michigan from Oak Street Beach in Chicago at {sunrise.ToLongTimeString()} on {sunrise.ToLongDateString()}.");
 
 ## Sunset in Michigan ##
 
@@ -46,4 +46,4 @@ The sample code below shows how to initialize and call the Solar Calculator to g
     // ***
     // *** Display the sunset
     // ***
-    Console.WriteLine("View the sunset across Lake Michigan from Benton Harbor Michigan at {0} on {1}.", sunset.ToLongTimeString(), sunset.ToLongDateString());
+    Console.WriteLine($"View the sunset across Lake Michigan from Benton Harbor Michigan at {sunset.ToLongTimeString()} on {sunset.ToLongDateString()}.");
