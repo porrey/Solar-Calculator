@@ -3,6 +3,5 @@ solution: Src/Solar-Calculator-Solution/Solar-Calculator-Solution.sln
 dotnet: 3.1
 mono: none
 script:
-  - dotnet restore Src/Solar-Calculator-Solution/Solar-Calculator-Solution.sln
   - dotnet build Src/Solar-Calculator-Solution/Solar-Calculator-Solution.sln --configuration Release
   - dotnet test Src/Solar-Calculator-Solution/Solar-Calculator-Solution.sln
