@@ -50,4 +50,4 @@ The sample code below shows how to initialize and call the Solar Calculator to g
     // ***
     // *** Display the sunset
     // ***
-    Console.WriteLine($"View the sunset across Lake Michigan from Benton Harbor Michigan at {sunset.ToLongTimeString()} on {sunset.ToLongDateString()}.");
+    Console.WriteLine($"View the sunset across Lake Michigan from Benton Harbor in Michigan at {sunset.ToLongTimeString()} on {sunset.ToLongDateString()}.");
