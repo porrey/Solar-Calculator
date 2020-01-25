@@ -1,5 +1,9 @@
 [![Build Status](https://travis-ci.com/porrey/Solar-Calculator.svg?branch=master)](https://travis-ci.com/porrey/Solar-Calculator)
 
+[![Nuget - Angle](https://img.shields.io/nuget/v/Angle)](https://www.nuget.org/packages/Angle/) Angle
+
+[![Nuget - SolarCalculator](https://img.shields.io/nuget/v/SolarCalculator)](https://www.nuget.org/packages/SolarCalculator/) Solar Calculator
+
 # Solar-Calculator #
 Calculates the sunrise and sunset for a given date and location (using GEO coordinates). This library uses the method outlined NOAA Solar Calculations Day spreadsheet found at http://www.esrl.noaa.gov/gmd/grad/solcalc/calcdetails.html.
 
