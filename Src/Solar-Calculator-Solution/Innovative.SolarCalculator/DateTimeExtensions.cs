@@ -1,5 +1,5 @@
 ﻿// ***
-// *** Copyright (C) 2013-2018, Daniel M. Porrey. All rights reserved.
+// *** Copyright (C) 2013-2020, Daniel M. Porrey. All rights reserved.
 // *** Written By Daniel M. Porrey
 // ***
 // *** This software is provided "AS IS," without a warranty of any kind. ALL EXPRESS OR IMPLIED CONDITIONS, REPRESENTATIONS AND WARRANTIES, 
@@ -15,9 +15,9 @@
 // ***
 namespace System
 {
-    /// <summary>
-    /// Provides extensions used to convert date time values used in Excel and Ole Automation.
-    /// </summary>
+	/// <summary>
+	/// Provides extensions used to convert date time values used in Excel and Ole Automation.
+	/// </summary>
 	public static class DateTimeExtensions
 	{
 		/// <summary>
