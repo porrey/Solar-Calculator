@@ -1,10 +1,10 @@
-![Build Status](https://img.shields.io/travis/porrey/Solar-Calculator/master?style=for-the-badge)
+[![Build Status](https://img.shields.io/travis/porrey/Solar-Calculator/master?style=for-the-badge)](https://travis-ci.com/porrey/Solar-Calculator)
 
-![Nuget](https://img.shields.io/nuget/v/Angle?label=Angle%20-%20NuGet&style=for-the-badge)
-![Nuget](https://img.shields.io/nuget/dt/Angle?label=Downloads&style=for-the-badge)
+[![Nuget](https://img.shields.io/nuget/v/Angle?label=Angle%20-%20NuGet&style=for-the-badge)
+![Nuget](https://img.shields.io/nuget/dt/Angle?label=Downloads&style=for-the-badge)](https://www.nuget.org/packages/Angle/)
 
-![Nuget](https://img.shields.io/nuget/v/SolarCalculator?label=Solar%20Calculator%20-%20NuGet&style=for-the-badge)
-![Nuget](https://img.shields.io/nuget/dt/SolarCalculator?label=Downloads&style=for-the-badge)
+[![Nuget](https://img.shields.io/nuget/v/SolarCalculator?label=Solar%20Calculator%20-%20NuGet&style=for-the-badge)
+![Nuget](https://img.shields.io/nuget/dt/SolarCalculator?label=Downloads&style=for-the-badge)](https://www.nuget.org/packages/SolarCalculator/)
 
 # Solar-Calculator #
 Calculates the sunrise and sunset for a given date and location (using GEO coordinates). This library uses the method outlined NOAA Solar Calculations Day spreadsheet found at http://www.esrl.noaa.gov/gmd/grad/solcalc/calcdetails.html.
