@@ -3,5 +3,5 @@ solution: Src/Solar-Calculator-Solution/Solar-Calculator-Solution.sln
 dotnet: 3.1
 mono: none
 script:
-  - dotnet build Src/Solar-Calculator-Solution/Solar-Calculator-Solution.sln -p:CollectCoverage=true -p:format=opencover --configuration Release --framework netcoreapp3.1
-  - dotnet test Src/Solar-Calculator-Solution/Solar-Calculator-Solution.sln --framework netcoreapp3.1
+  - dotnet build Src/Solar-Calculator-Solution/Solar-Calculator-Solution.sln --configuration Release --framework netcoreapp3.1
+  - dotnet test Src/Solar-Calculator-Solution/Solar-Calculator-Solution.sln -p:CollectCoverage=true -p:format=opencover --framework netcoreapp3.1
