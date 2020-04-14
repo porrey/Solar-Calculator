@@ -324,7 +324,7 @@ namespace Innovative.SolarCalculator
 			{
 				Angle returnValue = Angle.Empty;
 
-				returnValue = new Angle(Universal.Math.Sin(this.SunMeanAnomaly.Radians) * (1.914602M - this.JulianCentury * (0.004817M + 0.000014M * this.JulianCentury)) + Universal.Math.Sin(this.SunMeanAnomaly.RadiansMultiplied(2M)) * (0.019993M - 0.000101M * JulianCentury) + Universal.Math.Sin(this.SunMeanAnomaly.RadiansMultiplied(3M)) * 0.000289M);
+				returnValue = new Angle(Universal.Math.Sin(this.SunMeanAnomaly.Radians) * (1.914602M - this.JulianCentury * (0.004817M + 0.000014M * this.JulianCentury)) + Universal.Math.Sin(this.SunMeanAnomaly.RadiansMultiplied(2M)) * (0.019993M - 0.000101M * this.JulianCentury) + Universal.Math.Sin(this.SunMeanAnomaly.RadiansMultiplied(3M)) * 0.000289M);
 
 				return returnValue;
 			}

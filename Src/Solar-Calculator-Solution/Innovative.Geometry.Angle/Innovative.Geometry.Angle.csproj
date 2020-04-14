@@ -7,22 +7,19 @@
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 		<PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
 		<PackageId>Angle</PackageId>
-		<Version>3.0.2</Version>
+		<Version>3.0.3</Version>
 		<Authors>Daniel M. Porrey</Authors>
 		<Company>Daniel M. Porrey</Company>
 		<PackageIconUrl></PackageIconUrl>
 		<PackageProjectUrl>https://github.com/porrey/Solar-Calculator</PackageProjectUrl>
 		<Copyright>Copyright © 2013-2020 Daniel M. Porrey</Copyright>
 		<PackageTags>Angle,Math,Arcminute,Arcsecond,Degree</PackageTags>
-		<PackageReleaseNotes>v3.0.2 Added source code and symbol integration to NuGet package.
+		<PackageReleaseNotes>v3.0.3 Added missing documentation.
+v3.0.2 Added source code and symbol integration to NuGet package.
 v3.0.1 Changed license to LGPL Public 3.0.
-
 v3.0.0 Added support for multiple frameworks.
-
 v2.0.0 Converted to .NET Standard/Moved to GitHub.
-
 v1.0.2 Added multiple .NET versions. Completed units test and corrected minor issues.
-
 v1.0.1 Changed namespace to Innovative.Geometry</PackageReleaseNotes>
 		<NeutralLanguage>en-US</NeutralLanguage>
 		<AssemblyVersion>3.0.2</AssemblyVersion>
@@ -40,6 +37,11 @@ v1.0.1 Changed namespace to Innovative.Geometry</PackageReleaseNotes>
 		<EmbedUntrackedSources>true</EmbedUntrackedSources>
 		<IncludeSymbols>true</IncludeSymbols>
 		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
+		<Deterministic>true</Deterministic>
+	</PropertyGroup>
+
+	<PropertyGroup>
+	  <DocumentationFile>Innovative.Geometry.Angle.xml</DocumentationFile>
 	</PropertyGroup>
 
 	<ItemGroup>
