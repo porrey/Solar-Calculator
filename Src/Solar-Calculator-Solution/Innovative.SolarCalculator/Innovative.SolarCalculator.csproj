@@ -7,7 +7,7 @@
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 		<PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
 		<PackageId>SolarCalculator</PackageId>
-		<Version>3.0.1</Version>
+		<Version>3.0.2</Version>
 		<Authors>Daniel M. Porrey</Authors>
 		<Company>Daniel M. Porrey</Company>
 		<Product>Solar Calculator</Product>
@@ -16,30 +16,51 @@
 		<Copyright>Copyright © 2013-2020 Daniel M. Porrey</Copyright>
 		<Summary>This library is a port of the Excel spreadsheet found at NOAA to calculate the sunrise and sunset for a given date and location (using Geographic Coordinates).</Summary>
 		<Description>Calculates the sunrise and sunset for a given date and location (using Geographic Coordinates). This library uses the method outlined NOAA Solar Calculations Day spreadsheet found at http://www.esrl.noaa.gov/gmd/grad/solcalc/calcdetails.html. Calculations are based on the book "Astronomical Algorithms" by Jean Meeus.</Description>
-		<PackageReleaseNotes>v3.0.1 Changed license to LGPL Public 3.0.
-v3.0.0 Changed license to GPL Public 3.0. Added support for multiple frameworks.
+		<PackageReleaseNotes>v3.0.2 Added source code and symbol integration to NuGet package.
+v3.0.1 Changed license to LGPL Public 3.0.
+
+v3.0.0 Added support for multiple frameworks.
+
 v2.0.4 Bug Fix - Removed internal date setting by string that was not compatible in all locales - t1m0thyj
+
 v2.0.3 Added azimuth calculation - GeorgeHahn
+
 v2.0.2 Corrected date portion of SolarNoon date and time. It was showing the correct time but the wrong day.
+
 v2.0.1 Change default value for SolarNoon to the ForDate property.
-v2.0.0 Converted to .NET Standard/Moved to GitHub. Changed license to GNU Public 3.0.
+
+v2.0.0 Converted to .NET Standard/Moved to GitHub.
+
 v1.0.8 Added multiple .NET versions.
+
 v1.0.7 Removed Angle class and referenced it from NuGet library.
+
 v1.0.6 Updated NuGet package only.
+
 v1.0.5 Added a class/data type called Angle to handle computations and conversions. This class inherently behaves as a type double so that pre-existing code is not broken.
+
 v1.0.4 Change the type of ForDate to DateTimeOffset due to improper handling of Time Zone. This does not affected code already written against this method.
+
 v1.0.3 Corrected a time issue causing the wrong sunrise and sunset times to be returned. All test cases passed.
+
 v1.0.2 Added XML comments file.
+
 v1.0.1 Updated license and project URL's in package.</PackageReleaseNotes>
 		<RepositoryUrl>https://github.com/porrey/Solar-Calculator</RepositoryUrl>
 		<RepositoryType>git</RepositoryType>
 		<PackageTags>Sunrise Sunset Calculator,Jean Meeus,Solar,Angle,Astronomical Algorithms</PackageTags>
-		<AssemblyVersion>3.0.1</AssemblyVersion>
-		<FileVersion>3.0.1</FileVersion>
+		<AssemblyVersion>3.0.2</AssemblyVersion>
+		<FileVersion>3.0.2</FileVersion>
 		<NeutralLanguage>en-US</NeutralLanguage>
 		<PackageLicenseExpression>LGPL-3.0-or-later</PackageLicenseExpression>
 		<PackageIcon>Solar-Calculator.png</PackageIcon>
 		<PackageIconUrl>Solar-Calculator.png</PackageIconUrl>
+		<PublishRepositoryUrl>true</PublishRepositoryUrl>
+		<EmbedUntrackedSources>true</EmbedUntrackedSources>
+		<PublishRepositoryUrl>true</PublishRepositoryUrl>
+		<EmbedUntrackedSources>true</EmbedUntrackedSources>
+		<IncludeSymbols>true</IncludeSymbols>
+		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -51,6 +72,13 @@ v1.0.1 Updated license and project URL's in package.</PackageReleaseNotes>
 	    <Pack>True</Pack>
 	    <PackagePath></PackagePath>
 	  </None>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0">
+	    <PrivateAssets>all</PrivateAssets>
+	    <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+	  </PackageReference>
 	</ItemGroup>
 
 </Project>
