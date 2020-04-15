@@ -36,7 +36,6 @@ namespace Innovative.SolarCalculator.Tests
 			SolarTimes solarTimes = TestDirector.SolarTimesInstance(item);
 			decimal expectedValue = item.JulianDay;
 			decimal actualValue = solarTimes.JulianDay;
-			decimal difference = expectedValue - actualValue;
 
 			CustomAssert.AreEqual(expectedValue, actualValue, TestDirector.SolarDecimalDelta);
 		}
@@ -48,7 +47,6 @@ namespace Innovative.SolarCalculator.Tests
 			SolarTimes solarTimes = TestDirector.SolarTimesInstance(item);
 			decimal expectedValue = item.JulianCentury;
 			decimal actualValue = solarTimes.JulianCentury;
-			decimal difference = expectedValue - actualValue;
 
 			CustomAssert.AreEqual(expectedValue, actualValue, TestDirector.SolarDecimalDelta);
 		}
@@ -60,7 +58,6 @@ namespace Innovative.SolarCalculator.Tests
 			SolarTimes solarTimes = TestDirector.SolarTimesInstance(item);
 			decimal expectedValue = item.GeomMeanLongSun;
 			decimal actualValue = solarTimes.SunGeometricMeanLongitude;
-			decimal difference = expectedValue - actualValue;
 
 			CustomAssert.AreEqual(expectedValue, actualValue, TestDirector.SolarDecimalDelta);
 		}
@@ -72,7 +69,6 @@ namespace Innovative.SolarCalculator.Tests
 			SolarTimes solarTimes = TestDirector.SolarTimesInstance(item);
 			decimal expectedValue = item.GeomMeanAnomSun;
 			decimal actualValue = solarTimes.SunMeanAnomaly;
-			decimal difference = expectedValue - actualValue;
 
 			CustomAssert.AreEqual(expectedValue, actualValue, TestDirector.SolarDecimalDelta);
 		}
@@ -84,7 +80,6 @@ namespace Innovative.SolarCalculator.Tests
 			SolarTimes solarTimes = TestDirector.SolarTimesInstance(item);
 			decimal expectedValue = item.EccentEarthOrbit;
 			decimal actualValue = solarTimes.EccentricityOfEarthOrbit;
-			decimal difference = expectedValue - actualValue;
 
 			CustomAssert.AreEqual(expectedValue, actualValue, TestDirector.SolarDecimalDelta);
 		}
@@ -96,7 +91,6 @@ namespace Innovative.SolarCalculator.Tests
 			SolarTimes solarTimes = TestDirector.SolarTimesInstance(item);
 			decimal expectedValue = item.SunEqofCtr;
 			decimal actualValue = solarTimes.SunEquationOfCenter;
-			decimal difference = expectedValue - actualValue;
 
 			CustomAssert.AreEqual(expectedValue, actualValue, TestDirector.SolarDecimalDelta);
 		}
@@ -108,7 +102,6 @@ namespace Innovative.SolarCalculator.Tests
 			SolarTimes solarTimes = TestDirector.SolarTimesInstance(item);
 			decimal expectedValue = item.SunTrueLong;
 			decimal actualValue = solarTimes.SunTrueLongitude;
-			decimal difference = expectedValue - actualValue;
 
 			CustomAssert.AreEqual(expectedValue, actualValue, TestDirector.SolarDecimalDelta);
 		}
@@ -120,7 +113,6 @@ namespace Innovative.SolarCalculator.Tests
 			SolarTimes solarTimes = TestDirector.SolarTimesInstance(item);
 			decimal expectedValue = item.SunAppLong;
 			decimal actualValue = solarTimes.SunApparentLongitude;
-			decimal difference = expectedValue - actualValue;
 
 			CustomAssert.AreEqual(expectedValue, actualValue, TestDirector.SolarDecimalDelta);
 		}
@@ -132,7 +124,6 @@ namespace Innovative.SolarCalculator.Tests
 			SolarTimes solarTimes = TestDirector.SolarTimesInstance(item);
 			decimal expectedValue = item.MeanObliqEcliptic;
 			decimal actualValue = solarTimes.MeanEclipticObliquity;
-			decimal difference = expectedValue - actualValue;
 
 			CustomAssert.AreEqual(expectedValue, actualValue, TestDirector.SolarDecimalDelta);
 		}
@@ -144,7 +135,6 @@ namespace Innovative.SolarCalculator.Tests
 			SolarTimes solarTimes = TestDirector.SolarTimesInstance(item);
 			decimal expectedValue = item.ObliqCorr;
 			decimal actualValue = solarTimes.ObliquityCorrection;
-			decimal difference = expectedValue - actualValue;
 
 			CustomAssert.AreEqual(expectedValue, actualValue, TestDirector.SolarDecimalDelta);
 		}
@@ -156,7 +146,6 @@ namespace Innovative.SolarCalculator.Tests
 			SolarTimes solarTimes = TestDirector.SolarTimesInstance(item);
 			decimal expectedValue = item.SunDeclin;
 			decimal actualValue = solarTimes.SolarDeclination;
-			decimal difference = expectedValue - actualValue;
 
 			CustomAssert.AreEqual(expectedValue, actualValue, TestDirector.SolarDecimalDelta);
 		}
@@ -168,7 +157,6 @@ namespace Innovative.SolarCalculator.Tests
 			SolarTimes solarTimes = TestDirector.SolarTimesInstance(item);
 			decimal expectedValue = item.Vary;
 			decimal actualValue = solarTimes.VarY;
-			decimal difference = expectedValue - actualValue;
 
 			CustomAssert.AreEqual(expectedValue, actualValue, TestDirector.SolarDecimalDelta);
 		}
@@ -180,7 +168,6 @@ namespace Innovative.SolarCalculator.Tests
 			SolarTimes solarTimes = TestDirector.SolarTimesInstance(item);
 			decimal expectedValue = item.EqofTime;
 			decimal actualValue = solarTimes.EquationOfTime;
-			decimal difference = expectedValue - actualValue;
 
 			CustomAssert.AreEqual(expectedValue, actualValue, TestDirector.SolarDecimalDelta);
 		}
@@ -192,7 +179,6 @@ namespace Innovative.SolarCalculator.Tests
 			SolarTimes solarTimes = TestDirector.SolarTimesInstance(item);
 			decimal expectedValue = item.HaSunrise;
 			decimal actualValue = solarTimes.HourAngleSunrise;
-			decimal difference = expectedValue - actualValue;
 
 			CustomAssert.AreEqual(expectedValue, actualValue, TestDirector.SolarDecimalDelta);
 		}
@@ -264,7 +250,6 @@ namespace Innovative.SolarCalculator.Tests
 			SolarTimes solarTimes = TestDirector.SolarTimesInstance(item);
 			decimal expectedValue = item.TrueSolarTime;
 			decimal actualValue = solarTimes.TrueSolarTime;
-			decimal difference = expectedValue - actualValue;
 
 			CustomAssert.AreEqual(expectedValue, actualValue, TestDirector.SolarDecimalDelta);
 		}
@@ -273,7 +258,7 @@ namespace Innovative.SolarCalculator.Tests
 		public void CheckSunsetDate()
 		{
 			int numberOfDays = TestDirector.Rnd.Next(10, 20);
-			DateTime forDate = DateTime.Now.AddDays(numberOfDays);
+			DateTimeOffset forDate = DateTimeOffset.Now.AddDays(numberOfDays);
 			SolarTimes solarTimes = new SolarTimes(forDate, 41.9032, -87.6224);
 			Assert.AreEqual(solarTimes.ForDate.Date, solarTimes.Sunset.Date);
 		}
@@ -282,7 +267,7 @@ namespace Innovative.SolarCalculator.Tests
 		public void CheckSunriseDate()
 		{
 			int numberOfDays = TestDirector.Rnd.Next(10, 20);
-			DateTime forDate = DateTime.Now.AddDays(numberOfDays);
+			DateTimeOffset forDate = DateTimeOffset.Now.AddDays(numberOfDays);
 			SolarTimes solarTimes = new SolarTimes(forDate, 41.9032, -87.6224);
 			Assert.AreEqual(solarTimes.ForDate.Date, solarTimes.Sunrise.Date);
 		}
@@ -291,7 +276,7 @@ namespace Innovative.SolarCalculator.Tests
 		public void CheckSolarNoonDate()
 		{
 			int numberOfDays = TestDirector.Rnd.Next(10, 20);
-			DateTime forDate = DateTime.Now.AddDays(numberOfDays);
+			DateTimeOffset forDate = DateTimeOffset.Now.AddDays(numberOfDays);
 			SolarTimes solarTimes = new SolarTimes(forDate, 41.9032, -87.6224);
 			Assert.AreEqual(solarTimes.ForDate.Date, solarTimes.SolarNoon.Date);
 		}
