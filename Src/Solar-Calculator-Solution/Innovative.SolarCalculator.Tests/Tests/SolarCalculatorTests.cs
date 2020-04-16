@@ -255,29 +255,27 @@ namespace Innovative.SolarCalculator.Tests
 		}
 
 		[Test]
-		public void CheckSunsetDate()
+		[TestCaseSource("TestDataItems")]
+		public void CheckSunsetDate(SolarCalculationsTestData item)
 		{
-			int numberOfDays = TestDirector.Rnd.Next(10, 20);
-			DateTimeOffset forDate = DateTimeOffset.Now.AddDays(numberOfDays);
-			SolarTimes solarTimes = new SolarTimes(forDate, 41.9032, -87.6224);
-			Assert.AreEqual(solarTimes.ForDate.Date, solarTimes.Sunset.Date);
+			SolarTimes solarTimes = TestDirector.SolarTimesInstance(item);
+			DateTime expectedDate = solarTimes.Sunrise.Add(solarTimes.SunlightDuration);
+			Assert.AreEqual(expectedDate.Date, solarTimes.Sunset.Date);
 		}
 
 		[Test]
-		public void CheckSunriseDate()
+		[TestCaseSource("TestDataItems")]
+		public void CheckSunriseDate(SolarCalculationsTestData item)
 		{
-			int numberOfDays = TestDirector.Rnd.Next(10, 20);
-			DateTimeOffset forDate = DateTimeOffset.Now.AddDays(numberOfDays);
-			SolarTimes solarTimes = new SolarTimes(forDate, 41.9032, -87.6224);
+			SolarTimes solarTimes = TestDirector.SolarTimesInstance(item);
 			Assert.AreEqual(solarTimes.ForDate.Date, solarTimes.Sunrise.Date);
 		}
 
 		[Test]
-		public void CheckSolarNoonDate()
+		[TestCaseSource("TestDataItems")]
+		public void CheckSolarNoonDate(SolarCalculationsTestData item)
 		{
-			int numberOfDays = TestDirector.Rnd.Next(10, 20);
-			DateTimeOffset forDate = DateTimeOffset.Now.AddDays(numberOfDays);
-			SolarTimes solarTimes = new SolarTimes(forDate, 41.9032, -87.6224);
+			SolarTimes solarTimes = TestDirector.SolarTimesInstance(item);
 			Assert.AreEqual(solarTimes.ForDate.Date, solarTimes.SolarNoon.Date);
 		}
 	}
