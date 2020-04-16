@@ -25,7 +25,6 @@ namespace Innovative.SolarCalculator
 	/// </summary>
 	public class SolarTimes
 	{
-		private DateTimeOffset _forDate = DateTimeOffset.MinValue;
 		private Angle _longitude = Angle.Empty;
 		private Angle _latitude = Angle.Empty;
 
@@ -79,17 +78,7 @@ namespace Innovative.SolarCalculator
 		/// <summary>
 		/// Specifies the Date for which the sunrise and sunset will be calculated.
 		/// </summary>
-		public DateTimeOffset ForDate
-		{
-			get
-			{
-				return _forDate;
-			}
-			set
-			{
-				_forDate = value;
-			}
-		}
+		public DateTimeOffset ForDate { get; set; }
 
 		/// <summary>
 		/// Angular measurement of east-west location on Earth's surface. Longitude is defined from the 
@@ -186,8 +175,9 @@ namespace Innovative.SolarCalculator
 			{
 				DateTime returnValue = DateTime.MinValue;
 
-				decimal dayFraction = (decimal)this.SolarNoon.TimeOfDay.TotalDays + this.HourAngleSunrise * 4M / 1440M;
-				returnValue = this.ForDate.Date.Add(DecimalTimeSpan.FromDays(dayFraction));
+				decimal dayFraction = (decimal)this.SolarNoon.TimeOfDay.TotalDays + this.HourAngleSunrise * 4M / 1440M;				
+				TimeSpan timeOfDay = DecimalTimeSpan.FromDays(dayFraction < 1 ? dayFraction : dayFraction - 1);
+				returnValue = this.ForDate.Date.Add(timeOfDay);
 
 				return returnValue;
 			}
@@ -485,7 +475,8 @@ namespace Innovative.SolarCalculator
 				DateTime returnValue = this.ForDate.Date;
 
 				decimal dayFraction = (720M - (4M * this.Longitude) - this.EquationOfTime + (this.TimeZoneOffset * 60M)) / 1440M;
-				returnValue = this.ForDate.Date.Add(DecimalTimeSpan.FromDays(dayFraction));
+				TimeSpan timeOfDay = DecimalTimeSpan.FromDays(dayFraction < 1 ? dayFraction : dayFraction - 1);
+				returnValue = this.ForDate.Date.Add(timeOfDay);
 
 				return returnValue;
 			}
@@ -528,10 +519,11 @@ namespace Innovative.SolarCalculator
 		{
 			get
 			{
-				return Angle.FromRadians(
+				return Angle.FromRadians
+				(
 					Universal.Math.Acos(Universal.Math.Sin(this.Latitude.Radians) * Universal.Math.Sin(this.SolarDeclination.Radians) +
 					Universal.Math.Cos(this.Latitude.Radians) * Universal.Math.Cos(this.SolarDeclination.Radians) * Universal.Math.Cos(this.HourAngleDegrees.Radians))
-					);
+				);
 			}
 		}
 
@@ -557,7 +549,7 @@ namespace Innovative.SolarCalculator
 			{
 				Angle angle = Angle.FromRadians(Universal.Math.Acos(
 											  ((Universal.Math.Sin(this.Latitude.Radians) * Universal.Math.Cos(this.SolarZenith.Radians)) -
-											    Universal.Math.Sin(this.SolarDeclination.Radians)) /
+												Universal.Math.Sin(this.SolarDeclination.Radians)) /
 											   (Universal.Math.Cos(this.Latitude.Radians) * Universal.Math.Sin(this.SolarZenith.Radians))));
 
 				if (this.HourAngleDegrees > 0.0)

@@ -7,7 +7,7 @@
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 		<PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
 		<PackageId>SolarCalculator</PackageId>
-		<Version>3.0.3</Version>
+		<Version>3.0.4</Version>
 		<Authors>Daniel M. Porrey</Authors>
 		<Company>Daniel M. Porrey</Company>
 		<Product>Solar Calculator</Product>
@@ -36,8 +36,8 @@ v1.0.1 Updated license and project URL's in package.</PackageReleaseNotes>
 		<RepositoryUrl>https://github.com/porrey/Solar-Calculator</RepositoryUrl>
 		<RepositoryType>git</RepositoryType>
 		<PackageTags>Sunrise Sunset Calculator,Jean Meeus,Solar,Angle,Astronomical Algorithms</PackageTags>
-		<AssemblyVersion>3.0.3</AssemblyVersion>
-		<FileVersion>3.0.3</FileVersion>
+		<AssemblyVersion>3.0.4</AssemblyVersion>
+		<FileVersion>3.0.4</FileVersion>
 		<NeutralLanguage>en-US</NeutralLanguage>
 		<PackageLicenseExpression>LGPL-3.0-or-later</PackageLicenseExpression>
 		<PackageIcon>Solar-Calculator.png</PackageIcon>

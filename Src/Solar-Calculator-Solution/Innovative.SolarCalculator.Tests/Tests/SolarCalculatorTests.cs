@@ -256,19 +256,18 @@ namespace Innovative.SolarCalculator.Tests
 
 		[Test]
 		[TestCaseSource("TestDataItems")]
-		public void CheckSunsetDate(SolarCalculationsTestData item)
-		{
-			SolarTimes solarTimes = TestDirector.SolarTimesInstance(item);
-			DateTime expectedDate = solarTimes.Sunrise.Add(solarTimes.SunlightDuration);
-			Assert.AreEqual(expectedDate.Date, solarTimes.Sunset.Date);
-		}
-
-		[Test]
-		[TestCaseSource("TestDataItems")]
 		public void CheckSunriseDate(SolarCalculationsTestData item)
 		{
 			SolarTimes solarTimes = TestDirector.SolarTimesInstance(item);
 			Assert.AreEqual(solarTimes.ForDate.Date, solarTimes.Sunrise.Date);
+		}
+
+		[Test]
+		[TestCaseSource("TestDataItems")]
+		public void CheckSunsetDate(SolarCalculationsTestData item)
+		{
+			SolarTimes solarTimes = TestDirector.SolarTimesInstance(item);
+			Assert.AreEqual(solarTimes.ForDate.Date, solarTimes.Sunset.Date);
 		}
 
 		[Test]
