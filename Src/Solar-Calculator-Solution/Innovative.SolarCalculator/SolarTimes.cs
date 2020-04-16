@@ -555,10 +555,11 @@ namespace Innovative.SolarCalculator
 		{
 			get
 			{
-				var angle = Angle.FromRadians(Universal.Math.Acos(
-						((Universal.Math.Sin(this.Latitude.Radians) * Universal.Math.Cos(this.SolarZenith.Radians)) -
-							Universal.Math.Sin(this.SolarDeclination.Radians)) /
-					 	(Universal.Math.Cos(this.Latitude.Radians) * Universal.Math.Sin(this.SolarZenith.Radians))));
+				Angle angle = Angle.FromRadians(Universal.Math.Acos(
+											  ((Universal.Math.Sin(this.Latitude.Radians) * Universal.Math.Cos(this.SolarZenith.Radians)) -
+											    Universal.Math.Sin(this.SolarDeclination.Radians)) /
+											   (Universal.Math.Cos(this.Latitude.Radians) * Universal.Math.Sin(this.SolarZenith.Radians))));
+
 				if (this.HourAngleDegrees > 0.0)
 				{
 					return Angle.Reduce(angle + new Angle(180.0));
