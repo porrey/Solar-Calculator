@@ -16,7 +16,8 @@
 		<Copyright>Copyright © 2013-2020 Daniel M. Porrey</Copyright>
 		<Summary>This library is a port of the Excel spreadsheet found at NOAA to calculate the sunrise and sunset for a given date and location (using Geographic Coordinates).</Summary>
 		<Description>Calculates the sunrise and sunset for a given date and location (using Geographic Coordinates). This library uses the method outlined NOAA Solar Calculations Day spreadsheet found at http://www.esrl.noaa.gov/gmd/grad/solcalc/calcdetails.html. Calculations are based on the book "Astronomical Algorithms" by Jean Meeus.</Description>
-		<PackageReleaseNotes>v3.0.3 Added missing documentation.
+		<PackageReleaseNotes>v3.0.4 Corrected date shifting issue.
+v3.0.3 Added missing documentation.
 v3.0.2 Added source code and symbol integration to NuGet package.
 v3.0.1 Changed license to LGPL Public 3.0.
 v3.0.0 Added support for multiple frameworks.

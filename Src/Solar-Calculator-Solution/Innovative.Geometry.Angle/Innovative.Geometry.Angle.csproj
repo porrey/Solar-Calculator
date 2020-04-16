@@ -14,7 +14,8 @@
 		<PackageProjectUrl>https://github.com/porrey/Solar-Calculator</PackageProjectUrl>
 		<Copyright>Copyright © 2013-2020 Daniel M. Porrey</Copyright>
 		<PackageTags>Angle,Math,Arcminute,Arcsecond,Degree</PackageTags>
-		<PackageReleaseNotes>v3.0.3 Added missing documentation.
+		<PackageReleaseNotes>v3.0.4 Corrected date shifting issue.
+v3.0.3 Added missing documentation.
 v3.0.2 Added source code and symbol integration to NuGet package.
 v3.0.1 Changed license to LGPL Public 3.0.
 v3.0.0 Added support for multiple frameworks.
