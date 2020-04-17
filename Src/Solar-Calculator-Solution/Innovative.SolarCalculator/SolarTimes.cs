@@ -175,9 +175,8 @@ namespace Innovative.SolarCalculator
 			{
 				DateTime returnValue = DateTime.MinValue;
 
-				decimal dayFraction = (decimal)this.SolarNoon.TimeOfDay.TotalDays + this.HourAngleSunrise * 4M / 1440M;				
-				TimeSpan timeOfDay = DecimalTimeSpan.FromDays(dayFraction < 1 ? dayFraction : dayFraction - 1);
-				returnValue = this.ForDate.Date.Add(timeOfDay);
+				decimal dayFraction = (decimal)this.SolarNoon.TimeOfDay.TotalDays + this.HourAngleSunrise * 4M / 1440M;
+				returnValue = this.ForDate.Date.Add(DecimalTimeSpan.FromDays(dayFraction));
 
 				return returnValue;
 			}
@@ -475,8 +474,7 @@ namespace Innovative.SolarCalculator
 				DateTime returnValue = this.ForDate.Date;
 
 				decimal dayFraction = (720M - (4M * this.Longitude) - this.EquationOfTime + (this.TimeZoneOffset * 60M)) / 1440M;
-				TimeSpan timeOfDay = DecimalTimeSpan.FromDays(dayFraction < 1 ? dayFraction : dayFraction - 1);
-				returnValue = this.ForDate.Date.Add(timeOfDay);
+				returnValue = this.ForDate.Date.Add(DecimalTimeSpan.FromDays(dayFraction));
 
 				return returnValue;
 			}

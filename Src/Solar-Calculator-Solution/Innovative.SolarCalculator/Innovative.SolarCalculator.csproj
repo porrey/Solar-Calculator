@@ -7,7 +7,7 @@
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 		<PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
 		<PackageId>SolarCalculator</PackageId>
-		<Version>3.0.4</Version>
+		<Version>3.0.5</Version>
 		<Authors>Daniel M. Porrey</Authors>
 		<Company>Daniel M. Porrey</Company>
 		<Product>Solar Calculator</Product>
@@ -16,7 +16,8 @@
 		<Copyright>Copyright © 2013-2020 Daniel M. Porrey</Copyright>
 		<Summary>This library is a port of the Excel spreadsheet found at NOAA to calculate the sunrise and sunset for a given date and location (using Geographic Coordinates).</Summary>
 		<Description>Calculates the sunrise and sunset for a given date and location (using Geographic Coordinates). This library uses the method outlined NOAA Solar Calculations Day spreadsheet found at http://www.esrl.noaa.gov/gmd/grad/solcalc/calcdetails.html. Calculations are based on the book "Astronomical Algorithms" by Jean Meeus.</Description>
-		<PackageReleaseNotes>v3.0.4 Corrected date shifting issue.
+		<PackageReleaseNotes>v3.0.5 Reverted changes until further research can be done.
+v3.0.4 Corrected date shifting issue.
 v3.0.3 Added missing documentation.
 v3.0.2 Added source code and symbol integration to NuGet package.
 v3.0.1 Changed license to LGPL Public 3.0.
@@ -37,8 +38,8 @@ v1.0.1 Updated license and project URL's in package.</PackageReleaseNotes>
 		<RepositoryUrl>https://github.com/porrey/Solar-Calculator</RepositoryUrl>
 		<RepositoryType>git</RepositoryType>
 		<PackageTags>Sunrise Sunset Calculator,Jean Meeus,Solar,Angle,Astronomical Algorithms</PackageTags>
-		<AssemblyVersion>3.0.4</AssemblyVersion>
-		<FileVersion>3.0.4</FileVersion>
+		<AssemblyVersion>3.0.5</AssemblyVersion>
+		<FileVersion>3.0.5</FileVersion>
 		<NeutralLanguage>en-US</NeutralLanguage>
 		<PackageLicenseExpression>LGPL-3.0-or-later</PackageLicenseExpression>
 		<PackageIcon>Solar-Calculator.png</PackageIcon>
