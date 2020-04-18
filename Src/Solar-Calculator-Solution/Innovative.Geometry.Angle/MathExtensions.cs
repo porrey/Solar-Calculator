@@ -15,8 +15,6 @@
 // *** You should have received a copy of the GNU Lesser General Public License
 // *** along with this program. If not, see http://www.gnu.org/licenses/.
 // *** 
-using System;
-
 namespace Innovative.Geometry
 {
 	/// <summary>
@@ -25,13 +23,13 @@ namespace Innovative.Geometry
 	public static class Numbers
 	{
 		/// <summary>
-		/// Gets the value of PI.
+		/// Gets the value of PI. The full value is 3.1415926535897932384626433832795028841971693993751058209749445923078164062862089986280348253421170679.
 		/// </summary>
 		public static decimal Pi
 		{
 			get
 			{
-				return 3.1415926535897932384626433832795028841971693993751058209749445923078164062862089986280348253421170679M;
+				return 3.1415926535897932384626433832795M;
 			}
 		}
 	}

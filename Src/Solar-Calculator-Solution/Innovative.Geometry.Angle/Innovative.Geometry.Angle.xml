@@ -433,7 +433,7 @@
         </member>
         <member name="P:Innovative.Geometry.Numbers.Pi">
             <summary>
-            Gets the value of PI.
+            Gets the value of PI. The full value is 3.1415926535897932384626433832795028841971693993751058209749445923078164062862089986280348253421170679.
             </summary>
         </member>
     </members>
