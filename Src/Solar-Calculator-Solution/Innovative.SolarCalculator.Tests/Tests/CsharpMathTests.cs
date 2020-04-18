@@ -36,7 +36,7 @@ namespace Innovative.SolarCalculator.Tests
 		public void CsharpSquareTest()
 		{
 			decimal baseNumber = 1.0000001M;
-			decimal expectedValue = 674530.4707M;
+			decimal expectedValue = 674530.47074108455938268917802975M; // 674530.4707M;
 			decimal actualValue = baseNumber;
 
 			for (int i = 0; i < 27; i++)
@@ -48,7 +48,7 @@ namespace Innovative.SolarCalculator.Tests
 
 			if (difference != 0M)
 			{
-				Assert.Inconclusive("Taking the square of the number {0} 27 times should result in {1}. The actual value ({2}) differs by {3}.", baseNumber, expectedValue, actualValue, difference);
+				Assert.Inconclusive($"Taking the square of the number {baseNumber} 27 times should result in {expectedValue}. The actual value ({actualValue}) differs by {difference}.");
 			}
 		}
 
@@ -62,7 +62,7 @@ namespace Innovative.SolarCalculator.Tests
 
 			if (difference != 0M)
 			{
-				Assert.Inconclusive("The result of the equation 2 + .2 + .2 + .2 + .2 + .2 - 3 should be {0}. The actual value ({1}) differs by {2}.", expectedValue, actualValue, difference);
+				Assert.Inconclusive($"The result of the equation 2 + .2 + .2 + .2 + .2 + .2 - 3 should be {expectedValue}. The actual value ({actualValue}) differs by {difference}.");
 			}
 		}
 
@@ -76,7 +76,7 @@ namespace Innovative.SolarCalculator.Tests
 
 			if (difference != 0M)
 			{
-				Assert.Inconclusive("The result of the equation 2 + (5 * .02) - 3 should be {0}. The actual value ({1}) differs by {2}.", expectedValue, actualValue, difference);
+				Assert.Inconclusive($"The result of the equation 2 + (5 * .02) - 3 should be {expectedValue}. The actual value ({actualValue}) differs by {difference}.");
 			}
 		}
 
@@ -95,7 +95,7 @@ namespace Innovative.SolarCalculator.Tests
 
 			if (difference != 0M)
 			{
-				Assert.Inconclusive("The result of incrementing a counter from 0 to 100 by .1 should result in {0} after 100 steps. The actual value ({1}) differs by {2}.", expectedValue, actualValue, difference);
+				Assert.Inconclusive($"The result of incrementing a counter from 0 to 100 by .1 should result in {expectedValue} after 100 steps. The actual value ({actualValue}) differs by {difference}.");
 			}
 		}
 
@@ -109,7 +109,7 @@ namespace Innovative.SolarCalculator.Tests
 
 			if (difference != 0M)
 			{
-				Assert.Inconclusive("The result of the equation 3 * (1/3) should be {0}. The actual value ({1}) differs by {2}.", expectedValue, actualValue, difference);
+				Assert.Inconclusive($"The result of the equation 3 * (1/3) should be {expectedValue}. The actual value ({actualValue}) differs by {difference}.");
 			}
 		}
 
@@ -124,7 +124,7 @@ namespace Innovative.SolarCalculator.Tests
 
 			if (difference != 0)
 			{
-				Assert.Inconclusive("The result of the equation 1000 * .1 should be {0}. The actual value ({1}) differs by {2}.", expectedValue, actualValue, difference);
+				Assert.Inconclusive($"The result of the equation 1000 * .1 should be {expectedValue}. The actual value ({actualValue}) differs by {difference}.");
 			}
 		}
 
@@ -142,7 +142,7 @@ namespace Innovative.SolarCalculator.Tests
 
 			if (difference != 0M)
 			{
-				Assert.Inconclusive("The result of b = (a / 10), c = (10 * b) and (a - c) should be {0} (where a is any number). The actual value ({1}) differs by {2}.", expectedValue, actualValue, difference);
+				Assert.Inconclusive($"The result of b = (a / 10), c = (10 * b) and (a - c) should be {expectedValue} (where a is any number). The actual value ({actualValue}) differs by {difference}.");
 			}
 		}
 
@@ -156,7 +156,7 @@ namespace Innovative.SolarCalculator.Tests
 
 			if (difference != 0)
 			{
-				Assert.Inconclusive("The result of the equation SQRT(25) - 5 should be {0}. The actual value ({1}) differs by {2}.", expectedValue, actualValue, difference);
+				Assert.Inconclusive($"The result of the equation SQRT(25) - 5 should be {expectedValue}. The actual value ({actualValue}) differs by {difference}.");
 			}
 		}
 	}

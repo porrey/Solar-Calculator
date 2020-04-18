@@ -22,13 +22,15 @@ namespace Innovative.SolarCalculator.Tests
 {
 	public static class CustomAssert
 	{
+		public delegate void AssertDelegate(string message);
+
 		public static void AreEqual(decimal expected, decimal actual, decimal delta)
 		{
 			decimal difference = Math.Abs(expected) - Math.Abs(actual);
 
 			if (difference > delta)
 			{
-				string message = String.Format("Expected  {0}, Actual = {1}, Difference = {2} which is greater than the delta of {3}", expected, actual, difference, delta);
+				string message = String.Format($"Expected  {expected}, Actual = {actual}, Difference = {difference} which is greater than the delta of {delta}");
 				Assert.Fail(message);
 			}
 		}
