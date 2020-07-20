@@ -19,6 +19,7 @@ using System.Linq;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Globalization;
 
 namespace Innovative.SolarCalculator.Tests
 {
@@ -38,8 +39,8 @@ namespace Innovative.SolarCalculator.Tests
 			returnValue = (from tbl in TestDirector.ParseCsv(contents)
 						   select new SolarCalculationsTestData()
 						   {
-							   Date = DateTime.Parse(tbl["Date"]),
-							   Time = DateTime.Parse(tbl["Time"]),
+							   Date = DateTime.Parse(tbl["Date"], new CultureInfo("en-US")),
+							   Time = DateTime.Parse(tbl["Time"], new CultureInfo("en-US")),
 							   TimeZoneOffset = Convert.ToInt32(tbl["TimeZoneOffset"]),
 							   Latitude = Convert.ToDecimal(tbl["Latitude"]),
 							   Longitude = Convert.ToDecimal(tbl["Longitude"]),
@@ -57,9 +58,9 @@ namespace Innovative.SolarCalculator.Tests
 							   Vary = Convert.ToDecimal(tbl["vary"]),
 							   EqofTime = Convert.ToDecimal(tbl["EqofTime"]),
 							   HaSunrise = Convert.ToDecimal(tbl["HaSunrise"]),
-							   SolarNoon = DateTime.Parse(tbl["SolarNoon"]),
-							   SunriseTime = DateTime.Parse(tbl["SunriseTime"]),
-							   SunsetTime = DateTime.Parse(tbl["SunsetTime"]),
+							   SolarNoon = DateTime.Parse(tbl["SolarNoon"], new CultureInfo("en-US")),
+							   SunriseTime = DateTime.Parse(tbl["SunriseTime"], new CultureInfo("en-US")),
+							   SunsetTime = DateTime.Parse(tbl["SunsetTime"], new CultureInfo("en-US")),
 							   SunlightDuration = Convert.ToDouble(tbl["SunlightDuration"]),
 							   TrueSolarTime = Convert.ToDecimal(tbl["TrueSolarTime"])
 						   }).ToArray();
@@ -79,7 +80,7 @@ namespace Innovative.SolarCalculator.Tests
 			returnValue = (from tbl in TestDirector.ParseCsv(contents)
 						   select new DateValueTestData()
 						   {
-							   Date = DateTime.Parse(tbl["Date"]),
+							   Date = DateTime.Parse(tbl["Date"], new CultureInfo("en-US")),
 							   DateValue = Convert.ToDecimal(tbl["DateValue"])
 						   }).ToArray();
 
