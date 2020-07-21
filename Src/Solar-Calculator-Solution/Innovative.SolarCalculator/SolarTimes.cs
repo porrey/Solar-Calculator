@@ -270,7 +270,7 @@ namespace Innovative.SolarCalculator
 		/// Nautical Dusk Time
 		/// This is when the sun is &lt; 12 degrees below the horizon
 		/// </summary>
-		public DateTime DuskNautucal
+		public DateTime DuskNautical
 		{
 			get
 			{
@@ -570,7 +570,7 @@ namespace Innovative.SolarCalculator
 			{
 				decimal returnValue = 0M;
 
-				Angle a1 = 108d + this.AtmosphericRefraction;
+				Angle a1 = 108d;// + this.AtmosphericRefraction; // Online calculators I could test against don't include refraction
 				decimal radians = Universal.Math.Acos(Universal.Math.Cos(a1.Radians) / (Universal.Math.Cos(this.Latitude.Radians) * Universal.Math.Cos(this.SolarDeclination.Radians)) - Universal.Math.Tan(this.Latitude.Radians) * Universal.Math.Tan(this.SolarDeclination.Radians));
 				returnValue = Angle.FromRadians(radians);
 
@@ -587,7 +587,7 @@ namespace Innovative.SolarCalculator
 			{
 				decimal returnValue = 0M;
 
-				Angle a1 = 96d + this.AtmosphericRefraction;
+				Angle a1 = 96d;// + this.AtmosphericRefraction; // Online calculators I could test against don't include refraction
 				decimal radians = Universal.Math.Acos(Universal.Math.Cos(a1.Radians) / (Universal.Math.Cos(this.Latitude.Radians) * Universal.Math.Cos(this.SolarDeclination.Radians)) - Universal.Math.Tan(this.Latitude.Radians) * Universal.Math.Tan(this.SolarDeclination.Radians));
 				returnValue = Angle.FromRadians(radians);
 
@@ -605,7 +605,7 @@ namespace Innovative.SolarCalculator
 			{
 				decimal returnValue = 0M;
 
-				Angle a1 = 102d + this.AtmosphericRefraction;
+				Angle a1 = 102d;// + this.AtmosphericRefraction; // Online calculators I could test against don't include refraction
 				decimal radians = Universal.Math.Acos(Universal.Math.Cos(a1.Radians) / (Universal.Math.Cos(this.Latitude.Radians) * Universal.Math.Cos(this.SolarDeclination.Radians)) - Universal.Math.Tan(this.Latitude.Radians) * Universal.Math.Tan(this.SolarDeclination.Radians));
 				returnValue = Angle.FromRadians(radians);
 
