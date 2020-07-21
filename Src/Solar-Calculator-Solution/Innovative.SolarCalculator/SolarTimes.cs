@@ -183,6 +183,107 @@ namespace Innovative.SolarCalculator
 		}
 
 		/// <summary>
+		/// The Astronomical Dawn Time
+		/// This is when the sun is &lt; 18 degrees below the horizon
+		/// </summary>
+		public DateTime DawnAstronomical
+		{
+			get
+			{
+				DateTime returnValue = DateTime.MinValue;
+
+				decimal dayFraction = (decimal)this.SolarNoon.TimeOfDay.TotalDays - this.HourAngleDawnAstronomical * 4M / 1440M;
+				returnValue = this.ForDate.Date.Add(DecimalTimeSpan.FromDays(dayFraction));
+
+				return returnValue;
+			}
+		}
+
+		/// <summary>
+		/// Astronomical Dusk Time
+		/// This is when the sun is &lt; 18 degrees below the horizon
+		/// </summary>
+		public DateTime DuskAstronomical
+		{
+			get
+			{
+				DateTime returnValue = DateTime.MinValue;
+
+				decimal dayFraction = (decimal)this.SolarNoon.TimeOfDay.TotalDays + this.HourAngleDawnAstronomical * 4M / 1440M;
+				returnValue = this.ForDate.Date.Add(DecimalTimeSpan.FromDays(dayFraction));
+
+				return returnValue;
+			}
+		}
+		/// <summary>
+		/// The Civil Dawn Time
+		/// This is when the sun is &lt; 6 degrees below the horizon
+		/// </summary>
+		public DateTime DawnCivil
+		{
+			get
+			{
+				DateTime returnValue = DateTime.MinValue;
+
+				decimal dayFraction = (decimal)this.SolarNoon.TimeOfDay.TotalDays - this.HourAngleDawnCivil * 4M / 1440M;
+				returnValue = this.ForDate.Date.Add(DecimalTimeSpan.FromDays(dayFraction));
+
+				return returnValue;
+			}
+		}
+
+		/// <summary>
+		/// Civil Dusk Time
+		/// This is when the sun is &lt; 6 degrees below the horizon
+		/// </summary>
+		public DateTime DuskCivil
+		{
+			get
+			{
+				DateTime returnValue = DateTime.MinValue;
+
+				decimal dayFraction = (decimal)this.SolarNoon.TimeOfDay.TotalDays + this.HourAngleDawnCivil * 4M / 1440M;
+				returnValue = this.ForDate.Date.Add(DecimalTimeSpan.FromDays(dayFraction));
+
+				return returnValue;
+			}
+		}
+
+		/// <summary>
+		/// The Nautical Dawn Time
+		/// This is when the sun is &lt; 12 degrees below the horizon
+		/// </summary>
+		public DateTime DawnNautical
+		{
+			get
+			{
+				DateTime returnValue = DateTime.MinValue;
+
+				decimal dayFraction = (decimal)this.SolarNoon.TimeOfDay.TotalDays - this.HourAngleDawnNautical * 4M / 1440M;
+				returnValue = this.ForDate.Date.Add(DecimalTimeSpan.FromDays(dayFraction));
+
+				return returnValue;
+			}
+		}
+
+		/// <summary>
+		/// Nautical Dusk Time
+		/// This is when the sun is &lt; 12 degrees below the horizon
+		/// </summary>
+		public DateTime DuskNautucal
+		{
+			get
+			{
+				DateTime returnValue = DateTime.MinValue;
+
+				decimal dayFraction = (decimal)this.SolarNoon.TimeOfDay.TotalDays + this.HourAngleDawnNautical * 4M / 1440M;
+				returnValue = this.ForDate.Date.Add(DecimalTimeSpan.FromDays(dayFraction));
+
+				return returnValue;
+			}
+		}
+
+		/// <summary>
 		/// As light from the sun (or another celestial body) travels from the vacuum of space into Earth's atmosphere, the 
 		/// path of the light is bent due to refraction. This causes stars and planets near the horizon to appear higher in 
 		/// the sky than they actually are, and explains how the sun can still be visible after it has physically passed 
@@ -453,6 +554,58 @@ namespace Innovative.SolarCalculator
 				decimal returnValue = 0M;
 
 				Angle a1 = 90d + this.AtmosphericRefraction;
+				decimal radians = Universal.Math.Acos(Universal.Math.Cos(a1.Radians) / (Universal.Math.Cos(this.Latitude.Radians) * Universal.Math.Cos(this.SolarDeclination.Radians)) - Universal.Math.Tan(this.Latitude.Radians) * Universal.Math.Tan(this.SolarDeclination.Radians));
+				returnValue = Angle.FromRadians(radians);
+
+				return returnValue;
+			}
+		}
+
+		/// <summary>
+		/// HA Astronomical Dawn (degrees)
+		/// </summary>
+		public Angle HourAngleDawnAstronomical
+		{
+			get
+			{
+				decimal returnValue = 0M;
+
+				Angle a1 = 108d + this.AtmosphericRefraction;
+				decimal radians = Universal.Math.Acos(Universal.Math.Cos(a1.Radians) / (Universal.Math.Cos(this.Latitude.Radians) * Universal.Math.Cos(this.SolarDeclination.Radians)) - Universal.Math.Tan(this.Latitude.Radians) * Universal.Math.Tan(this.SolarDeclination.Radians));
+				returnValue = Angle.FromRadians(radians);
+
+				return returnValue;
+			}
+		}
+
+		/// <summary>
+		/// HA Civil Dawn (degrees)
+		/// </summary>
+		public Angle HourAngleDawnCivil
+		{
+			get
+			{
+				decimal returnValue = 0M;
+
+				Angle a1 = 96d + this.AtmosphericRefraction;
+				decimal radians = Universal.Math.Acos(Universal.Math.Cos(a1.Radians) / (Universal.Math.Cos(this.Latitude.Radians) * Universal.Math.Cos(this.SolarDeclination.Radians)) - Universal.Math.Tan(this.Latitude.Radians) * Universal.Math.Tan(this.SolarDeclination.Radians));
+				returnValue = Angle.FromRadians(radians);
+
+				return returnValue;
+			}
+		}
+
+		/// <summary>
+		/// HA Nautical Dawn (degrees)
+		/// (Spreadsheet Column W)
+		/// </summary>
+		public Angle HourAngleDawnNautical
+		{
+			get
+			{
+				decimal returnValue = 0M;
+
+				Angle a1 = 102d + this.AtmosphericRefraction;
 				decimal radians = Universal.Math.Acos(Universal.Math.Cos(a1.Radians) / (Universal.Math.Cos(this.Latitude.Radians) * Universal.Math.Cos(this.SolarDeclination.Radians)) - Universal.Math.Tan(this.Latitude.Radians) * Universal.Math.Tan(this.SolarDeclination.Radians));
 				returnValue = Angle.FromRadians(radians);
 
