@@ -286,7 +286,12 @@ namespace Innovative.SolarCalculator.Tests
             // Test data is sourced from http://www.ga.gov.au/geodesy/astro/sunrise.jsp
             // Times slightly adjusted as the website is rounded to the minute
 
-            SolarTimes solarTimes = new SolarTimes(new DateTime(2020, 07, 21).Date, -33.856837, 151.215066);
+            SolarTimes solarTimes = new SolarTimes()
+            {
+                Latitude = -33.856837,
+                Longitude = 151.215066,
+                ForDate = new DateTimeOffset(new DateTime(2020, 07, 21).Date, TimeSpan.FromHours(10)),
+            };
 
             Assert.AreEqual(2020, solarTimes.DawnAstronomical.Year);
             Assert.AreEqual(07,   solarTimes.DawnAstronomical.Month);
