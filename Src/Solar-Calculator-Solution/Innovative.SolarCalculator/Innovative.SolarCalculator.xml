@@ -161,6 +161,42 @@
             (Spreadsheet Column Z)
             </summary>
         </member>
+        <member name="P:Innovative.SolarCalculator.SolarTimes.DawnAstronomical">
+            <summary>
+            The Astronomical Dawn Time
+            This is when the sun is &lt; 18 degrees below the horizon
+            </summary>
+        </member>
+        <member name="P:Innovative.SolarCalculator.SolarTimes.DuskAstronomical">
+            <summary>
+            Astronomical Dusk Time
+            This is when the sun is &lt; 18 degrees below the horizon
+            </summary>
+        </member>
+        <member name="P:Innovative.SolarCalculator.SolarTimes.DawnCivil">
+            <summary>
+            The Civil Dawn Time
+            This is when the sun is &lt; 6 degrees below the horizon
+            </summary>
+        </member>
+        <member name="P:Innovative.SolarCalculator.SolarTimes.DuskCivil">
+            <summary>
+            Civil Dusk Time
+            This is when the sun is &lt; 6 degrees below the horizon
+            </summary>
+        </member>
+        <member name="P:Innovative.SolarCalculator.SolarTimes.DawnNautical">
+            <summary>
+            The Nautical Dawn Time
+            This is when the sun is &lt; 12 degrees below the horizon
+            </summary>
+        </member>
+        <member name="P:Innovative.SolarCalculator.SolarTimes.DuskNautical">
+            <summary>
+            Nautical Dusk Time
+            This is when the sun is &lt; 12 degrees below the horizon
+            </summary>
+        </member>
         <member name="P:Innovative.SolarCalculator.SolarTimes.AtmosphericRefraction">
             <summary>
             As light from the sun (or another celestial body) travels from the vacuum of space into Earth's atmosphere, the 
@@ -269,6 +305,22 @@
         <member name="P:Innovative.SolarCalculator.SolarTimes.HourAngleSunrise">
             <summary>
             HA Sunrise (degrees)
+            (Spreadsheet Column W)
+            </summary>
+        </member>
+        <member name="P:Innovative.SolarCalculator.SolarTimes.HourAngleDawnAstronomical">
+            <summary>
+            HA Astronomical Dawn (degrees)
+            </summary>
+        </member>
+        <member name="P:Innovative.SolarCalculator.SolarTimes.HourAngleDawnCivil">
+            <summary>
+            HA Civil Dawn (degrees)
+            </summary>
+        </member>
+        <member name="P:Innovative.SolarCalculator.SolarTimes.HourAngleDawnNautical">
+            <summary>
+            HA Nautical Dawn (degrees)
             (Spreadsheet Column W)
             </summary>
         </member>
