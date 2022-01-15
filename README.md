@@ -1,4 +1,4 @@
-***This branch and all previous releases are under the Microsoft Reciprocal License. All newer version found in the master branch have been changed the GPL v3.***
+***This branch and all previous releases are under the Microsoft Reciprocal License. All newer version found in the master branch have been changed to LGPL v3.***
 
 [![Build Status](https://travis-ci.com/porrey/Solar-Calculator.svg?branch=master)](https://travis-ci.com/porrey/Solar-Calculator)
 
