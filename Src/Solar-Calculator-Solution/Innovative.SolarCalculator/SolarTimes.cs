@@ -1,6 +1,6 @@
 ﻿// ***
-// *** Solar Calculator 3.0.0
-// *** Copyright(C) 2013-2020, Daniel M. Porrey. All rights reserved.
+// *** Solar Calculator 3.1.0
+// *** Copyright(C) 2013-2022, Daniel M. Porrey. All rights reserved.
 // *** 
 // *** This program is free software: you can redistribute it and/or modify
 // *** it under the terms of the GNU General Public License as published by

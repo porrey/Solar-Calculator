@@ -1,55 +1,46 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<IsPackable>false</IsPackable>
+		<Version>3.1.0</Version>
+		<FileVersion>3.1.0</FileVersion>
+		<AssemblyVersion>3.1.0</AssemblyVersion>
+		<Nullable>disable</Nullable>
+	</PropertyGroup>
 
-    <IsPackable>false</IsPackable>
+	<ItemGroup>
+	  <Content Include="Data\AngleTestData.csv">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Data\AngleTestData.xlsx">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Data\CsharpExcelTestData.csv">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Data\DateValueTestData.csv">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Data\SolarCalculationsTestData.csv">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Data\SolarCalculationsTestData.xlsx">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
+	</ItemGroup>
 
-    <Version>3.0.5</Version>
+	<ItemGroup>
+	  <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.0.0" />
+	  <PackageReference Include="NUnit" Version="3.13.2" />
+	  <PackageReference Include="NUnit3TestAdapter" Version="4.2.0" />
+	</ItemGroup>
 
-    <FileVersion>3.0.5</FileVersion>
 
-    <AssemblyVersion>3.0.5</AssemblyVersion>
-  </PropertyGroup>
 
-  <ItemGroup>
-    <None Remove=".DS_Store" />
-    <None Remove="Data\.DS_Store" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="nunit" Version="3.12.0" />
-    <PackageReference Include="NUnit3TestAdapter" Version="3.16.1">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.5.0" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\Innovative.Geometry.Angle\Innovative.Geometry.Angle.csproj" />
-    <ProjectReference Include="..\Innovative.SolarCalculator\Innovative.SolarCalculator.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Update="Data\AngleTestData.csv">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="Data\AngleTestData.xlsx">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="Data\DateValueTestData.csv">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="Data\CsharpExcelTestData.csv">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="Data\SolarCalculationsTestData.xlsx">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="Data\SolarCalculationsTestData.csv">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\Innovative.Geometry.Angle\Innovative.Geometry.Angle.csproj" />
+		<ProjectReference Include="..\Innovative.SolarCalculator\Innovative.SolarCalculator.csproj" />
+	</ItemGroup>
 
 </Project>
