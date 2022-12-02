@@ -1,20 +1,20 @@
-﻿// ***
-// *** Solar Calculator 3.1.0
-// *** Copyright(C) 2013-2022, Daniel M. Porrey. All rights reserved.
-// *** 
-// *** This program is free software: you can redistribute it and/or modify
-// *** it under the terms of the GNU Lesser General Public License as published
-// *** by the Free Software Foundation, either version 3 of the License, or
-// *** (at your option) any later version.
-// *** 
-// *** This program is distributed in the hope that it will be useful,
-// *** but WITHOUT ANY WARRANTY; without even the implied warranty of
-// *** MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-// *** GNU Lesser General Public License for more details.
-// *** 
-// *** You should have received a copy of the GNU Lesser General Public License
-// *** along with this program. If not, see http://www.gnu.org/licenses/.
-// *** 
+﻿//
+// Solar Calculator
+// Copyright(C) 2013-2022, Daniel M. Porrey. All rights reserved.
+// 
+// This program is free software: you can redistribute it and/or modify
+// it under the terms of the GNU Lesser General Public License as published
+// by the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+// 
+// This program is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+// GNU Lesser General Public License for more details.
+// 
+// You should have received a copy of the GNU Lesser General Public License
+// along with this program. If not, see http://www.gnu.org/licenses/.
+// 
 using System;
 using System.Runtime.CompilerServices;
 
@@ -485,14 +485,14 @@ namespace Innovative.Geometry
 		{
 			decimal returnValue = 0M;
 
-			// ***
-			// *** Ensure all parameters are the same sing
-			// ***
+			//
+			// Ensure all parameters are the same sing
+			//
 			Angle.NormalDirection(ref degrees, ref arcminute, ref arcsecond);
 
-			// ***
-			// *** 15 degrees per hour
-			// ***
+			//
+			// 15 degrees per hour
+			//
 			returnValue = degrees + (arcminute / 60M) + (arcsecond / 3600M);
 
 			return returnValue;
@@ -507,9 +507,9 @@ namespace Innovative.Geometry
 		{
 			decimal returnValue = 0M;
 
-			// ***
-			// *** Factor = 180 / pi 
-			// ***
+			//
+			// Factor = 180 / pi 
+			//
 			returnValue = radians * (180M / Numbers.Pi);
 
 			return returnValue;
@@ -525,9 +525,9 @@ namespace Innovative.Geometry
 		{
 			decimal returnValue = 0M;
 
-			// ***
-			// *** Factor = pi / 180 
-			// ***
+			//
+			// Factor = pi / 180 
+			//
 			returnValue = (degrees * Numbers.Pi) / 180M;
 
 			return returnValue;
@@ -686,13 +686,13 @@ namespace Innovative.Geometry
 
 		internal static void NormalDirection(ref int degrees, ref int minutes, ref decimal seconds)
 		{
-			// ***
-			// *** If the value for degrees is negative then
-			// *** minutes and seconds should be negative. This 
-			// *** is due to the fact that these three numbers
-			// *** represent one angle and always must have the
-			// *** same direction.
-			// ***
+			//
+			// If the value for degrees is negative then
+			// minutes and seconds should be negative. This 
+			// is due to the fact that these three numbers
+			// represent one angle and always must have the
+			// same direction.
+			//
 			if (degrees < 0 || minutes < 0 || seconds < 0)
 			{
 				degrees = -1 * Math.Abs(degrees);
@@ -703,13 +703,13 @@ namespace Innovative.Geometry
 
 		internal static void NormalDirection(ref decimal hours, ref int minutes, ref decimal seconds)
 		{
-			// ***
-			// *** If the value for degrees is negative then
-			// *** minutes and seconds should be negative. This 
-			// *** is due to the fact that these three numbers
-			// *** represent one angle and always must have the
-			// *** same direction.
-			// ***
+			//
+			// If the value for degrees is negative then
+			// minutes and seconds should be negative. This 
+			// is due to the fact that these three numbers
+			// represent one angle and always must have the
+			// same direction.
+			//
 			if (hours < 0 || minutes < 0 || seconds < 0)
 			{
 				hours = -1 * Math.Abs(hours);

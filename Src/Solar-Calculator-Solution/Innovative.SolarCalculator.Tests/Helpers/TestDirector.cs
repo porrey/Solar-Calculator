@@ -1,20 +1,20 @@
-﻿// ***
-// *** Solar Calculator 3.1.0
-// *** Copyright(C) 2013-2022, Daniel M. Porrey. All rights reserved.
-// *** 
-// *** This program is free software: you can redistribute it and/or modify
-// *** it under the terms of the GNU Lesser General Public License as published
-// *** by the Free Software Foundation, either version 3 of the License, or
-// *** (at your option) any later version.
-// *** 
-// *** This program is distributed in the hope that it will be useful,
-// *** but WITHOUT ANY WARRANTY; without even the implied warranty of
-// *** MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-// *** GNU Lesser General Public License for more details.
-// *** 
-// *** You should have received a copy of the GNU Lesser General Public License
-// *** along with this program. If not, see http://www.gnu.org/licenses/.
-// *** 
+﻿//
+// Solar Calculator
+// Copyright(C) 2013-2022, Daniel M. Porrey. All rights reserved.
+// 
+// This program is free software: you can redistribute it and/or modify
+// it under the terms of the GNU Lesser General Public License as published
+// by the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+// 
+// This program is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+// GNU Lesser General Public License for more details.
+// 
+// You should have received a copy of the GNU Lesser General Public License
+// along with this program. If not, see http://www.gnu.org/licenses/.
+// 
 using System.Linq;
 using System;
 using System.Collections.Generic;
@@ -33,9 +33,9 @@ namespace Innovative.SolarCalculator.Tests
 
 			string contents = File.ReadAllText(@"Data/SolarCalculationsTestData.csv");
 
-			// ***
-			// ***
-			// ***
+			//
+			//
+			//
 			returnValue = (from tbl in TestDirector.ParseCsv(contents)
 						   select new SolarCalculationsTestData()
 						   {
@@ -74,9 +74,9 @@ namespace Innovative.SolarCalculator.Tests
 
 			string contents = File.ReadAllText(@"Data/DateValueTestData.csv");
 
-			// ***
-			// ***
-			// ***
+			//
+			//
+			//
 			returnValue = (from tbl in TestDirector.ParseCsv(contents)
 						   select new DateValueTestData()
 						   {
@@ -93,9 +93,9 @@ namespace Innovative.SolarCalculator.Tests
 
 			string contents = File.ReadAllText(@"Data/CsharpExcelTestData.csv");
 
-			// ***
-			// ***
-			// ***
+			//
+			//
+			//
 			returnValue = (from tbl in TestDirector.ParseCsv(contents)
 						   select new CsharpExcelTestData()
 						   {
@@ -121,9 +121,9 @@ namespace Innovative.SolarCalculator.Tests
 
 			string contents = File.ReadAllText(@"Data/AngleTestData.csv");
 
-			// ***
-			// ***
-			// ***
+			//
+			//
+			//
 			returnValue = (from tbl in TestDirector.ParseCsv(contents)
 						   select new AngleTestData()
 						   {
@@ -171,30 +171,30 @@ namespace Innovative.SolarCalculator.Tests
 		{
 			IList<Dictionary<string, string>> returnValue = new List<Dictionary<string, string>>();
 
-			// ***
-			// *** Get the test data file from the resources and
-			// *** separate it into multiple lines.
-			// ***
+			//
+			// Get the test data file from the resources and
+			// separate it into multiple lines.
+			//
 			string[] lines = contents.Split(new char[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
 
-			// ***
-			// *** Filter out invalid data. The spreadsheet uses random data to generate certain field values
-			// *** and it may contain invalid data. The line of data is cast into an string array. The first
-			// *** row contains the column names.
-			// ***
+			//
+			// Filter out invalid data. The spreadsheet uses random data to generate certain field values
+			// and it may contain invalid data. The line of data is cast into an string array. The first
+			// row contains the column names.
+			//
 			IEnumerable<string[]> items = from tbl1 in lines
 										  where !tbl1.Contains("#")
 										  select tbl1.Split(new char[] { ',' });
 
-			// ***
-			// *** Get the column headers and data rows into two separate sets.
-			// ***
+			//
+			// Get the column headers and data rows into two separate sets.
+			//
 			string[] columnHeaders = items.First();
 			string[][] rows = items.Skip(1).ToArray();
 
-			// ***
-			// ***
-			// ***
+			//
+			//
+			//
 			for (int i = 0; i < rows.Count(); i++)
 			{
 				Dictionary<string, string> row = new Dictionary<string, string>();
@@ -218,7 +218,7 @@ namespace Innovative.SolarCalculator.Tests
 		{
 			get
 			{
-				// ***   12345678901234567890
+				//   12345678901234567890
 				return 0.000000000001M;
 			}
 		}
@@ -231,7 +231,7 @@ namespace Innovative.SolarCalculator.Tests
 		{
 			get
 			{
-				// ***   12345678901234567890
+				//   12345678901234567890
 				return 0.000000009M;
 			}
 		}
@@ -244,7 +244,7 @@ namespace Innovative.SolarCalculator.Tests
 		{
 			get
 			{
-				// ***   12345678901234567890
+				//   12345678901234567890
 				return 0.000000001M;
 			}
 		}
@@ -257,9 +257,9 @@ namespace Innovative.SolarCalculator.Tests
 		{
 			get
 			{
-				// ***
-				// *** The maximum difference allowed is 500 milliseconds
-				// ***
+				//
+				// The maximum difference allowed is 500 milliseconds
+				//
 				return TimeSpan.FromMilliseconds(500);
 			}
 		}
@@ -272,8 +272,8 @@ namespace Innovative.SolarCalculator.Tests
 		{
 			get
 			{
-				// ***
-				// ***   123456789012
+				//
+				//   123456789012
 				return 0.0000001M;
 			}
 		}
@@ -286,8 +286,8 @@ namespace Innovative.SolarCalculator.Tests
 		{
 			get
 			{
-				// ***
-				// ***   123456789012
+				//
+				//   123456789012
 				return 0.0000001D;
 			}
 		}

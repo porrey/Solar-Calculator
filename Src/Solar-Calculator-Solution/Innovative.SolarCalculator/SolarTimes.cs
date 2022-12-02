@@ -1,20 +1,20 @@
-﻿// ***
-// *** Solar Calculator 3.1.0
-// *** Copyright(C) 2013-2022, Daniel M. Porrey. All rights reserved.
-// *** 
-// *** This program is free software: you can redistribute it and/or modify
-// *** it under the terms of the GNU General Public License as published by
-// *** the Free Software Foundation, either version 3 of the License, or
-// *** (at your option) any later version.
-// *** 
-// *** This program is distributed in the hope that it will be useful,
-// *** but WITHOUT ANY WARRANTY; without even the implied warranty of
-// *** MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.See the
-// *** GNU General Public License for more details.
-// *** 
-// *** You should have received a copy of the GNU General Public License
-// *** along with this program.If not, see<http://www.gnu.org/licenses/>.
-// *** 
+﻿//
+// Solar Calculator
+// Copyright(C) 2013-2022, Daniel M. Porrey. All rights reserved.
+// 
+// This program is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+// 
+// This program is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.See the
+// GNU General Public License for more details.
+// 
+// You should have received a copy of the GNU General Public License
+// along with this program.If not, see<http://www.gnu.org/licenses/>.
+// 
 using System;
 using Innovative.Geometry;
 
@@ -303,9 +303,9 @@ namespace Innovative.SolarCalculator
 			{
 				decimal returnValue = 0M;
 
-				// ***
-				// *** .1 / 24
-				// ***
+				//
+				// .1 / 24
+				//
 				returnValue = (new DateTime(1899, 12, 30, 0, 0, 0)).Add(this.ForDate.TimeOfDay).ToOleAutomationDate();
 
 				return returnValue;
@@ -325,9 +325,9 @@ namespace Innovative.SolarCalculator
 			{
 				decimal returnValue = 0M;
 
-				// ***
-				// *** this.TimePastLocalMidnight was removed since the time is in ForDate
-				// ***
+				//
+				// this.TimePastLocalMidnight was removed since the time is in ForDate
+				//
 				returnValue = ExcelFormulae.ToExcelDateValue(this.ForDate.Date) + 2415018.5M - (this.TimeZoneOffset / 24M);
 
 				return returnValue;
@@ -463,10 +463,10 @@ namespace Innovative.SolarCalculator
 			{
 				Angle returnValue = 0d;
 
-				// ***
-				// *** Formula 22.3 from Page 147 of Astronomical Algorithms, Second Edition (Jean Meeus)
-				// *** Original spreadsheet formula based on 22.2 same page of book
-				// ***
+				//
+				// Formula 22.3 from Page 147 of Astronomical Algorithms, Second Edition (Jean Meeus)
+				// Original spreadsheet formula based on 22.2 same page of book
+				//
 				returnValue = 23M + (26M + ((21.448M - this.JulianCentury * (46.815M + this.JulianCentury * (0.00059M - this.JulianCentury * 0.001813M)))) / 60M) / 60M;
 
 				return returnValue;

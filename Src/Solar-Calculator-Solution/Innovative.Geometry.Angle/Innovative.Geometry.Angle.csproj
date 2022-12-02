@@ -1,20 +1,22 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFrameworks>netstandard1.3;netstandard2.0;netstandard2.1;net40;net45;net461;netcoreapp3.1;net5.0;net6.0</TargetFrameworks>
+		<TargetFrameworks>netstandard1.3;netstandard2.0;netstandard2.1;net40;net45;net461;netcoreapp3.1;net5.0;net6.0;net7.0</TargetFrameworks>
 		<RootNamespace>Innovative.Geometry</RootNamespace>
 		<AssemblyName>Innovative.Geometry.Angle</AssemblyName>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 		<PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
 		<PackageId>Angle</PackageId>
-		<Version>3.1.0</Version>
+		<Version>3.2.1</Version>
 		<Authors>Daniel M. Porrey</Authors>
 		<Company>Daniel M. Porrey</Company>
 		<PackageIconUrl></PackageIconUrl>
 		<PackageProjectUrl>https://github.com/porrey/Solar-Calculator</PackageProjectUrl>
 		<Copyright>Copyright © 2013-2022 Daniel M. Porrey</Copyright>
 		<PackageTags>Angle,Math,Arcminute,Arcsecond,Degree</PackageTags>
-		<PackageReleaseNotes>v3.1.0 Added support for net 5.0 and net 6.0.
+		<PackageReleaseNotes>v3.2.1 Added ReadMe to package.
+v3.2.0 Added net 7.0 support.
+v3.1.0 Added support for net 5.0 and net 6.0.
 v3.0.4 Corrected date shifting issue.
 v3.0.3 Added missing documentation.
 v3.0.2 Added source code and symbol integration to NuGet package.
@@ -24,8 +26,8 @@ v2.0.0 Converted to .NET Standard/Moved to GitHub.
 v1.0.2 Added multiple .NET versions. Completed units test and corrected minor issues.
 v1.0.1 Changed namespace to Innovative.Geometry</PackageReleaseNotes>
 		<NeutralLanguage>en-US</NeutralLanguage>
-		<AssemblyVersion>3.1.0</AssemblyVersion>
-		<FileVersion>3.1.0</FileVersion>
+		<AssemblyVersion>3.2.1</AssemblyVersion>
+		<FileVersion>3.2.1</FileVersion>
 		<Product>Angle</Product>
 		<Description>Defines a type for a geometric angle that allows various ways of setting and converting the values from and to different modes. Angle inherently is a double and can be used in place of a double when specifically referring to a geometric angle with the value being the degrees of the angle.</Description>
 		<RepositoryUrl>https://github.com/porrey/Solar-Calculator.git</RepositoryUrl>
@@ -44,12 +46,18 @@ v1.0.1 Changed namespace to Innovative.Geometry</PackageReleaseNotes>
 
 	<PropertyGroup>
 	  <DocumentationFile>Innovative.Geometry.Angle.xml</DocumentationFile>
+	  <Title>Solar Calculator Angle</Title>
+	  <PackageReadmeFile>README.md</PackageReadmeFile>
 	</PropertyGroup>
 
 	<ItemGroup>
 	  <None Include="..\..\..\Images\Angle.png">
 	    <Pack>True</Pack>
 	    <PackagePath></PackagePath>
+	  </None>
+	  <None Include="..\..\..\README.md">
+	    <Pack>True</Pack>
+	    <PackagePath>\</PackagePath>
 	  </None>
 	</ItemGroup>
 

@@ -1,13 +1,13 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFrameworks>netstandard1.3;netstandard2.0;netstandard2.1;net40;net45;net461;netcoreapp3.1;net5.0;net6.0</TargetFrameworks>
+		<TargetFrameworks>netstandard1.3;netstandard2.0;netstandard2.1;net40;net45;net461;netcoreapp3.1;net5.0;net6.0;net7.0</TargetFrameworks>
 		<AssemblyName>Innovative.SolarCalculator</AssemblyName>
 		<RootNamespace>Innovative.SolarCalculator</RootNamespace>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 		<PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
 		<PackageId>SolarCalculator</PackageId>
-		<Version>3.1.0</Version>
+		<Version>3.2.1</Version>
 		<Authors>Daniel M. Porrey</Authors>
 		<Company>Daniel M. Porrey</Company>
 		<Product>Solar Calculator</Product>
@@ -16,7 +16,9 @@
 		<Copyright>Copyright © 2013-2022 Daniel M. Porrey</Copyright>
 		<Summary>This library is a port of the Excel spreadsheet found at NOAA to calculate the sunrise and sunset for a given date and location (using Geographic Coordinates).</Summary>
 		<Description>Calculates the sunrise and sunset for a given date and location (using Geographic Coordinates). This library uses the method outlined NOAA Solar Calculations Day spreadsheet found at http://www.esrl.noaa.gov/gmd/grad/solcalc/calcdetails.html. Calculations are based on the book "Astronomical Algorithms" by Jean Meeus.</Description>
-		<PackageReleaseNotes>v3.1.0 Added support for net 5.0 and net 6.0.
+		<PackageReleaseNotes>v3.2.1 Added ReadMe to package.
+v3.2.0 Added net 7.0 support.
+v3.1.0 Added support for net 5.0 and net 6.0.
 v3.0.6 Added calculations for Astronomical, Nautical and Civil Dawn and Dusk times (rbdavison).
 v3.0.5 Reverted changes until further research can be done.
 v3.0.4 Corrected date shifting issue.
@@ -40,8 +42,8 @@ v1.0.1 Updated license and project URL's in package.</PackageReleaseNotes>
 		<RepositoryUrl>https://github.com/porrey/Solar-Calculator</RepositoryUrl>
 		<RepositoryType>git</RepositoryType>
 		<PackageTags>Sunrise Sunset Calculator,Jean Meeus,Solar,Angle,Astronomical Algorithms</PackageTags>
-		<AssemblyVersion>3.1.0</AssemblyVersion>
-		<FileVersion>3.1.0</FileVersion>
+		<AssemblyVersion>3.2.1</AssemblyVersion>
+		<FileVersion>3.2.1</FileVersion>
 		<NeutralLanguage>en-US</NeutralLanguage>
 		<PackageLicenseExpression>LGPL-3.0-or-later</PackageLicenseExpression>
 		<PackageIcon>Solar-Calculator.png</PackageIcon>
@@ -57,6 +59,8 @@ v1.0.1 Updated license and project URL's in package.</PackageReleaseNotes>
 
 	<PropertyGroup>
 	  <DocumentationFile>Innovative.SolarCalculator.xml</DocumentationFile>
+	  <Title>Solar Calculator</Title>
+	  <PackageReadmeFile>README.md</PackageReadmeFile>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -67,6 +71,10 @@ v1.0.1 Updated license and project URL's in package.</PackageReleaseNotes>
 	  <None Include="..\..\..\Images\Solar-Calculator.png">
 	    <Pack>True</Pack>
 	    <PackagePath></PackagePath>
+	  </None>
+	  <None Include="..\..\..\README.md">
+	    <Pack>True</Pack>
+	    <PackagePath>\</PackagePath>
 	  </None>
 	</ItemGroup>
 
