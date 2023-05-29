@@ -15,81 +15,89 @@
 // You should have received a copy of the GNU Lesser General Public License
 // along with this program. If not, see http://www.gnu.org/licenses/.
 // 
+
 namespace Innovative.SolarCalculator
 {
-	/// <summary>
-	/// Provides common .NET static methods that vary between versions.
-	/// </summary>
-	public static class Universal
-	{
-		/// <summary>
-		/// The Math functions in PORTABLE libraries only accept and return double. All other libraries accept
-		/// decimal. The library works in all decimal values. This class provides decimal based Math functions
-		/// for all platforms.
-		/// </summary>
-		public static class Math
-		{
-			/// <summary>
-			/// Returns the sine of the specified angle.
-			/// </summary>
-			/// <param name="value">An angle, measured in radians.</param>
-			/// <returns>The sine of value.</returns>
-			public static decimal Sin(decimal value)
-			{
-				return (decimal)System.Math.Sin((double)value);
-			}
+    /// <summary>
+    /// Provides common .NET static methods that vary between versions.
+    /// </summary>
+    public static class Universal
+    {
+        /// <summary>
+        /// The Math functions in PORTABLE libraries only accept and return double. All other libraries accept
+        /// decimal. The library works in all decimal values. This class provides decimal based Math functions
+        /// for all platforms.
+        /// </summary>
+        public static class Math
+        {
+            /// <summary>
+            /// Returns the sine of the specified angle.
+            /// </summary>
+            /// <param name="value">An angle, measured in radians.</param>
+            /// <returns>The sine of value.</returns>
+            public static decimal Sin(decimal value)
+            {
+                return (decimal)System.Math.Sin((double)value);
+            }
 
-			/// <summary>
-			/// Returns the angle whose sine is the specified number.
-			/// </summary>
-			/// <param name="value">A number representing a sine, where value must be greater
-			/// than or equal to -1, but less than or equal to 1.</param>
-			/// <returns>An angle, θ, measured in radians.</returns>
-			public static decimal Asin(decimal value)
-			{
-				return (decimal)System.Math.Asin((double)value);
-			}
+            /// <summary>
+            /// Returns the angle whose sine is the specified number.
+            /// </summary>
+            /// <param name="value">A number representing a sine, where value must be greater
+            /// than or equal to -1, but less than or equal to 1.</param>
+            /// <returns>An angle, θ, measured in radians.</returns>
+            public static decimal Asin(decimal value)
+            {
+                return (decimal)System.Math.Asin((double)value);
+            }
 
-			/// <summary>
-			/// Returns the tangent of the specified angle.
-			/// </summary>
-			/// <param name="value">An angle, measured in radians.</param>
-			/// <returns>The tangent of value.</returns>
-			public static decimal Tan(decimal value)
-			{
-				return (decimal)System.Math.Tan((double)value);
-			}
+            /// <summary>
+            /// Returns the tangent of the specified angle.
+            /// </summary>
+            /// <param name="value">An angle, measured in radians.</param>
+            /// <returns>The tangent of value.</returns>
+            public static decimal Tan(decimal value)
+            {
+                return (decimal)System.Math.Tan((double)value);
+            }
 
-			/// <summary>
-			/// Returns the cosine of the specified angle.
-			/// </summary>
-			/// <param name="value">An angle, measured in radians.</param>
-			/// <returns>The cosine of value.</returns>
-			public static decimal Cos(decimal value)
-			{
-				return (decimal)System.Math.Cos((double)value);
-			}
+            /// <summary>
+            /// Returns the cosine of the specified angle.
+            /// </summary>
+            /// <param name="value">An angle, measured in radians.</param>
+            /// <returns>The cosine of value.</returns>
+            public static decimal Cos(decimal value)
+            {
+                return (decimal)System.Math.Cos((double)value);
+            }
 
-			/// <summary>
-			/// Returns the angle whose cosine is the specified number.
-			/// </summary>
-			/// <param name="value">A number representing a cosine, where value must be greater than or equal to -1,
-			/// but less than or equal to 1.</param>
-			/// <returns>An angle, θ, measured in radians.</returns>
-			public static decimal Acos(decimal value)
-			{
-				return (decimal)System.Math.Acos((double)value);
-			}
+            /// <summary>
+            /// Returns the angle whose cosine is the specified number.
+            /// </summary>
+            /// <param name="value">A number representing a cosine, where value must be greater than or equal to -1,
+            /// but less than or equal to 1.</param>
+            /// <returns>An angle, θ, measured in radians.</returns>
+            public static decimal Acos(decimal value)
+            {
+                return (decimal)System.Math.Acos(Clamp((double)value, (double)decimal.MinusOne, (double)decimal.One));
+            }
 
-			/// <summary>
-			/// Returns the square root of a specified number.
-			/// </summary>
-			/// <param name="value">The number whose square root is to be found.</param>
-			/// <returns>The positive square root of value.</returns>
-			public static decimal Sqrt(decimal value)
-			{
-				return (decimal)System.Math.Sqrt((double)value);
-			}
-		}
-	}
+            /// <summary>
+            /// Returns the square root of a specified number.
+            /// </summary>
+            /// <param name="value">The number whose square root is to be found.</param>
+            /// <returns>The positive square root of value.</returns>
+            public static decimal Sqrt(decimal value)
+            {
+                return (decimal)System.Math.Sqrt((double)value);
+            }
+			
+            private static T Clamp<T>(T val, T min, T max) where T : System.IComparable<T>
+            {
+                if (val.CompareTo(min) < 0) return min;
+                else if(val.CompareTo(max) > 0) return max;
+                else return val;
+            }
+        }
+    }
 }

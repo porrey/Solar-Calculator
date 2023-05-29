@@ -157,13 +157,18 @@ namespace Innovative.SolarCalculator
 			get
 			{
 				DateTime returnValue = DateTime.MinValue;
-
+				if (IsPolarNight) return new SolarTimes(this.ForDate.Date.AddDays(1), Latitude, Longitude).Sunrise;
+				else if (IsPolarDay) return new SolarTimes(this.ForDate.Date.AddDays(-1), Latitude, Longitude).Sunrise;
 				decimal dayFraction = (decimal)this.SolarNoon.TimeOfDay.TotalDays - this.HourAngleSunrise * 4M / 1440M;
 				returnValue = this.ForDate.Date.Add(DecimalTimeSpan.FromDays(dayFraction));
 
 				return returnValue;
 			}
 		}
+		
+		public bool IsPolarDay => TimeSpan.FromDays(1) - SunlightDuration <= TimeSpan.FromMilliseconds(10);
+
+		public bool IsPolarNight => this.SunlightDuration == TimeSpan.Zero;
 
 		/// <summary>
 		/// Sun Set Time
@@ -174,7 +179,9 @@ namespace Innovative.SolarCalculator
 			get
 			{
 				DateTime returnValue = DateTime.MinValue;
-
+				
+				if (IsPolarDay) return new SolarTimes(this.ForDate.Date.AddDays(1), Latitude, Longitude).Sunset;
+				else if (IsPolarNight) return new SolarTimes(this.ForDate.Date.AddDays(-1), Latitude, Longitude).Sunset;
 				decimal dayFraction = (decimal)this.SolarNoon.TimeOfDay.TotalDays + this.HourAngleSunrise * 4M / 1440M;
 				returnValue = this.ForDate.Date.Add(DecimalTimeSpan.FromDays(dayFraction));
 
