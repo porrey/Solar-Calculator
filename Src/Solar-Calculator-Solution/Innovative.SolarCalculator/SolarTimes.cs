@@ -1,4 +1,4 @@
-﻿//
+//
 // Solar Calculator
 // Copyright(C) 2013-2022, Daniel M. Porrey. All rights reserved.
 // 
@@ -166,7 +166,7 @@ namespace Innovative.SolarCalculator
 			}
 		}
 		
-		public bool IsPolarDay => TimeSpan.FromDays(1) - SunlightDuration <= TimeSpan.FromMilliseconds(10);
+		public bool IsPolarDay => TimeSpan.FromDays(1) - SunlightDuration <= TimeSpan.FromMilliseconds(1);
 
 		public bool IsPolarNight => this.SunlightDuration == TimeSpan.Zero;
 
