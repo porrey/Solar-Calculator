@@ -109,9 +109,22 @@ namespace Innovative.SolarCalculator
             /// </returns>
             private static T Clamp<T>(T value, T min, T max) where T : System.IComparable<T>
             {
-                if (value.CompareTo(min) < 0) return min;
-                else if(value.CompareTo(max) > 0) return max;
-                else return value;
+                T returnValue = default(T);
+
+                if (value.CompareTo(min) < 0)
+                {
+                    returnValue = min;
+                }
+                else if (value.CompareTo(max) > 0)
+                {
+                    returnValue = max;
+                }
+                else
+                {
+                    returnValue = value;
+                }
+
+                return returnValue;
             }
         }
     }
