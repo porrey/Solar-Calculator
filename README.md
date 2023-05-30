@@ -1,6 +1,4 @@
-***This branch and all previous releases are under the Microsoft Reciprocal License. All newer version found in the master branch have been changed to LGPL v3.***
-
-[![Build Status](https://travis-ci.com/porrey/Solar-Calculator.svg?branch=master)](https://travis-ci.com/porrey/Solar-Calculator)
+***This branch and all previous releases are under the Microsoft Reciprocal License. All newer versions found in the master branch have been changed to LGPL v3.***
 
 # Solar-Calculator #
 Calculates the sunrise and sunset for a given date and location (using geo coordinates). This library uses the method outlined NOAA Solar Calculations Day spreadsheet found at http://www.esrl.noaa.gov/gmd/grad/solcalc/calcdetails.html.
