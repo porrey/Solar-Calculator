@@ -16,6 +16,7 @@
 // along with this program. If not, see http://www.gnu.org/licenses/.
 // 
 using System;
+using System.Globalization;
 using System.Runtime.CompilerServices;
 
 [assembly: InternalsVisibleTo("Innovative.SolarCalculator.Tests")]
@@ -737,7 +738,7 @@ namespace Innovative.Geometry
 		/// <returns>The short format string representation of the value of this instance.</returns>
 		public string ToShortFormat()
 		{
-			return this.InternalValue.ToString("0°.0000####");
+			return this.InternalValue.ToString("0°.0000####", CultureInfo.InvariantCulture);
 		}
 
 		/// <summary>
