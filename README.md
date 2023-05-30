@@ -14,6 +14,14 @@ Add this to your project in Visual Studio using NuGet Package Manager UI and ID 
 
     PM> Install-Package SolarCalculator
 
+
+# Notes #
+Starting in version **3.3.0** there are two new properties for checking if a date is a Polar Day (`IsPolarDay`) or Polar Night (`IsPolarNight`). If the combination of date and location result in a Polar Day or Polar Night, the values for Sunrise and Sunset are as follows:
+
+**Polar Day**:   Sunrise = `DateTime.MinValue`, Sunset = `DateTime.MaxValue`
+
+**Polar Night**: Sunrise = `DateTime.MaxValue`, Sunset = `DateTime.MinValue`
+
 # Sample Code #
 
 The sample code below shows how to initialize and call the Solar Calculator to get the sunrise and sunset for the given location.
