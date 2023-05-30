@@ -1,4 +1,4 @@
-[![Build Status](https://img.shields.io/travis/porrey/Solar-Calculator/master?style=for-the-badge)](https://travis-ci.com/porrey/Solar-Calculator)
+![GitHub Workflow Status (with branch)](https://img.shields.io/github/actions/workflow/status/porrey/Solar-Calculator/.github/workflows/dotnet.yml?style=for-the-badge)
 
 [![Nuget](https://img.shields.io/nuget/v/Angle?label=Angle%20-%20NuGet&style=for-the-badge)
 ![Nuget](https://img.shields.io/nuget/dt/Angle?label=Downloads&style=for-the-badge)](https://www.nuget.org/packages/Angle/)
