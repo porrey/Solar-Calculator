@@ -24,7 +24,7 @@ jobs:
       run: dotnet restore
       working-directory: Src/Solar-Calculator-Solution
     - name: Build
-      run: dotnet build --configuration Release --no-restore
+      run: dotnet build --no-restore
       working-directory: Src/Solar-Calculator-Solution
     - name: Test
       run: dotnet test --no-build --verbosity normal
