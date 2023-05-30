@@ -157,11 +157,12 @@ namespace Innovative.SolarCalculator
 			get
 			{
 				DateTime returnValue = DateTime.MinValue;
-				if (IsPolarNight)
+
+				if (this.IsPolarNight)
 				{
 					returnValue =  DateTime.MaxValue;
 				}
-				else if (IsPolarDay)
+				else if (this.IsPolarDay)
 				{
 					returnValue =  DateTime.MinValue;
 				}
@@ -197,11 +198,11 @@ namespace Innovative.SolarCalculator
 			{
 				DateTime returnValue = DateTime.MinValue;
 				
-				if (IsPolarDay)
+				if (this.IsPolarDay)
 				{
 					returnValue =  DateTime.MaxValue;
 				}
-				else if (IsPolarNight)
+				else if (this.IsPolarNight)
 				{
 					returnValue =  DateTime.MinValue;
 				}
@@ -690,7 +691,7 @@ namespace Innovative.SolarCalculator
 		{
 			get
 			{
-				var temp = this.TrueSolarTime / 4;
+				decimal temp = this.TrueSolarTime / 4;
 				return temp < 0 ? temp + 180 : temp - 180;
 			}
 		}
