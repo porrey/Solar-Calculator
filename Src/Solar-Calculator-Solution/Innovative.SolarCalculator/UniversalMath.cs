@@ -48,7 +48,7 @@ namespace Innovative.SolarCalculator
             /// <returns>An angle, θ, measured in radians.</returns>
             public static decimal Asin(decimal value)
             {
-                return (decimal)System.Math.Asin((double)value);
+                return (decimal)System.Math.Asin(Clamp((double)value, (double)decimal.MinusOne, (double)decimal.One));
             }
 
             /// <summary>
@@ -92,11 +92,26 @@ namespace Innovative.SolarCalculator
                 return (decimal)System.Math.Sqrt((double)value);
             }
 			
-            private static T Clamp<T>(T val, T min, T max) where T : System.IComparable<T>
+            /// <summary>Returns <paramref name="value" /> clamped to the inclusive range of <paramref name="min" /> and <paramref name="max" />.</summary>
+            /// <param name="value">The value to be clamped.</param>
+            /// <param name="min">The lower bound of the result.</param>
+            /// <param name="max">The upper bound of the result.</param>
+            /// <returns>
+            ///   <paramref name="value" /> if <paramref name="min" /> ≤ <paramref name="value" /> ≤ <paramref name="max" />.
+            ///
+            ///   -or-
+            ///
+            ///   <paramref name="min" /> if <paramref name="value" /> &lt; <paramref name="min" />.
+            ///
+            ///   -or-
+            ///
+            ///   <paramref name="max" /> if <paramref name="max" /> &lt; <paramref name="value" />.
+            /// </returns>
+            private static T Clamp<T>(T value, T min, T max) where T : System.IComparable<T>
             {
-                if (val.CompareTo(min) < 0) return min;
-                else if(val.CompareTo(max) > 0) return max;
-                else return val;
+                if (value.CompareTo(min) < 0) return min;
+                else if(value.CompareTo(max) > 0) return max;
+                else return value;
             }
         }
     }

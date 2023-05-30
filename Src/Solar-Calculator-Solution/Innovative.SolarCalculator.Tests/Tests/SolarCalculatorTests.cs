@@ -354,12 +354,12 @@ namespace Innovative.SolarCalculator.Tests
         [Test]
         public void CheckPolarTimes()
         {
-            //WIP: Solve for Polar day & Night
+            //https://gml.noaa.gov/grad/solcalc/table.php?lat=68.262796&lon=14.249245&year=2023
             SolarTimes polarDay = new SolarTimes()
             {
                 Latitude = 68.2627966,
                 Longitude = 14.2492450,
-                ForDate = new DateTimeOffset(new DateTime(2023, 6, 29, 12, 0, 0), TimeSpan.FromHours(2)),
+                ForDate = new DateTimeOffset(new DateTime(2023, 5, 29, 12, 0, 0), TimeSpan.FromHours(2)),
             };
             
             SolarTimes polarNight = new SolarTimes()
@@ -369,39 +369,32 @@ namespace Innovative.SolarCalculator.Tests
                 ForDate = new DateTimeOffset(new DateTime(2024, 01, 01, 12, 0, 0), TimeSpan.FromHours(1)),
             };
             
-            Assert.AreEqual(2023, polarNight.Sunset.Year);
-            Assert.AreEqual(12,   polarNight.Sunset.Month);
-            Assert.AreEqual(07,   polarNight.Sunset.Day);
-            Assert.AreEqual(12,   polarNight.Sunset.Hour);
-            Assert.AreEqual(05,   polarNight.Sunset.Minute);
-            Assert.AreEqual(48,   polarNight.Sunset.Second);
+            SolarTimes notPolarTime = new SolarTimes()
+            {
+                Latitude = 68.2627966,
+                Longitude = 14.2492450,
+                ForDate = new DateTimeOffset(new DateTime(2024, 02, 15, 12, 0, 0), TimeSpan.FromHours(1)),
+            };
             
-            Assert.AreEqual(2024, polarNight.Sunrise.Year);
-            Assert.AreEqual(01,   polarNight.Sunrise.Month);
-            Assert.AreEqual(07,   polarNight.Sunrise.Day);
-            Assert.AreEqual(11,   polarNight.Sunrise.Hour);
-            Assert.AreEqual(45,   polarNight.Sunrise.Minute);
-            Assert.AreEqual(11,   polarNight.Sunrise.Second);
             
+            //During polar night, the sunset was some time in the past, for now MinValue
+            Assert.AreEqual(DateTime.MinValue, polarNight.Sunset);
+            //During polar night, the sunrise is some time in future, for now MaxValue
+            Assert.AreEqual(DateTime.MaxValue, polarNight.Sunrise);
+            //Is polar night, sun never rises
             Assert.AreEqual(true, polarNight.IsPolarNight);
             Assert.AreEqual(false, polarNight.IsPolarDay);
             
-            Assert.AreEqual(2023, polarDay.Sunset.Year);
-            Assert.AreEqual(07,   polarDay.Sunset.Month);
-            Assert.AreEqual(21,   polarDay.Sunset.Day);
-            Assert.AreEqual(00,   polarDay.Sunset.Hour);
-            Assert.AreEqual(41,   polarDay.Sunset.Minute);
-            Assert.AreEqual(49,   polarDay.Sunset.Second);
-            
-            Assert.AreEqual(2023, polarDay.Sunrise.Year);
-            Assert.AreEqual(05,   polarDay.Sunrise.Month);
-            Assert.AreEqual(25,   polarDay.Sunrise.Day);
-            Assert.AreEqual(01,   polarDay.Sunrise.Hour);
-            Assert.AreEqual(17,   polarDay.Sunrise.Minute);
-            Assert.AreEqual(00,   polarDay.Sunrise.Second);
-            
+            //During polar day, the sunrise was some time in the past, for now MinValue
+            Assert.AreEqual(DateTime.MinValue, polarDay.Sunrise);
+            //During polar day, the sunset is some time in future, for now MaxValue
+            Assert.AreEqual(DateTime.MaxValue, polarDay.Sunset);
+            //Is polar day, sun never goes down
             Assert.AreEqual(true, polarDay.IsPolarDay);
             Assert.AreEqual(false, polarDay.IsPolarNight);
+            
+            Assert.AreEqual(false, notPolarTime.IsPolarDay);
+            Assert.AreEqual(false, notPolarTime.IsPolarNight);
         }
     }
 }

@@ -1,4 +1,4 @@
-//
+﻿//
 // Solar Calculator
 // Copyright(C) 2013-2022, Daniel M. Porrey. All rights reserved.
 // 
@@ -157,8 +157,8 @@ namespace Innovative.SolarCalculator
 			get
 			{
 				DateTime returnValue = DateTime.MinValue;
-				if (IsPolarNight) return new SolarTimes(this.ForDate.Date.AddDays(1), Latitude, Longitude).Sunrise;
-				else if (IsPolarDay) return new SolarTimes(this.ForDate.Date.AddDays(-1), Latitude, Longitude).Sunrise;
+				if (IsPolarNight) return DateTime.MaxValue;
+				if (IsPolarDay) return DateTime.MinValue;
 				decimal dayFraction = (decimal)this.SolarNoon.TimeOfDay.TotalDays - this.HourAngleSunrise * 4M / 1440M;
 				returnValue = this.ForDate.Date.Add(DecimalTimeSpan.FromDays(dayFraction));
 
@@ -166,9 +166,17 @@ namespace Innovative.SolarCalculator
 			}
 		}
 		
-		public bool IsPolarDay => TimeSpan.FromDays(1) - SunlightDuration <= TimeSpan.FromMilliseconds(1);
+		/// <summary>
+		/// A phenomenon in the northernmost and southernmost regions of Earth where day lasts for more than 24 hours, sun never sets.
+		/// </summary>
+		// Due to calculations not being correct around the pole, we account for very tiny amout of incorrectness for detrmining Polar day
+		public bool IsPolarDay => TimeSpan.FromDays(1) - this.SunlightDuration <= TimeSpan.FromMilliseconds(1);
 
-		public bool IsPolarNight => this.SunlightDuration == TimeSpan.Zero;
+		/// <summary>
+		/// A phenomenon in the northernmost and southernmost regions of Earth where night lasts for more than 24 hours, sun never rises.
+		/// </summary>
+		// Due to calculations not being correct around the pole, we account for very tiny amout of incorrectness for detrmining Polar night
+		public bool IsPolarNight => this.SunlightDuration <= TimeSpan.FromMilliseconds(1);
 
 		/// <summary>
 		/// Sun Set Time
@@ -180,8 +188,8 @@ namespace Innovative.SolarCalculator
 			{
 				DateTime returnValue = DateTime.MinValue;
 				
-				if (IsPolarDay) return new SolarTimes(this.ForDate.Date.AddDays(1), Latitude, Longitude).Sunset;
-				else if (IsPolarNight) return new SolarTimes(this.ForDate.Date.AddDays(-1), Latitude, Longitude).Sunset;
+				if (IsPolarDay) return DateTime.MaxValue;
+				if (IsPolarNight) return DateTime.MinValue;
 				decimal dayFraction = (decimal)this.SolarNoon.TimeOfDay.TotalDays + this.HourAngleSunrise * 4M / 1440M;
 				returnValue = this.ForDate.Date.Add(DecimalTimeSpan.FromDays(dayFraction));
 

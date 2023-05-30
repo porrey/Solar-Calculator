@@ -155,6 +155,16 @@
             (Spreadsheet Column Y)
             </summary>
         </member>
+        <member name="P:Innovative.SolarCalculator.SolarTimes.IsPolarDay">
+            <summary>
+            A phenomenon in the northernmost and southernmost regions of Earth where day lasts for more than 24 hours, sun never sets.
+            </summary>
+        </member>
+        <member name="P:Innovative.SolarCalculator.SolarTimes.IsPolarNight">
+            <summary>
+            A phenomenon in the northernmost and southernmost regions of Earth where night lasts for more than 24 hours, sun never rises.
+            </summary>
+        </member>
         <member name="P:Innovative.SolarCalculator.SolarTimes.Sunset">
             <summary>
             Sun Set Time
@@ -440,6 +450,23 @@
             </summary>
             <param name="value">The number whose square root is to be found.</param>
             <returns>The positive square root of value.</returns>
+        </member>
+        <member name="M:Innovative.SolarCalculator.Universal.Math.Clamp``1(``0,``0,``0)">
+             <summary>Returns <paramref name="value" /> clamped to the inclusive range of <paramref name="min" /> and <paramref name="max" />.</summary>
+             <param name="value">The value to be clamped.</param>
+             <param name="min">The lower bound of the result.</param>
+             <param name="max">The upper bound of the result.</param>
+             <returns>
+               <paramref name="value" /> if <paramref name="min" /> ≤ <paramref name="value" /> ≤ <paramref name="max" />.
+            
+               -or-
+            
+               <paramref name="min" /> if <paramref name="value" /> &lt; <paramref name="min" />.
+            
+               -or-
+            
+               <paramref name="max" /> if <paramref name="max" /> &lt; <paramref name="value" />.
+             </returns>
         </member>
     </members>
 </doc>
