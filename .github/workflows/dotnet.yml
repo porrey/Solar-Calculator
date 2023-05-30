@@ -23,6 +23,6 @@ jobs:
     - name: Restore dependencies
       run: dotnet restore
     - name: Build
-      run: dotnet build --no-restore
+      run: dotnet build Src/Solar-Calculator-Solution/Solar-Calculator-Solution.sln --configuration Release --no-restore
     - name: Test
-      run: dotnet test --no-build --verbosity normal
+      run: dotnet test Src/Solar-Calculator-Solution/Solar-Calculator-Solution.sln --no-build --verbosity normal
