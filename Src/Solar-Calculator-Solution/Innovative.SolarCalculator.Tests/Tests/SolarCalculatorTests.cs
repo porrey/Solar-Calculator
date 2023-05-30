@@ -350,5 +350,49 @@ namespace Innovative.SolarCalculator.Tests
             Assert.AreEqual(14,   solarTimes.DuskAstronomical.Second);
         }
 
+        [Test]
+        public void CheckPolarTimes()
+        {
+            // https://gml.noaa.gov/grad/solcalc/table.php?lat=68.262796&lon=14.249245&year=2023
+            SolarTimes polarDay = new SolarTimes()
+            {
+                Latitude = 68.2627966,
+                Longitude = 14.2492450,
+                ForDate = new DateTimeOffset(new DateTime(2023, 5, 29, 12, 0, 0), TimeSpan.FromHours(2)),
+            };
+            
+            SolarTimes polarNight = new SolarTimes()
+            {
+                Latitude = 68.2627966,
+                Longitude = 14.2492450,
+                ForDate = new DateTimeOffset(new DateTime(2024, 01, 01, 12, 0, 0), TimeSpan.FromHours(1)),
+            };
+            
+            SolarTimes notPolarTime = new SolarTimes()
+            {
+                Latitude = 68.2627966,
+                Longitude = 14.2492450,
+                ForDate = new DateTimeOffset(new DateTime(2024, 02, 15, 12, 0, 0), TimeSpan.FromHours(1)),
+            };
+            
+            // During polar night, the sunset was some time in the past, for now MinValue
+            Assert.AreEqual(DateTime.MinValue, polarNight.Sunset);
+            // During polar night, the sunrise is some time in future, for now MaxValue
+            Assert.AreEqual(DateTime.MaxValue, polarNight.Sunrise);
+            // Is polar night, sun never rises
+            Assert.AreEqual(true, polarNight.IsPolarNight);
+            Assert.AreEqual(false, polarNight.IsPolarDay);
+            
+            // During polar day, the sunrise was some time in the past, for now MinValue
+            Assert.AreEqual(DateTime.MinValue, polarDay.Sunrise);
+            // During polar day, the sunset is some time in future, for now MaxValue
+            Assert.AreEqual(DateTime.MaxValue, polarDay.Sunset);
+            // Is polar day, sun never goes down
+            Assert.AreEqual(true, polarDay.IsPolarDay);
+            Assert.AreEqual(false, polarDay.IsPolarNight);
+            
+            Assert.AreEqual(false, notPolarTime.IsPolarDay);
+            Assert.AreEqual(false, notPolarTime.IsPolarNight);
+        }
     }
 }

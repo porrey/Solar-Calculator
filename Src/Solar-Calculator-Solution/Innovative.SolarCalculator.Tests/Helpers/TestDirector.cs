@@ -41,28 +41,28 @@ namespace Innovative.SolarCalculator.Tests
 						   {
 							   Date = DateTime.Parse(tbl["Date"], new CultureInfo("en-US")),
 							   Time = DateTime.Parse(tbl["Time"], new CultureInfo("en-US")),
-							   TimeZoneOffset = Convert.ToInt32(tbl["TimeZoneOffset"]),
-							   Latitude = Convert.ToDecimal(tbl["Latitude"]),
-							   Longitude = Convert.ToDecimal(tbl["Longitude"]),
-							   JulianDay = Convert.ToDecimal(tbl["JulianDay"]),
-							   JulianCentury = Convert.ToDecimal(tbl["JulianCentury"]),
-							   GeomMeanLongSun = Convert.ToDecimal(tbl["GeomMeanLongSun"]),
-							   GeomMeanAnomSun = Convert.ToDecimal(tbl["GeomMeanAnomSun"]),
-							   EccentEarthOrbit = Convert.ToDecimal(tbl["EccentEarthOrbit"]),
-							   SunEqofCtr = Convert.ToDecimal(tbl["SunEqofCtr"]),
-							   SunTrueLong = Convert.ToDecimal(tbl["SunTrueLong"]),
-							   SunAppLong = Convert.ToDecimal(tbl["SunAppLong"]),
-							   MeanObliqEcliptic = Convert.ToDecimal(tbl["MeanObliqEcliptic"]),
-							   ObliqCorr = Convert.ToDecimal(tbl["ObliqCorr"]),
-							   SunDeclin = Convert.ToDecimal(tbl["SunDeclin"]),
-							   Vary = Convert.ToDecimal(tbl["vary"]),
-							   EqofTime = Convert.ToDecimal(tbl["EqofTime"]),
-							   HaSunrise = Convert.ToDecimal(tbl["HaSunrise"]),
+							   TimeZoneOffset = Convert.ToInt32(tbl["TimeZoneOffset"], new CultureInfo("en-US")),
+							   Latitude = Convert.ToDecimal(tbl["Latitude"], new CultureInfo("en-US")),
+							   Longitude = Convert.ToDecimal(tbl["Longitude"], new CultureInfo("en-US")),
+							   JulianDay = Convert.ToDecimal(tbl["JulianDay"], new CultureInfo("en-US")),
+							   JulianCentury = Convert.ToDecimal(tbl["JulianCentury"], new CultureInfo("en-US")),
+							   GeomMeanLongSun = Convert.ToDecimal(tbl["GeomMeanLongSun"], new CultureInfo("en-US")),
+							   GeomMeanAnomSun = Convert.ToDecimal(tbl["GeomMeanAnomSun"], new CultureInfo("en-US")),
+							   EccentEarthOrbit = Convert.ToDecimal(tbl["EccentEarthOrbit"], new CultureInfo("en-US")),
+							   SunEqofCtr = Convert.ToDecimal(tbl["SunEqofCtr"], new CultureInfo("en-US")),
+							   SunTrueLong = Convert.ToDecimal(tbl["SunTrueLong"], new CultureInfo("en-US")),
+							   SunAppLong = Convert.ToDecimal(tbl["SunAppLong"], new CultureInfo("en-US")),
+							   MeanObliqEcliptic = Convert.ToDecimal(tbl["MeanObliqEcliptic"], new CultureInfo("en-US")),
+							   ObliqCorr = Convert.ToDecimal(tbl["ObliqCorr"], new CultureInfo("en-US")),
+							   SunDeclin = Convert.ToDecimal(tbl["SunDeclin"], new CultureInfo("en-US")),
+							   Vary = Convert.ToDecimal(tbl["vary"], new CultureInfo("en-US")),
+							   EqofTime = Convert.ToDecimal(tbl["EqofTime"], new CultureInfo("en-US")),
+							   HaSunrise = Convert.ToDecimal(tbl["HaSunrise"], new CultureInfo("en-US")),
 							   SolarNoon = DateTime.Parse(tbl["SolarNoon"], new CultureInfo("en-US")),
 							   SunriseTime = DateTime.Parse(tbl["SunriseTime"], new CultureInfo("en-US")),
 							   SunsetTime = DateTime.Parse(tbl["SunsetTime"], new CultureInfo("en-US")),
-							   SunlightDuration = Convert.ToDouble(tbl["SunlightDuration"]),
-							   TrueSolarTime = Convert.ToDecimal(tbl["TrueSolarTime"])
+							   SunlightDuration = Convert.ToDouble(tbl["SunlightDuration"], new CultureInfo("en-US")),
+							   TrueSolarTime = Convert.ToDecimal(tbl["TrueSolarTime"], new CultureInfo("en-US"))
 						   }).ToArray();
 
 			return returnValue;
@@ -81,7 +81,7 @@ namespace Innovative.SolarCalculator.Tests
 						   select new DateValueTestData()
 						   {
 							   Date = DateTime.Parse(tbl["Date"], new CultureInfo("en-US")),
-							   DateValue = Convert.ToDecimal(tbl["DateValue"])
+							   DateValue = Convert.ToDecimal(tbl["DateValue"], new CultureInfo("en-US"))
 						   }).ToArray();
 
 			return returnValue;
@@ -99,17 +99,17 @@ namespace Innovative.SolarCalculator.Tests
 			returnValue = (from tbl in TestDirector.ParseCsv(contents)
 						   select new CsharpExcelTestData()
 						   {
-							   Value1 = Convert.ToDecimal(tbl["Value1"]),
-							   Value2 = Convert.ToDecimal(tbl["Value2"]),
-							   Value3 = Convert.ToDecimal(tbl["Value3"]),
-							   Radians = Convert.ToDecimal(tbl["Radians"]),
-							   Degrees = Convert.ToDecimal(tbl["Degrees"]),
-							   Mod = Convert.ToDecimal(tbl["Mod"]),
-							   Sin = Convert.ToDecimal(tbl["Sin"]),
-							   Asin = Convert.ToDecimal(tbl["Asin"]),
-							   Cos = Convert.ToDecimal(tbl["Cos"]),
-							   Acos = Convert.ToDecimal(tbl["Acos"]),
-							   Tan = Convert.ToDecimal(tbl["Tan"])
+							   Value1 = Convert.ToDecimal(tbl["Value1"], new CultureInfo("en-US")),
+							   Value2 = Convert.ToDecimal(tbl["Value2"], new CultureInfo("en-US")),
+							   Value3 = Convert.ToDecimal(tbl["Value3"], new CultureInfo("en-US")),
+							   Radians = Convert.ToDecimal(tbl["Radians"], new CultureInfo("en-US")),
+							   Degrees = Convert.ToDecimal(tbl["Degrees"], new CultureInfo("en-US")),
+							   Mod = Convert.ToDecimal(tbl["Mod"], new CultureInfo("en-US")),
+							   Sin = Convert.ToDecimal(tbl["Sin"], new CultureInfo("en-US")),
+							   Asin = Convert.ToDecimal(tbl["Asin"], new CultureInfo("en-US")),
+							   Cos = Convert.ToDecimal(tbl["Cos"], new CultureInfo("en-US")),
+							   Acos = Convert.ToDecimal(tbl["Acos"], new CultureInfo("en-US")),
+							   Tan = Convert.ToDecimal(tbl["Tan"], new CultureInfo("en-US"))
 						   }).ToArray();
 
 			return returnValue;
@@ -127,21 +127,21 @@ namespace Innovative.SolarCalculator.Tests
 			returnValue = (from tbl in TestDirector.ParseCsv(contents)
 						   select new AngleTestData()
 						   {
-							   Angle = Convert.ToDecimal(tbl["Angle2"]),
-							   Radians = Convert.ToDecimal(tbl["Radians"]),
-							   Degrees = Convert.ToDecimal(tbl["Degrees"]),
-							   DecimalMinutes = Convert.ToDecimal(tbl["DecimalMinutes"]),
-							   Arcminute = Convert.ToDecimal(tbl["Arcminute"]),
-							   Arcsecond = Convert.ToDecimal(tbl["Arcsecond"]),
+							   Angle = Convert.ToDecimal(tbl["Angle2"], new CultureInfo("en-US")),
+							   Radians = Convert.ToDecimal(tbl["Radians"], new CultureInfo("en-US")),
+							   Degrees = Convert.ToDecimal(tbl["Degrees"], new CultureInfo("en-US")),
+							   DecimalMinutes = Convert.ToDecimal(tbl["DecimalMinutes"], new CultureInfo("en-US")),
+							   Arcminute = Convert.ToDecimal(tbl["Arcminute"], new CultureInfo("en-US")),
+							   Arcsecond = Convert.ToDecimal(tbl["Arcsecond"], new CultureInfo("en-US")),
 							   LongFormat = tbl["LongFormat"],
 							   ShortFormat = tbl["ShortFormat"],
-							   RandomNumber = Convert.ToDecimal(tbl["RandomNumber"]),
-							   RadiansMultiplied = Convert.ToDecimal(tbl["RadiansMultiplied"]),
-							   RadiansDivided = Convert.ToDecimal(tbl["RadiansDivided"]),
-							   ReducedDegrees = Convert.ToDecimal(tbl["ReducedDegrees"]),
-							   TotalMinutes = Convert.ToDecimal(tbl["TotalMinutes"]),
-							   TotalSeconds = Convert.ToDecimal(tbl["TotalSeconds"]),
-							   OppositeDirection = Convert.ToDecimal(tbl["OppositeDirection"])
+							   RandomNumber = Convert.ToDecimal(tbl["RandomNumber"], new CultureInfo("en-US")),
+							   RadiansMultiplied = Convert.ToDecimal(tbl["RadiansMultiplied"], new CultureInfo("en-US")),
+							   RadiansDivided = Convert.ToDecimal(tbl["RadiansDivided"], new CultureInfo("en-US")),
+							   ReducedDegrees = Convert.ToDecimal(tbl["ReducedDegrees"], new CultureInfo("en-US")),
+							   TotalMinutes = Convert.ToDecimal(tbl["TotalMinutes"], new CultureInfo("en-US")),
+							   TotalSeconds = Convert.ToDecimal(tbl["TotalSeconds"], new CultureInfo("en-US")),
+							   OppositeDirection = Convert.ToDecimal(tbl["OppositeDirection"], new CultureInfo("en-US"))
 						   }).ToArray();
 
 			return returnValue;
