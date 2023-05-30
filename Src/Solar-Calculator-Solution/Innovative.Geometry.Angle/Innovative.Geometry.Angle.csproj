@@ -7,7 +7,7 @@
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 		<PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
 		<PackageId>Angle</PackageId>
-		<Version>3.2.1</Version>
+		<Version>3.3.0</Version>
 		<Authors>Daniel M. Porrey</Authors>
 		<Company>Daniel M. Porrey</Company>
 		<PackageIconUrl></PackageIconUrl>
@@ -26,8 +26,8 @@ v2.0.0 Converted to .NET Standard/Moved to GitHub.
 v1.0.2 Added multiple .NET versions. Completed units test and corrected minor issues.
 v1.0.1 Changed namespace to Innovative.Geometry</PackageReleaseNotes>
 		<NeutralLanguage>en-US</NeutralLanguage>
-		<AssemblyVersion>3.2.1</AssemblyVersion>
-		<FileVersion>3.2.1</FileVersion>
+		<AssemblyVersion>3.3.0</AssemblyVersion>
+		<FileVersion>3.3.0</FileVersion>
 		<Product>Angle</Product>
 		<Description>Defines a type for a geometric angle that allows various ways of setting and converting the values from and to different modes. Angle inherently is a double and can be used in place of a double when specifically referring to a geometric angle with the value being the degrees of the angle.</Description>
 		<RepositoryUrl>https://github.com/porrey/Solar-Calculator.git</RepositoryUrl>
