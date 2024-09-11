@@ -35,11 +35,11 @@ namespace Innovative.SolarCalculator.Tests
 		public void AngleEmptyConstructorTest()
 		{
 			Angle target = new Angle();
-			Assert.AreEqual(0D, (double)target);
-			Assert.AreEqual(0M, (decimal)target);
-			Assert.AreEqual(0, target.Degrees);
-			Assert.AreEqual(0, target.Arcminute);
-			Assert.AreEqual(0M, target.Arcsecond);
+			Assert2.AreEqual(0D, (double)target);
+			Assert2.AreEqual(0M, (decimal)target);
+			Assert2.AreEqual(0, target.Degrees);
+			Assert2.AreEqual(0, target.Arcminute);
+			Assert2.AreEqual(0M, target.Arcsecond);
 		}
 
 		[Test]
@@ -48,7 +48,7 @@ namespace Innovative.SolarCalculator.Tests
 		{
 			int degrees = Convert.ToInt32(item.Angle);
 			Angle target = new Angle(degrees);
-			Assert.AreEqual(degrees, target.Degrees);
+			Assert2.AreEqual(degrees, target.Degrees);
 		}
 
 		[Test]
@@ -60,8 +60,8 @@ namespace Innovative.SolarCalculator.Tests
 
 			Angle target = new Angle(item.Angle);
 
-			Assert.AreEqual(degrees, target.Degrees);
-			Assert.AreEqual(arcminute, target.Arcminute);
+			Assert2.AreEqual(degrees, target.Degrees);
+			Assert2.AreEqual(arcminute, target.Arcminute);
 			CustomAssert.AreEqual(item.Arcsecond, target.Arcsecond, TestDirector.MathDecimalDelta);
 		}
 
@@ -75,8 +75,8 @@ namespace Innovative.SolarCalculator.Tests
 
 			Angle target = new Angle(doubleDegrees);
 
-			Assert.AreEqual(degrees, target.Degrees);
-			Assert.AreEqual(arcminute, target.Arcminute);
+			Assert2.AreEqual(degrees, target.Degrees);
+			Assert2.AreEqual(arcminute, target.Arcminute);
 			CustomAssert.AreEqual(item.Arcsecond, target.Arcsecond, TestDirector.MathDecimalDelta);
 		}
 
@@ -102,7 +102,7 @@ namespace Innovative.SolarCalculator.Tests
 
 			Angle target = new Angle(degrees, arcminute, item.Arcsecond);
 
-			Assert.AreEqual(doubleDegrees, (double)target, TestDirector.MathDoubleDelta);
+			Assert2.AreEqual(doubleDegrees, (double)target, TestDirector.MathDoubleDelta);
 		}
 		#endregion
 
@@ -114,7 +114,7 @@ namespace Innovative.SolarCalculator.Tests
 			int degrees = Convert.ToInt32(item.Degrees);
 
 			Angle target = new Angle(item.Angle);
-			Assert.AreEqual(degrees, target.Degrees);
+			Assert2.AreEqual(degrees, target.Degrees);
 		}
 
 		[Test]
@@ -124,7 +124,7 @@ namespace Innovative.SolarCalculator.Tests
 			int arcMinute = Convert.ToInt32(item.Arcminute);
 
 			Angle target = new Angle(item.Angle);
-			Assert.AreEqual(arcMinute, target.Arcminute);
+			Assert2.AreEqual(arcMinute, target.Arcminute);
 		}
 
 		[Test]
@@ -197,7 +197,7 @@ namespace Innovative.SolarCalculator.Tests
 
 			Angle target = new Angle(item.Angle);
 			target.Reduce();
-			Assert.IsTrue(target.Degrees <= 360);
+			Assert2.IsTrue(target.Degrees <= 360);
 			CustomAssert.AreEqual(reduced, (decimal)target, TestDirector.MathDecimalDelta);
 		}
 		#endregion
@@ -210,12 +210,12 @@ namespace Innovative.SolarCalculator.Tests
 			Angle target0 = new Angle(item.Angle);
 			object target1 = new Angle(item.Angle + 100);
 			bool areNotEqual = !target0.Equals(target1);
-			Assert.IsTrue(areNotEqual);
+			Assert2.IsTrue(areNotEqual);
 
 			Angle target2 = new Angle(item.Angle);
 			object target3 = new Angle(item.Angle);
 			bool areEqual = target2.Equals(target3);
-			Assert.IsTrue(areEqual);
+			Assert2.IsTrue(areEqual);
 		}
 
 		[Test]
@@ -224,7 +224,7 @@ namespace Innovative.SolarCalculator.Tests
 			Angle target = new Angle();
 			object obj = null;
 			bool actual = target.Equals(obj);
-			Assert.IsFalse(actual);
+			Assert2.IsFalse(actual);
 		}
 
 		[Test]
@@ -232,7 +232,7 @@ namespace Innovative.SolarCalculator.Tests
 		public void GetHashCodeTest(AngleTestData item)
 		{
 			Angle target = new Angle(item.Angle);
-			Assert.AreEqual(item.Angle.GetHashCode(), target.GetHashCode());
+			Assert2.AreEqual(item.Angle.GetHashCode(), target.GetHashCode());
 		}
 		#endregion
 
@@ -244,7 +244,7 @@ namespace Innovative.SolarCalculator.Tests
 			Angle target = new Angle(item.Angle);
 
 			object actual = (decimal)target;
-			Assert.IsTrue(actual is decimal);
+			Assert2.IsTrue(actual is decimal);
 			CustomAssert.AreEqual(item.Angle, (decimal)target, TestDirector.MathDecimalDelta);
 		}
 
@@ -256,8 +256,8 @@ namespace Innovative.SolarCalculator.Tests
 			Angle target = new Angle(doubleDegrees);
 
 			object actual = (double)target;
-			Assert.IsTrue(actual is double);
-			Assert.AreEqual(doubleDegrees, (double)target, TestDirector.MathDoubleDelta);
+			Assert2.IsTrue(actual is double);
+			Assert2.AreEqual(doubleDegrees, (double)target, TestDirector.MathDoubleDelta);
 		}
 
 		[Test]
@@ -265,7 +265,7 @@ namespace Innovative.SolarCalculator.Tests
 		public void ImplicitDecimalToAngleTest(AngleTestData item)
 		{
 			object target = (Angle)item.Angle;
-			Assert.IsTrue(target is Angle);
+			Assert2.IsTrue(target is Angle);
 			CustomAssert.AreEqual(item.Angle, (decimal)((Angle)target), TestDirector.MathDecimalDelta);
 		}
 
@@ -275,8 +275,8 @@ namespace Innovative.SolarCalculator.Tests
 		{
 			double doubleDegrees = Convert.ToDouble(item.Angle);
 			object target = (Angle)doubleDegrees;
-			Assert.IsTrue(target is Angle);
-			Assert.AreEqual(doubleDegrees, (double)((Angle)target), TestDirector.MathDoubleDelta);
+			Assert2.IsTrue(target is Angle);
+			Assert2.AreEqual(doubleDegrees, (double)((Angle)target), TestDirector.MathDoubleDelta);
 		}
 		#endregion
 
@@ -368,7 +368,7 @@ namespace Innovative.SolarCalculator.Tests
 			Angle secondAngle = item.Angle;
 
 			bool target = firstAngle == secondAngle;
-			Assert.AreEqual(firstAngle.InternalValue == secondAngle.InternalValue, target);
+			Assert2.AreEqual(firstAngle.InternalValue == secondAngle.InternalValue, target);
 		}
 
 		[Test]
@@ -379,7 +379,7 @@ namespace Innovative.SolarCalculator.Tests
 			Angle secondAngle = item.Angle;
 
 			bool target = firstAngle != secondAngle;
-			Assert.AreEqual(firstAngle.InternalValue != secondAngle.InternalValue, target);
+			Assert2.AreEqual(firstAngle.InternalValue != secondAngle.InternalValue, target);
 		}
 
 		[Test]
@@ -390,7 +390,7 @@ namespace Innovative.SolarCalculator.Tests
 			Angle secondAngle = item.Angle;
 
 			bool target = firstAngle > secondAngle;
-			Assert.AreEqual(firstAngle.InternalValue > secondAngle.InternalValue, target);
+			Assert2.AreEqual(firstAngle.InternalValue > secondAngle.InternalValue, target);
 		}
 
 		[Test]
@@ -401,7 +401,7 @@ namespace Innovative.SolarCalculator.Tests
 			Angle secondAngle = item.Angle;
 
 			bool target = firstAngle >= secondAngle;
-			Assert.AreEqual(firstAngle.InternalValue >= secondAngle.InternalValue, target);
+			Assert2.AreEqual(firstAngle.InternalValue >= secondAngle.InternalValue, target);
 		}
 
 		[Test]
@@ -412,7 +412,7 @@ namespace Innovative.SolarCalculator.Tests
 			Angle secondAngle = item.Angle;
 
 			bool target = firstAngle < secondAngle;
-			Assert.AreEqual(firstAngle.InternalValue < secondAngle.InternalValue, target);
+			Assert2.AreEqual(firstAngle.InternalValue < secondAngle.InternalValue, target);
 		}
 
 		[Test]
@@ -423,7 +423,7 @@ namespace Innovative.SolarCalculator.Tests
 			Angle secondAngle = item.Angle;
 
 			bool target = firstAngle <= secondAngle;
-			Assert.AreEqual(firstAngle.InternalValue <= secondAngle.InternalValue, target);
+			Assert2.AreEqual(firstAngle.InternalValue <= secondAngle.InternalValue, target);
 		}
 
 		[Test]
@@ -446,11 +446,11 @@ namespace Innovative.SolarCalculator.Tests
 		public void EmptyTest()
 		{
 			Angle target = Angle.Empty;
-			Assert.AreEqual(0D, (double)target);
-			Assert.AreEqual(0M, (decimal)target);
-			Assert.AreEqual(0, target.Degrees);
-			Assert.AreEqual(0, target.Arcminute);
-			Assert.AreEqual(0M, target.Arcsecond);
+			Assert2.AreEqual(0D, (double)target);
+			Assert2.AreEqual(0M, (decimal)target);
+			Assert2.AreEqual(0, target.Degrees);
+			Assert2.AreEqual(0, target.Arcminute);
+			Assert2.AreEqual(0M, target.Arcsecond);
 		}
 
 		[Test]
@@ -500,8 +500,8 @@ namespace Innovative.SolarCalculator.Tests
 			Angle target = Angle.FromRadians(radians);
 
 			CustomAssert.AreEqual(item.Angle, (decimal)target, TestDirector.MathDecimalDelta);
-			Assert.AreEqual(degrees, target.Degrees);
-			Assert.AreEqual(arcminute, target.Arcminute);
+			Assert2.AreEqual(degrees, target.Degrees);
+			Assert2.AreEqual(arcminute, target.Arcminute);
 			CustomAssert.AreEqual(arcsecond, target.Arcsecond, TestDirector.MathDecimalDelta);
 		}
 
@@ -512,7 +512,7 @@ namespace Innovative.SolarCalculator.Tests
 			int degrees = Convert.ToInt32(item.Degrees);
 			
 			Angle target = new Angle(item.Angle);
-			Assert.AreEqual(degrees, Angle.GetDegrees(target));
+			Assert2.AreEqual(degrees, Angle.GetDegrees(target));
 		}
 
 		[Test]
@@ -522,7 +522,7 @@ namespace Innovative.SolarCalculator.Tests
 			int arcminute = Convert.ToInt32(item.Arcminute);
 
 			int actual = Angle.GetArcminute(item.Angle);
-			Assert.AreEqual(arcminute, actual);
+			Assert2.AreEqual(arcminute, actual);
 		}
 
 		[Test]
@@ -538,7 +538,7 @@ namespace Innovative.SolarCalculator.Tests
 		public void StaticReduceTest(AngleTestData item)
 		{
 			Angle target = Angle.Reduce(item.Angle);
-			Assert.IsTrue(target.Degrees <= 360);
+			Assert2.IsTrue(target.Degrees <= 360);
 			CustomAssert.AreEqual(item.ReducedDegrees, (decimal)target, TestDirector.MathDecimalDelta);
 		}
 
@@ -571,7 +571,7 @@ namespace Innovative.SolarCalculator.Tests
 		public void InternalValueTest(AngleTestData item)
 		{
 			Angle target = new Angle(item.Angle);
-			Assert.AreEqual(item.Angle, target.InternalValue);
+			Assert2.AreEqual(item.Angle, target.InternalValue);
 		}
 
 		[Test]
@@ -585,7 +585,7 @@ namespace Innovative.SolarCalculator.Tests
 			decimal seconds1 = Math.Abs(item.Arcsecond);
 			seconds1 = seconds1 == 0 ? seconds1 = -1 : seconds1;
 			Angle.NormalDirection(ref degrees1, ref minutes1, ref seconds1);
-			Assert.IsTrue(degrees1 <= 0 && minutes1 <= 0 && seconds1 <= 0);
+			Assert2.IsTrue(degrees1 <= 0 && minutes1 <= 0 && seconds1 <= 0);
 
 			int degrees2 = Math.Abs(Convert.ToInt32(item.Degrees));
 			degrees2 = degrees2 == 0 ? degrees2 = -1 : degrees2;
@@ -594,7 +594,7 @@ namespace Innovative.SolarCalculator.Tests
 			decimal seconds2 = Math.Abs(item.Arcsecond);
 			seconds2 = seconds2 == 0 ? seconds2 = -1 : seconds2;
 			Angle.NormalDirection(ref degrees2, ref minutes2, ref seconds2);
-			Assert.IsTrue(degrees2 <= 0 && minutes2 <= 0 && seconds2 <= 0);
+			Assert2.IsTrue(degrees2 <= 0 && minutes2 <= 0 && seconds2 <= 0);
 
 			int degrees3 = Math.Abs(Convert.ToInt32(item.Degrees));
 			degrees3 = degrees3 == 0 ? degrees3 = -1 : degrees3;
@@ -603,7 +603,7 @@ namespace Innovative.SolarCalculator.Tests
 			decimal seconds3 = -1 * Math.Abs(item.Arcsecond);
 			seconds3 = seconds3 == 0 ? seconds3 = -1 : seconds3;
 			Angle.NormalDirection(ref degrees3, ref minutes3, ref seconds3);
-			Assert.IsTrue(degrees3 <= 0 && minutes3 <= 0 && seconds3 <= 0);
+			Assert2.IsTrue(degrees3 <= 0 && minutes3 <= 0 && seconds3 <= 0);
 		}
 
 		[Test]
@@ -617,7 +617,7 @@ namespace Innovative.SolarCalculator.Tests
 			decimal seconds1 = Math.Abs(item.Arcsecond);
 			seconds1 = seconds1 == 0 ? seconds1 = -1 : seconds1;
 			Angle.NormalDirection(ref hours1, ref minutes1, ref seconds1);
-			Assert.IsTrue(hours1 <= 0 && minutes1 <= 0 && seconds1 <= 0);
+			Assert2.IsTrue(hours1 <= 0 && minutes1 <= 0 && seconds1 <= 0);
 
 			decimal hours2 = Math.Abs(item.Degrees);
 			hours2 = hours2 == 0 ? hours2 = -1 : hours2;
@@ -626,7 +626,7 @@ namespace Innovative.SolarCalculator.Tests
 			decimal seconds2 = Math.Abs(item.Arcsecond);
 			seconds2 = seconds2 == 0 ? seconds2 = -1 : seconds2;
 			Angle.NormalDirection(ref hours2, ref minutes2, ref seconds2);
-			Assert.IsTrue(hours2 <= 0 && minutes2 <= 0 && seconds2 <= 0);
+			Assert2.IsTrue(hours2 <= 0 && minutes2 <= 0 && seconds2 <= 0);
 
 			decimal hours3 = Math.Abs(item.Degrees);
 			hours3 = hours3 == 0 ? hours3 = -1 : hours3;
@@ -635,7 +635,7 @@ namespace Innovative.SolarCalculator.Tests
 			decimal seconds3 = -1 * Math.Abs(item.Arcsecond);
 			seconds3 = seconds3 == 0 ? seconds3 = -1 : seconds3;
 			Angle.NormalDirection(ref hours3, ref minutes3, ref seconds3);
-			Assert.IsTrue(hours3 <= 0 && minutes3 <= 0 && seconds3 <= 0);
+			Assert2.IsTrue(hours3 <= 0 && minutes3 <= 0 && seconds3 <= 0);
 		}
 		#endregion
 
@@ -647,7 +647,7 @@ namespace Innovative.SolarCalculator.Tests
 			Angle target = new Angle(item.Angle);
 			string actualValue = target.ToString();
 
-			Assert.AreEqual(item.ShortFormat, actualValue);
+			Assert2.AreEqual(item.ShortFormat, actualValue);
 		}
 
 		[Test]
@@ -657,7 +657,7 @@ namespace Innovative.SolarCalculator.Tests
 			Angle target = new Angle(item.Angle);
 			string actualValue = target.ToShortFormat();
 
-			Assert.AreEqual(item.ShortFormat, actualValue);
+			Assert2.AreEqual(item.ShortFormat, actualValue);
 		}
 
 		[Test]
@@ -667,7 +667,7 @@ namespace Innovative.SolarCalculator.Tests
 			Angle target = new Angle(item.Angle);
 			string actualValue = target.ToLongFormat();
 
-			Assert.AreEqual(item.LongFormat, actualValue);
+			Assert2.AreEqual(item.LongFormat, actualValue);
 		}
 		#endregion
 
@@ -679,17 +679,17 @@ namespace Innovative.SolarCalculator.Tests
 			Angle target0 = new Angle(item.Angle);
 			object target1 = new Angle(item.Angle + 100);
 			int result1 = target0.CompareTo(target1);
-			Assert.AreEqual(-1, result1);
+			Assert2.AreEqual(-1, result1);
 
 			Angle target2 = new Angle(item.Angle);
 			object target3 = new Angle(item.Angle - 100);
 			int result2 = target2.CompareTo(target3);
-			Assert.AreEqual(1, result2);
+			Assert2.AreEqual(1, result2);
 
 			Angle target4 = new Angle(item.Angle);
 			object target5 = new Angle(item.Angle);
 			int result3 = target4.CompareTo(target5);
-			Assert.AreEqual(0, result3);
+			Assert2.AreEqual(0, result3);
 		}
 
 		[Test]
@@ -700,7 +700,7 @@ namespace Innovative.SolarCalculator.Tests
 			int expected = 1;
 			int actual;
 			actual = target.CompareTo(obj);
-			Assert.AreEqual(expected, actual);
+			Assert2.AreEqual(expected, actual);
 		}
 		#endregion
 
@@ -712,7 +712,7 @@ namespace Innovative.SolarCalculator.Tests
 			Angle target = new Angle(item.Angle);
 			string actualValue = target.ToShortFormat();
 
-			Assert.AreEqual(item.ShortFormat, actualValue);
+			Assert2.AreEqual(item.ShortFormat, actualValue);
 		}
 		#endregion
 
@@ -724,17 +724,17 @@ namespace Innovative.SolarCalculator.Tests
 			Angle target0 = new Angle(item.Angle);
 			Angle target1 = new Angle(item.Angle + 100);
 			int result1 = target0.CompareTo(target1);
-			Assert.AreEqual(-1, result1);
+			Assert2.AreEqual(-1, result1);
 
 			Angle target2 = new Angle(item.Angle);
 			Angle target3 = new Angle(item.Angle - 100);
 			int result2 = target2.CompareTo(target3);
-			Assert.AreEqual(1, result2);
+			Assert2.AreEqual(1, result2);
 
 			Angle target4 = new Angle(item.Angle);
 			Angle target5 = new Angle(item.Angle);
 			int result3 = target4.CompareTo(target5);
-			Assert.AreEqual(0, result3);
+			Assert2.AreEqual(0, result3);
 		}
 
 		[Test]
@@ -745,7 +745,7 @@ namespace Innovative.SolarCalculator.Tests
 			int expected = 1;
 			int actual;
 			actual = target.CompareTo(other);
-			Assert.AreEqual(expected, actual);
+			Assert2.AreEqual(expected, actual);
 		}
 		#endregion
 
@@ -757,12 +757,12 @@ namespace Innovative.SolarCalculator.Tests
 			Angle target0 = new Angle(item.Angle);
 			Angle target1 = new Angle(item.Angle + 100);
 			bool areNotEqual = !target0.Equals(target1);
-			Assert.IsTrue(areNotEqual);
+			Assert2.IsTrue(areNotEqual);
 
 			Angle target2 = new Angle(item.Angle);
 			Angle target3 = new Angle(item.Angle);
 			bool areEqual = target2.Equals(target3);
-			Assert.IsTrue(areEqual);
+			Assert2.IsTrue(areEqual);
 		}
 		#endregion
 	}

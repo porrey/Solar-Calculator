@@ -259,7 +259,7 @@ namespace Innovative.SolarCalculator.Tests
         public void CheckSunriseDate(SolarCalculationsTestData item)
         {
             SolarTimes solarTimes = TestDirector.SolarTimesInstance(item);
-            Assert.AreEqual(solarTimes.ForDate.Date, solarTimes.Sunrise.Date);
+            Assert2.AreEqual(solarTimes.ForDate.Date, solarTimes.Sunrise.Date);
         }
 
         [Test]
@@ -267,7 +267,7 @@ namespace Innovative.SolarCalculator.Tests
         public void CheckSunsetDate(SolarCalculationsTestData item)
         {
             SolarTimes solarTimes = TestDirector.SolarTimesInstance(item);
-            //Assert.AreEqual(solarTimes.ForDate.Date, solarTimes.Sunset.Date);
+            //Assert2.AreEqual(solarTimes.ForDate.Date, solarTimes.Sunset.Date);
             Assert.Inconclusive("Disabled until further research can be done.");
         }
 
@@ -276,7 +276,7 @@ namespace Innovative.SolarCalculator.Tests
         public void CheckSolarNoonDate(SolarCalculationsTestData item)
         {
             SolarTimes solarTimes = TestDirector.SolarTimesInstance(item);
-            //Assert.AreEqual(solarTimes.ForDate.Date, solarTimes.SolarNoon.Date);
+            //Assert2.AreEqual(solarTimes.ForDate.Date, solarTimes.SolarNoon.Date);
             Assert.Inconclusive("Disabled until further research can be done.");
         }
 
@@ -293,61 +293,61 @@ namespace Innovative.SolarCalculator.Tests
                 ForDate = new DateTimeOffset(new DateTime(2020, 07, 21).Date, TimeSpan.FromHours(10)),
             };
 
-            Assert.AreEqual(2020, solarTimes.DawnAstronomical.Year);
-            Assert.AreEqual(07,   solarTimes.DawnAstronomical.Month);
-            Assert.AreEqual(21,   solarTimes.DawnAstronomical.Day);
-            Assert.AreEqual(05,   solarTimes.DawnAstronomical.Hour);
-            Assert.AreEqual(27,   solarTimes.DawnAstronomical.Minute);
-            Assert.AreEqual(52,   solarTimes.DawnAstronomical.Second);
+            Assert2.AreEqual(2020, solarTimes.DawnAstronomical.Year);
+            Assert2.AreEqual(07,   solarTimes.DawnAstronomical.Month);
+            Assert2.AreEqual(21,   solarTimes.DawnAstronomical.Day);
+            Assert2.AreEqual(05,   solarTimes.DawnAstronomical.Hour);
+            Assert2.AreEqual(27,   solarTimes.DawnAstronomical.Minute);
+            Assert2.AreEqual(52,   solarTimes.DawnAstronomical.Second);
 
-            Assert.AreEqual(2020, solarTimes.DawnNautical.Year);
-            Assert.AreEqual(07,   solarTimes.DawnNautical.Month);
-            Assert.AreEqual(21,   solarTimes.DawnNautical.Day);
-            Assert.AreEqual(05,   solarTimes.DawnNautical.Hour);
-            Assert.AreEqual(57,   solarTimes.DawnNautical.Minute);
-            Assert.AreEqual(46,   solarTimes.DawnNautical.Second);
+            Assert2.AreEqual(2020, solarTimes.DawnNautical.Year);
+            Assert2.AreEqual(07,   solarTimes.DawnNautical.Month);
+            Assert2.AreEqual(21,   solarTimes.DawnNautical.Day);
+            Assert2.AreEqual(05,   solarTimes.DawnNautical.Hour);
+            Assert2.AreEqual(57,   solarTimes.DawnNautical.Minute);
+            Assert2.AreEqual(46,   solarTimes.DawnNautical.Second);
 
-            Assert.AreEqual(2020, solarTimes.DawnCivil.Year);
-            Assert.AreEqual(07,   solarTimes.DawnCivil.Month);
-            Assert.AreEqual(21,   solarTimes.DawnCivil.Day);
-            Assert.AreEqual(06,   solarTimes.DawnCivil.Hour);
-            Assert.AreEqual(28,   solarTimes.DawnCivil.Minute);
-            Assert.AreEqual(18,   solarTimes.DawnCivil.Second);
+            Assert2.AreEqual(2020, solarTimes.DawnCivil.Year);
+            Assert2.AreEqual(07,   solarTimes.DawnCivil.Month);
+            Assert2.AreEqual(21,   solarTimes.DawnCivil.Day);
+            Assert2.AreEqual(06,   solarTimes.DawnCivil.Hour);
+            Assert2.AreEqual(28,   solarTimes.DawnCivil.Minute);
+            Assert2.AreEqual(18,   solarTimes.DawnCivil.Second);
 
-            Assert.AreEqual(2020, solarTimes.Sunrise.Year);
-            Assert.AreEqual(07,   solarTimes.Sunrise.Month);
-            Assert.AreEqual(21,   solarTimes.Sunrise.Day);
-            Assert.AreEqual(06,   solarTimes.Sunrise.Hour);
-            Assert.AreEqual(55,   solarTimes.Sunrise.Minute);
-            Assert.AreEqual(14,   solarTimes.Sunrise.Second);
+            Assert2.AreEqual(2020, solarTimes.Sunrise.Year);
+            Assert2.AreEqual(07,   solarTimes.Sunrise.Month);
+            Assert2.AreEqual(21,   solarTimes.Sunrise.Day);
+            Assert2.AreEqual(06,   solarTimes.Sunrise.Hour);
+            Assert2.AreEqual(55,   solarTimes.Sunrise.Minute);
+            Assert2.AreEqual(14,   solarTimes.Sunrise.Second);
 
-            Assert.AreEqual(2020, solarTimes.Sunset.Year);
-            Assert.AreEqual(07,   solarTimes.Sunset.Month);
-            Assert.AreEqual(21,   solarTimes.Sunset.Day);
-            Assert.AreEqual(17,   solarTimes.Sunset.Hour);
-            Assert.AreEqual(07,   solarTimes.Sunset.Minute);
-            Assert.AreEqual(52,   solarTimes.Sunset.Second);
+            Assert2.AreEqual(2020, solarTimes.Sunset.Year);
+            Assert2.AreEqual(07,   solarTimes.Sunset.Month);
+            Assert2.AreEqual(21,   solarTimes.Sunset.Day);
+            Assert2.AreEqual(17,   solarTimes.Sunset.Hour);
+            Assert2.AreEqual(07,   solarTimes.Sunset.Minute);
+            Assert2.AreEqual(52,   solarTimes.Sunset.Second);
 
-            Assert.AreEqual(2020, solarTimes.DuskCivil.Year);
-            Assert.AreEqual(07,   solarTimes.DuskCivil.Month);
-            Assert.AreEqual(21,   solarTimes.DuskCivil.Day);
-            Assert.AreEqual(17,   solarTimes.DuskCivil.Hour);
-            Assert.AreEqual(34,   solarTimes.DuskCivil.Minute);
-            Assert.AreEqual(48,   solarTimes.DuskCivil.Second);
+            Assert2.AreEqual(2020, solarTimes.DuskCivil.Year);
+            Assert2.AreEqual(07,   solarTimes.DuskCivil.Month);
+            Assert2.AreEqual(21,   solarTimes.DuskCivil.Day);
+            Assert2.AreEqual(17,   solarTimes.DuskCivil.Hour);
+            Assert2.AreEqual(34,   solarTimes.DuskCivil.Minute);
+            Assert2.AreEqual(48,   solarTimes.DuskCivil.Second);
 
-            Assert.AreEqual(2020, solarTimes.DuskNautical.Year);
-            Assert.AreEqual(07,   solarTimes.DuskNautical.Month);
-            Assert.AreEqual(21,   solarTimes.DuskNautical.Day);
-            Assert.AreEqual(18,   solarTimes.DuskNautical.Hour);
-            Assert.AreEqual(05,   solarTimes.DuskNautical.Minute);
-            Assert.AreEqual(20,   solarTimes.DuskNautical.Second);
+            Assert2.AreEqual(2020, solarTimes.DuskNautical.Year);
+            Assert2.AreEqual(07,   solarTimes.DuskNautical.Month);
+            Assert2.AreEqual(21,   solarTimes.DuskNautical.Day);
+            Assert2.AreEqual(18,   solarTimes.DuskNautical.Hour);
+            Assert2.AreEqual(05,   solarTimes.DuskNautical.Minute);
+            Assert2.AreEqual(20,   solarTimes.DuskNautical.Second);
 
-            Assert.AreEqual(2020, solarTimes.DuskAstronomical.Year);
-            Assert.AreEqual(07,   solarTimes.DuskAstronomical.Month);
-            Assert.AreEqual(21,   solarTimes.DuskAstronomical.Day);
-            Assert.AreEqual(18,   solarTimes.DuskAstronomical.Hour);
-            Assert.AreEqual(35,   solarTimes.DuskAstronomical.Minute);
-            Assert.AreEqual(14,   solarTimes.DuskAstronomical.Second);
+            Assert2.AreEqual(2020, solarTimes.DuskAstronomical.Year);
+            Assert2.AreEqual(07,   solarTimes.DuskAstronomical.Month);
+            Assert2.AreEqual(21,   solarTimes.DuskAstronomical.Day);
+            Assert2.AreEqual(18,   solarTimes.DuskAstronomical.Hour);
+            Assert2.AreEqual(35,   solarTimes.DuskAstronomical.Minute);
+            Assert2.AreEqual(14,   solarTimes.DuskAstronomical.Second);
         }
 
         [Test]
@@ -376,23 +376,23 @@ namespace Innovative.SolarCalculator.Tests
             };
             
             // During polar night, the sunset was some time in the past, for now MinValue
-            Assert.AreEqual(DateTime.MinValue, polarNight.Sunset);
+            Assert2.AreEqual(DateTime.MinValue, polarNight.Sunset);
             // During polar night, the sunrise is some time in future, for now MaxValue
-            Assert.AreEqual(DateTime.MaxValue, polarNight.Sunrise);
+            Assert2.AreEqual(DateTime.MaxValue, polarNight.Sunrise);
             // Is polar night, sun never rises
-            Assert.AreEqual(true, polarNight.IsPolarNight);
-            Assert.AreEqual(false, polarNight.IsPolarDay);
+            Assert2.AreEqual(true, polarNight.IsPolarNight);
+            Assert2.AreEqual(false, polarNight.IsPolarDay);
             
             // During polar day, the sunrise was some time in the past, for now MinValue
-            Assert.AreEqual(DateTime.MinValue, polarDay.Sunrise);
+            Assert2.AreEqual(DateTime.MinValue, polarDay.Sunrise);
             // During polar day, the sunset is some time in future, for now MaxValue
-            Assert.AreEqual(DateTime.MaxValue, polarDay.Sunset);
+            Assert2.AreEqual(DateTime.MaxValue, polarDay.Sunset);
             // Is polar day, sun never goes down
-            Assert.AreEqual(true, polarDay.IsPolarDay);
-            Assert.AreEqual(false, polarDay.IsPolarNight);
+            Assert2.AreEqual(true, polarDay.IsPolarDay);
+            Assert2.AreEqual(false, polarDay.IsPolarNight);
             
-            Assert.AreEqual(false, notPolarTime.IsPolarDay);
-            Assert.AreEqual(false, notPolarTime.IsPolarNight);
+            Assert2.AreEqual(false, notPolarTime.IsPolarDay);
+            Assert2.AreEqual(false, notPolarTime.IsPolarNight);
         }
     }
 }
