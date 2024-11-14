@@ -1,34 +1,36 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFrameworks>netstandard1.3;netstandard2.0;netstandard2.1;net40;net45;net461;netcoreapp3.1;net5.0;net6.0;net7.0;net8.0</TargetFrameworks>
+		<TargetFrameworks>netstandard1.3;netstandard2.0;netstandard2.1;net40;net45;net461;netcoreapp3.1;net5.0;net6.0;net7.0;net8.0;net9.0</TargetFrameworks>
 		<RootNamespace>Innovative.Geometry</RootNamespace>
 		<AssemblyName>Innovative.Geometry.Angle</AssemblyName>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 		<PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
 		<PackageId>Angle</PackageId>
-		<Version>3.4.0</Version>
-		<AssemblyVersion>3.4.0</AssemblyVersion>
-		<FileVersion>3.4.0</FileVersion>
+		<Version>3.5.0</Version>
+		<AssemblyVersion>3.5.0</AssemblyVersion>
+		<FileVersion>3.5.0</FileVersion>
 		<Authors>Daniel M. Porrey</Authors>
 		<Company>Daniel M. Porrey</Company>
 		<PackageIconUrl></PackageIconUrl>
 		<PackageProjectUrl>https://github.com/porrey/Solar-Calculator</PackageProjectUrl>
 		<Copyright>Copyright © 2013-2024 Daniel M. Porrey</Copyright>
 		<PackageTags>Angle,Math,Arcminute,Arcsecond,Degree</PackageTags>
-		<PackageReleaseNotes>v3.4.0 Added net 8.0 support.
-v3.3.0 Corrections added for Polar Day and Polar Night (Nickztar)
-v3.2.1 Added ReadMe to package.
-v3.2.0 Added net 7.0 support.
-v3.1.0 Added support for net 5.0 and net 6.0.
-v3.0.4 Corrected date shifting issue.
-v3.0.3 Added missing documentation.
-v3.0.2 Added source code and symbol integration to NuGet package.
-v3.0.1 Changed license to LGPL Public 3.0.
-v3.0.0 Added support for multiple frameworks.
-v2.0.0 Converted to .NET Standard/Moved to GitHub.
-v1.0.2 Added multiple .NET versions. Completed units test and corrected minor issues.
-v1.0.1 Changed namespace to Innovative.Geometry</PackageReleaseNotes>
+		<PackageReleaseNotes>
+			v3.5.0 Added net 9.0 support.
+			v3.4.0 Added net 8.0 support.
+			v3.3.0 Corrections added for Polar Day and Polar Night (Nickztar)
+			v3.2.1 Added ReadMe to package.
+			v3.2.0 Added net 7.0 support.
+			v3.1.0 Added support for net 5.0 and net 6.0.
+			v3.0.4 Corrected date shifting issue.
+			v3.0.3 Added missing documentation.
+			v3.0.2 Added source code and symbol integration to NuGet package.
+			v3.0.1 Changed license to LGPL Public 3.0.
+			v3.0.0 Added support for multiple frameworks.
+			v2.0.0 Converted to .NET Standard/Moved to GitHub.
+			v1.0.2 Added multiple .NET versions. Completed units test and corrected minor issues.
+			v1.0.1 Changed namespace to Innovative.Geometry</PackageReleaseNotes>
 		<NeutralLanguage>en-US</NeutralLanguage>
 		<Product>Angle</Product>
 		<Description>Defines a type for a geometric angle that allows various ways of setting and converting the values from and to different modes. Angle inherently is a double and can be used in place of a double when specifically referring to a geometric angle with the value being the degrees of the angle.</Description>
@@ -60,12 +62,4 @@ v1.0.1 Changed namespace to Innovative.Geometry</PackageReleaseNotes>
 	    <PackagePath>\</PackagePath>
 	  </None>
 	</ItemGroup>
-
-	<ItemGroup>
-	  <PackageReference Include="Microsoft.SourceLink.GitHub" Version="8.0.0">
-	    <PrivateAssets>all</PrivateAssets>
-	    <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-	  </PackageReference>
-	</ItemGroup>
-
 </Project>
