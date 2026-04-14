@@ -107,12 +107,41 @@
             <param name="latitude">Specifies the angular measurement of north-south location on Earth's surface.</param>
             <param name="longitude">Specifies the angular measurement of east-west location on Earth's surface.</param>
         </member>
-        <member name="M:Innovative.SolarCalculator.SolarTimes.#ctor(System.DateTime,System.Int32,Innovative.Geometry.Angle,Innovative.Geometry.Angle)">
+        <member name="M:Innovative.SolarCalculator.SolarTimes.#ctor(System.DateTime,System.Double,Innovative.Geometry.Angle,Innovative.Geometry.Angle)">
             <summary>
-            Creates an instance of the SolarTimes object with the specified For Date, Latitude Longitude and Time Zone Offset
+            Creates an instance of the SolarTimes object with the specified For Date, Latitude Longitude and Time Zone Offset.
             </summary>
             <param name="forDate">Specifies the Date for which the sunrise and sunset will be calculated.</param>
-            <param name="timeZoneOffset">Specifies the time zone offset for the specified date in hours.</param>
+            <param name="timeZoneOffset">Specifies the time zone offset for the specified date in hours. Supports
+            fractional offsets (e.g. 5.5 for India Standard Time, 5.75 for Nepal Standard Time).</param>
+            <param name="latitude">Specifies the angular measurement of north-south location on Earth's surface.</param>
+            <param name="longitude">Specifies the angular measurement of east-west location on Earth's surface.</param>
+        </member>
+        <member name="M:Innovative.SolarCalculator.SolarTimes.#ctor(System.DateTime,System.TimeZoneInfo,Innovative.Geometry.Angle,Innovative.Geometry.Angle)">
+            <summary>
+            Creates an instance of the SolarTimes object with the specified For Date, TimeZoneInfo, Latitude and Longitude.
+            The UTC offset is determined from the provided <paramref name="timeZone"/> using noon of the given day,
+            which avoids incorrect offsets on DST transition days when the input <paramref name="forDate"/> falls
+            in the early-morning hours before the transition occurs.
+            </summary>
+            <param name="forDate">Specifies the Date for which the sunrise and sunset will be calculated.</param>
+            <param name="timeZone">The <see cref="T:System.TimeZoneInfo"/> representing the local time zone. Using noon of
+            the calendar day to derive the UTC offset ensures the correct standard or daylight offset is applied
+            even when <paramref name="forDate"/> is set to midnight on a DST transition day.</param>
+            <param name="latitude">Specifies the angular measurement of north-south location on Earth's surface.</param>
+            <param name="longitude">Specifies the angular measurement of east-west location on Earth's surface.</param>
+        </member>
+        <member name="M:Innovative.SolarCalculator.SolarTimes.#ctor(System.DateTime,System.TimeZoneInfo,System.Double,System.Double)">
+            <summary>
+            Creates an instance of the SolarTimes object with the specified For Date, TimeZoneInfo, Latitude and Longitude.
+            The UTC offset is determined from the provided <paramref name="timeZone"/> using noon of the given day,
+            which avoids incorrect offsets on DST transition days when the input <paramref name="forDate"/> falls
+            in the early-morning hours before the transition occurs.
+            </summary>
+            <param name="forDate">Specifies the Date for which the sunrise and sunset will be calculated.</param>
+            <param name="timeZone">The <see cref="T:System.TimeZoneInfo"/> representing the local time zone. Using noon of
+            the calendar day to derive the UTC offset ensures the correct standard or daylight offset is applied
+            even when <paramref name="forDate"/> is set to midnight on a DST transition day.</param>
             <param name="latitude">Specifies the angular measurement of north-south location on Earth's surface.</param>
             <param name="longitude">Specifies the angular measurement of east-west location on Earth's surface.</param>
         </member>
@@ -120,6 +149,15 @@
             <summary>
             Specifies the Date for which the sunrise and sunset will be calculated.
             </summary>
+            <remarks>
+            The UTC offset embedded in this <see cref="T:System.DateTimeOffset"/> is used directly in all solar
+            calculations. On DST transition days the UTC offset changes partway through the day, so
+            constructing a <see cref="T:System.DateTimeOffset"/> from a <see cref="T:System.DateTime"/> at midnight can
+            capture the <em>wrong</em> offset and shift the computed times by one hour. To avoid this,
+            prefer the <see cref="M:Innovative.SolarCalculator.SolarTimes.#ctor(System.DateTime,System.TimeZoneInfo,Innovative.Geometry.Angle,Innovative.Geometry.Angle)"/> or
+            <see cref="M:Innovative.SolarCalculator.SolarTimes.#ctor(System.DateTime,System.TimeZoneInfo,System.Double,System.Double)"/> constructors, or manually
+            supply a noon-derived <see cref="T:System.DateTimeOffset"/>.
+            </remarks>
         </member>
         <member name="P:Innovative.SolarCalculator.SolarTimes.Longitude">
             <summary>
