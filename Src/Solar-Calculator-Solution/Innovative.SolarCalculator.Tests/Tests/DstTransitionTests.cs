@@ -46,8 +46,9 @@ namespace Innovative.SolarCalculator.Tests
             // carries the pre-transition offset (+2) when converted naively. The
             // TimeZoneInfo constructor uses noon to pick the correct offset (+1).
             var berlin = TimeZoneInfo.FindSystemTimeZoneById("Europe/Berlin");
-            var date = new DateTime(2021, 10, 31, 0, 0, 0); // midnight
+            var date = new DateTime(2021, 10, 31, 0, 0, 0); // midnight (local, unspecified Kind)
 
+            // Berlin, Germany (52.50°N, 13.35°E)
             var solarTimes = new SolarTimes(date, berlin, 52.50, 13.35);
 
             var expected = new DateTime(2021, 10, 31, 7, 0, 36);
@@ -60,8 +61,9 @@ namespace Innovative.SolarCalculator.Tests
         public void Berlin_FallBack_Day_TimeZoneInfo_Angle_GivesCorrectSunset()
         {
             var berlin = TimeZoneInfo.FindSystemTimeZoneById("Europe/Berlin");
-            var date = new DateTime(2021, 10, 31, 0, 0, 0);
+            var date = new DateTime(2021, 10, 31, 0, 0, 0); // midnight (local, unspecified Kind)
 
+            // Berlin, Germany (52.50°N, 13.35°E)
             var solarTimes = new SolarTimes(date, berlin, 52.50, 13.35);
 
             var expected = new DateTime(2021, 10, 31, 16, 39, 44);
@@ -76,8 +78,9 @@ namespace Innovative.SolarCalculator.Tests
             // Without the fix, sunrise on Oct 31 (fall-back) would appear as ~08:00 (off by 1 h).
             // With the fix it should be in the 07:xx range.
             var berlin = TimeZoneInfo.FindSystemTimeZoneById("Europe/Berlin");
-            var date = new DateTime(2021, 10, 31, 0, 0, 0);
+            var date = new DateTime(2021, 10, 31, 0, 0, 0); // midnight (local, unspecified Kind)
 
+            // Berlin, Germany (52.50°N, 13.35°E)
             var solarTimes = new SolarTimes(date, berlin, 52.50, 13.35);
 
             Assert.That(solarTimes.Sunrise.Hour, Is.EqualTo(7),
@@ -89,8 +92,9 @@ namespace Innovative.SolarCalculator.Tests
         {
             // Oct 30 2021 – still on summer time (UTC+2). Reference: ~07:58 local.
             var berlin = TimeZoneInfo.FindSystemTimeZoneById("Europe/Berlin");
-            var date = new DateTime(2021, 10, 30, 0, 0, 0);
+            var date = new DateTime(2021, 10, 30, 0, 0, 0); // midnight (local, unspecified Kind)
 
+            // Berlin, Germany (52.50°N, 13.35°E)
             var solarTimes = new SolarTimes(date, berlin, 52.50, 13.35);
 
             var expected = new DateTime(2021, 10, 30, 7, 58, 42);
@@ -104,8 +108,9 @@ namespace Innovative.SolarCalculator.Tests
         {
             // Nov 1 2021 – winter time (UTC+1). Reference: ~07:02 local.
             var berlin = TimeZoneInfo.FindSystemTimeZoneById("Europe/Berlin");
-            var date = new DateTime(2021, 11, 1, 0, 0, 0);
+            var date = new DateTime(2021, 11, 1, 0, 0, 0); // midnight (local, unspecified Kind)
 
+            // Berlin, Germany (52.50°N, 13.35°E)
             var solarTimes = new SolarTimes(date, berlin, 52.50, 13.35);
 
             var expected = new DateTime(2021, 11, 1, 7, 2, 26);
@@ -126,8 +131,9 @@ namespace Innovative.SolarCalculator.Tests
             // the pre-transition offset (-6). The TimeZoneInfo constructor uses noon to pick
             // the correct offset (-5).
             var chicago = TimeZoneInfo.FindSystemTimeZoneById("America/Chicago");
-            var date = new DateTime(2022, 3, 13, 0, 0, 0);
+            var date = new DateTime(2022, 3, 13, 0, 0, 0); // midnight (local, unspecified Kind)
 
+            // Minneapolis, MN (44.927481°N, 93.306843°W)
             var solarTimes = new SolarTimes(date, chicago, 44.927481, -93.306843);
 
             var expected = new DateTime(2022, 3, 13, 7, 29, 46);
@@ -140,8 +146,9 @@ namespace Innovative.SolarCalculator.Tests
         public void USCentral_SpringForward_Day_TimeZoneInfo_Double_GivesCorrectSunset()
         {
             var chicago = TimeZoneInfo.FindSystemTimeZoneById("America/Chicago");
-            var date = new DateTime(2022, 3, 13, 0, 0, 0);
+            var date = new DateTime(2022, 3, 13, 0, 0, 0); // midnight (local, unspecified Kind)
 
+            // Minneapolis, MN (44.927481°N, 93.306843°W)
             var solarTimes = new SolarTimes(date, chicago, 44.927481, -93.306843);
 
             var expected = new DateTime(2022, 3, 13, 19, 15, 43);
@@ -156,8 +163,9 @@ namespace Innovative.SolarCalculator.Tests
             // Without the fix, sunrise would appear as ~06:29 (off by 1 h, using -6 offset).
             // With the fix it should be in the 07:xx range.
             var chicago = TimeZoneInfo.FindSystemTimeZoneById("America/Chicago");
-            var date = new DateTime(2022, 3, 13, 0, 0, 0);
+            var date = new DateTime(2022, 3, 13, 0, 0, 0); // midnight (local, unspecified Kind)
 
+            // Minneapolis, MN (44.927481°N, 93.306843°W)
             var solarTimes = new SolarTimes(date, chicago, 44.927481, -93.306843);
 
             Assert.That(solarTimes.Sunrise.Hour, Is.EqualTo(7),
@@ -169,8 +177,9 @@ namespace Innovative.SolarCalculator.Tests
         {
             // Mar 12 2022 – still on standard time (UTC-6). Reference: ~06:31 local.
             var chicago = TimeZoneInfo.FindSystemTimeZoneById("America/Chicago");
-            var date = new DateTime(2022, 3, 12, 0, 0, 0);
+            var date = new DateTime(2022, 3, 12, 0, 0, 0); // midnight (local, unspecified Kind)
 
+            // Minneapolis, MN (44.927481°N, 93.306843°W)
             var solarTimes = new SolarTimes(date, chicago, 44.927481, -93.306843);
 
             var expected = new DateTime(2022, 3, 12, 6, 31, 32);
@@ -184,8 +193,9 @@ namespace Innovative.SolarCalculator.Tests
         {
             // Mar 14 2022 – daylight saving time (UTC-5). Reference: ~07:27 local.
             var chicago = TimeZoneInfo.FindSystemTimeZoneById("America/Chicago");
-            var date = new DateTime(2022, 3, 14, 0, 0, 0);
+            var date = new DateTime(2022, 3, 14, 0, 0, 0); // midnight (local, unspecified Kind)
 
+            // Minneapolis, MN (44.927481°N, 93.306843°W)
             var solarTimes = new SolarTimes(date, chicago, 44.927481, -93.306843);
 
             var expected = new DateTime(2022, 3, 14, 7, 27, 55);
