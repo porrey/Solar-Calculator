@@ -34,7 +34,7 @@ namespace Innovative.SolarCalculator
 		/// </summary>
 		public SolarTimes()
 		{
-			this.ForDate = DateTime.Now;
+			this.ForDate = DateTimeOffset.Now;
 		}
 
 		/// <summary>
@@ -60,15 +60,66 @@ namespace Innovative.SolarCalculator
 		}
 
 		/// <summary>
-		/// Creates an instance of the SolarTimes object with the specified For Date, Latitude Longitude and Time Zone Offset
+		/// Creates an instance of the SolarTimes object with the specified For Date, Latitude Longitude and Time Zone Offset.
 		/// </summary>
 		/// <param name="forDate">Specifies the Date for which the sunrise and sunset will be calculated.</param>
-		/// <param name="timeZoneOffset">Specifies the time zone offset for the specified date in hours.</param>
+		/// <param name="timeZoneOffset">Specifies the time zone offset for the specified date in hours. Supports
+		/// fractional offsets (e.g. 5.5 for India Standard Time, 5.75 for Nepal Standard Time).</param>
 		/// <param name="latitude">Specifies the angular measurement of north-south location on Earth's surface.</param>
 		/// <param name="longitude">Specifies the angular measurement of east-west location on Earth's surface.</param>
-		public SolarTimes(DateTime forDate, int timeZoneOffset, Angle latitude, Angle longitude)
+		public SolarTimes(DateTime forDate, double timeZoneOffset, Angle latitude, Angle longitude)
 		{
 			this.ForDate = new DateTimeOffset(forDate, TimeSpan.FromHours(timeZoneOffset));
+			this.Latitude = latitude;
+			this.Longitude = longitude;
+		}
+
+		/// <summary>
+		/// Creates an instance of the SolarTimes object with the specified For Date, TimeZoneInfo, Latitude and Longitude.
+		/// The UTC offset is determined from the provided <paramref name="timeZone"/> using noon of the given day,
+		/// which avoids incorrect offsets on DST transition days when the input <paramref name="forDate"/> falls
+		/// in the early-morning hours before the transition occurs.
+		/// </summary>
+		/// <param name="forDate">Specifies the Date for which the sunrise and sunset will be calculated.</param>
+		/// <param name="timeZone">The <see cref="TimeZoneInfo"/> representing the local time zone. Using noon of
+		/// the calendar day to derive the UTC offset ensures the correct standard or daylight offset is applied
+		/// even when <paramref name="forDate"/> is set to midnight on a DST transition day.</param>
+		/// <param name="latitude">Specifies the angular measurement of north-south location on Earth's surface.</param>
+		/// <param name="longitude">Specifies the angular measurement of east-west location on Earth's surface.</param>
+		public SolarTimes(DateTime forDate, TimeZoneInfo timeZone, Angle latitude, Angle longitude)
+		{
+			//
+			// Use noon of the calendar day to derive the UTC offset. DST transitions almost universally
+			// occur in the early morning (e.g. 2:00–3:00 AM), so noon is always safely on the correct
+			// side of the transition and yields the right offset for the full calendar day.
+			//
+			var noon = new DateTime(forDate.Year, forDate.Month, forDate.Day, 12, 0, 0, DateTimeKind.Unspecified);
+			this.ForDate = new DateTimeOffset(forDate.Date, timeZone.GetUtcOffset(noon));
+			this.Latitude = latitude;
+			this.Longitude = longitude;
+		}
+
+		/// <summary>
+		/// Creates an instance of the SolarTimes object with the specified For Date, TimeZoneInfo, Latitude and Longitude.
+		/// The UTC offset is determined from the provided <paramref name="timeZone"/> using noon of the given day,
+		/// which avoids incorrect offsets on DST transition days when the input <paramref name="forDate"/> falls
+		/// in the early-morning hours before the transition occurs.
+		/// </summary>
+		/// <param name="forDate">Specifies the Date for which the sunrise and sunset will be calculated.</param>
+		/// <param name="timeZone">The <see cref="TimeZoneInfo"/> representing the local time zone. Using noon of
+		/// the calendar day to derive the UTC offset ensures the correct standard or daylight offset is applied
+		/// even when <paramref name="forDate"/> is set to midnight on a DST transition day.</param>
+		/// <param name="latitude">Specifies the angular measurement of north-south location on Earth's surface.</param>
+		/// <param name="longitude">Specifies the angular measurement of east-west location on Earth's surface.</param>
+		public SolarTimes(DateTime forDate, TimeZoneInfo timeZone, double latitude, double longitude)
+		{
+			//
+			// Use noon of the calendar day to derive the UTC offset. DST transitions almost universally
+			// occur in the early morning (e.g. 2:00–3:00 AM), so noon is always safely on the correct
+			// side of the transition and yields the right offset for the full calendar day.
+			//
+			var noon = new DateTime(forDate.Year, forDate.Month, forDate.Day, 12, 0, 0, DateTimeKind.Unspecified);
+			this.ForDate = new DateTimeOffset(forDate.Date, timeZone.GetUtcOffset(noon));
 			this.Latitude = latitude;
 			this.Longitude = longitude;
 		}
@@ -78,6 +129,15 @@ namespace Innovative.SolarCalculator
 		/// <summary>
 		/// Specifies the Date for which the sunrise and sunset will be calculated.
 		/// </summary>
+		/// <remarks>
+		/// The UTC offset embedded in this <see cref="DateTimeOffset"/> is used directly in all solar
+		/// calculations. On DST transition days the UTC offset changes partway through the day, so
+		/// constructing a <see cref="DateTimeOffset"/> from a <see cref="DateTime"/> at midnight can
+		/// capture the <em>wrong</em> offset and shift the computed times by one hour. To avoid this,
+		/// prefer the <see cref="SolarTimes(DateTime, TimeZoneInfo, Angle, Angle)"/> or
+		/// <see cref="SolarTimes(DateTime, TimeZoneInfo, double, double)"/> constructors, or manually
+		/// supply a noon-derived <see cref="DateTimeOffset"/>.
+		/// </remarks>
 		public DateTimeOffset ForDate { get; set; }
 
 		/// <summary>
