@@ -765,5 +765,18 @@ namespace Innovative.SolarCalculator.Tests
 			Assert2.IsTrue(areEqual);
 		}
 		#endregion
+	[Test]
+		public void ParseInvalidString_ThrowsFormatException()
+		{
+			Assert.Throws<FormatException>(() => Angle.Parse("not-a-number"));
+		}
+
+		[Test]
+		public void TryParseInvalidString_ReturnsFalse()
+		{
+			bool success = Angle.TryParse("not-a-number", out Angle result);
+			Assert2.IsFalse(success);
+			Assert.That(result, Is.Null);
+		}
 	}
 }

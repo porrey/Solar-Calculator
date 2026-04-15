@@ -394,5 +394,48 @@ namespace Innovative.SolarCalculator.Tests
             Assert2.AreEqual(false, notPolarTime.IsPolarDay);
             Assert2.AreEqual(false, notPolarTime.IsPolarNight);
         }
+        [Test]
+        [TestCaseSource("TestDataItems")]
+        public void HourAngleDegreesComparisonTest(SolarCalculationsTestData item)
+        {
+            SolarTimes solarTimes = TestDirector.SolarTimesInstance(item);
+            decimal expectedValue = item.HourAngle;
+            decimal actualValue = solarTimes.HourAngleDegrees;
+
+            CustomAssert.AreEqual(expectedValue, actualValue, TestDirector.SolarDecimalDelta);
+        }
+
+        [Test]
+        [TestCaseSource("TestDataItems")]
+        public void SolarZenithComparisonTest(SolarCalculationsTestData item)
+        {
+            SolarTimes solarTimes = TestDirector.SolarTimesInstance(item);
+            decimal expectedValue = item.SolarZenithAngle;
+            decimal actualValue = solarTimes.SolarZenith;
+
+            CustomAssert.AreEqual(expectedValue, actualValue, TestDirector.SolarDecimalDelta);
+        }
+
+        [Test]
+        [TestCaseSource("TestDataItems")]
+        public void SolarElevationComparisonTest(SolarCalculationsTestData item)
+        {
+            SolarTimes solarTimes = TestDirector.SolarTimesInstance(item);
+            decimal expectedValue = item.SolarElevationAngle;
+            decimal actualValue = solarTimes.SolarElevation;
+
+            CustomAssert.AreEqual(expectedValue, actualValue, TestDirector.SolarDecimalDelta);
+        }
+
+        [Test]
+        [TestCaseSource("TestDataItems")]
+        public void SolarAzimuthComparisonTest(SolarCalculationsTestData item)
+        {
+            SolarTimes solarTimes = TestDirector.SolarTimesInstance(item);
+            decimal expectedValue = item.SolarAzimuthAngle;
+            decimal actualValue = solarTimes.SolarAzimuth;
+
+            CustomAssert.AreEqual(expectedValue, actualValue, TestDirector.SolarDecimalDelta);
+        }
     }
 }

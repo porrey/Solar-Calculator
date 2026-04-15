@@ -62,7 +62,11 @@ namespace Innovative.SolarCalculator.Tests
 							   SunriseTime = DateTime.Parse(tbl["SunriseTime"], new CultureInfo("en-US")),
 							   SunsetTime = DateTime.Parse(tbl["SunsetTime"], new CultureInfo("en-US")),
 							   SunlightDuration = Convert.ToDouble(tbl["SunlightDuration"], new CultureInfo("en-US")),
-							   TrueSolarTime = Convert.ToDecimal(tbl["TrueSolarTime"], new CultureInfo("en-US"))
+							   TrueSolarTime = Convert.ToDecimal(tbl["TrueSolarTime"], new CultureInfo("en-US")),
+						   HourAngle = Convert.ToDecimal(tbl["HourAngle"], new CultureInfo("en-US")),
+						   SolarZenithAngle = Convert.ToDecimal(tbl["SolarZenithAngle"], new CultureInfo("en-US")),
+						   SolarElevationAngle = Convert.ToDecimal(tbl["SolarElevationAngle"], new CultureInfo("en-US")),
+						   SolarAzimuthAngle = Convert.ToDecimal(tbl["SolarAzimuthAngle"], new CultureInfo("en-US"))
 						   }).ToArray();
 
 			return returnValue;
