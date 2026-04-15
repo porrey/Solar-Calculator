@@ -1,10 +1,8 @@
-![GitHub Workflow Status (with branch)](https://img.shields.io/github/actions/workflow/status/porrey/Solar-Calculator/.github/workflows/dotnet.yml?style=for-the-badge)
+![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/porrey/Solar-Calculator/.github%2Fworkflows%2Fdotnet.yml?style=for-the-badge&label=Build%20and%20Test) ![GitHub License](https://img.shields.io/github/license/porrey/Solar-Calculator?style=for-the-badge) ![.NET](https://img.shields.io/badge/.NET-10-purple?style=for-the-badge)
 
-[![Nuget](https://img.shields.io/nuget/v/Angle?label=Angle%20-%20NuGet&style=for-the-badge)
-![Nuget](https://img.shields.io/nuget/dt/Angle?label=Downloads&style=for-the-badge)](https://www.nuget.org/packages/Angle/)
+[![Nuget](https://img.shields.io/nuget/v/Angle?label=Angle%20-%20NuGet&style=for-the-badge)![Nuget](https://img.shields.io/nuget/dt/Angle?label=Downloads&style=for-the-badge)](https://www.nuget.org/packages/Angle/)
 
-[![Nuget](https://img.shields.io/nuget/v/SolarCalculator?label=Solar%20Calculator%20-%20NuGet&style=for-the-badge)
-![Nuget](https://img.shields.io/nuget/dt/SolarCalculator?label=Downloads&style=for-the-badge)](https://www.nuget.org/packages/SolarCalculator/)
+[![Nuget](https://img.shields.io/nuget/v/SolarCalculator?label=Solar%20Calculator%20-%20NuGet&style=for-the-badge)![Nuget](https://img.shields.io/nuget/dt/SolarCalculator?label=Downloads&style=for-the-badge)](https://www.nuget.org/packages/SolarCalculator/)
 
 # Solar Calculator
 
