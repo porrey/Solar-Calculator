@@ -15,7 +15,7 @@
 		<Product>Solar Calculator</Product>
 		<PackageIconUrl></PackageIconUrl>
 		<PackageProjectUrl>https://github.com/porrey/Solar-Calculator</PackageProjectUrl>
-		<Copyright>Copyright © 2013-2024 Daniel M. Porrey</Copyright>
+		<Copyright>Copyright © 2013-2026 Daniel M. Porrey</Copyright>
 		<Summary>This library is a port of the Excel spreadsheet found at NOAA to calculate the sunrise and sunset for a given date and location (using Geographic Coordinates).</Summary>
 		<Description>Calculates the sunrise and sunset for a given date and location (using Geographic Coordinates). This library uses the method outlined NOAA Solar Calculations Day spreadsheet found at http://www.esrl.noaa.gov/gmd/grad/solcalc/calcdetails.html. Calculations are based on the book "Astronomical Algorithms" by Jean Meeus.</Description>
 		<PackageReleaseNotes>

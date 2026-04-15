@@ -14,7 +14,7 @@
 		<Company>Daniel M. Porrey</Company>
 		<PackageIconUrl></PackageIconUrl>
 		<PackageProjectUrl>https://github.com/porrey/Solar-Calculator</PackageProjectUrl>
-		<Copyright>Copyright © 2013-2024 Daniel M. Porrey</Copyright>
+		<Copyright>Copyright © 2013-2026 Daniel M. Porrey</Copyright>
 		<PackageTags>Angle,Math,Arcminute,Arcsecond,Degree</PackageTags>
 		<PackageReleaseNotes>
 			v3.6.1 Fix DST transition day sunrise/sunset offset bug. Removed NET 7.

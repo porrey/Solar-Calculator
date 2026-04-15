@@ -1,6 +1,6 @@
 ﻿//
 // Solar Calculator
-// Copyright(C) 2013-2025, Daniel M. Porrey. All rights reserved.
+// Copyright(C) 2013-2026, Daniel M. Porrey. All rights reserved.
 // 
 // This program is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
