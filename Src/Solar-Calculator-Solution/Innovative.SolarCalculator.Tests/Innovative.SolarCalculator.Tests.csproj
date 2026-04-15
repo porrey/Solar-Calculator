@@ -3,9 +3,9 @@
 	<PropertyGroup>
 		<TargetFramework>net10.0</TargetFramework>
 		<IsPackable>false</IsPackable>
-		<Version>3.6.0.0</Version>
-		<FileVersion>3.6.0.0</FileVersion>
-		<AssemblyVersion>3.6.0.0</AssemblyVersion>
+		<Version>3.6.1</Version>
+		<FileVersion>3.6.1</FileVersion>
+		<AssemblyVersion>3.6.1</AssemblyVersion>
 		<Nullable>disable</Nullable>
 	</PropertyGroup>
 
@@ -31,9 +31,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <PackageReference Include="Microsoft.NET.Test.Sdk" Version="18.0.1" />
-	  <PackageReference Include="NUnit" Version="4.4.0" />
-	  <PackageReference Include="NUnit3TestAdapter" Version="5.2.0" />
+	  <PackageReference Include="Microsoft.NET.Test.Sdk" Version="18.4.0" />
+	  <PackageReference Include="NUnit" Version="4.5.1" />
+	  <PackageReference Include="NUnit3TestAdapter" Version="6.2.0" />
 	</ItemGroup>
 
 

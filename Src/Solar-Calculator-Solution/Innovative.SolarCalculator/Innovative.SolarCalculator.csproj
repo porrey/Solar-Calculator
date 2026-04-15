@@ -1,15 +1,15 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFrameworks>netstandard2.0;netstandard2.1;net40;net45;net461;netcoreapp3.1;net5.0;net6.0;net7.0;net8.0;net9.0;net10.0</TargetFrameworks>
+		<TargetFrameworks>netstandard2.0;netstandard2.1;net40;net45;net461;netcoreapp3.1;net5.0;net6.0;net8.0;net9.0;net10.0</TargetFrameworks>
 		<AssemblyName>Innovative.SolarCalculator</AssemblyName>
 		<RootNamespace>Innovative.SolarCalculator</RootNamespace>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 		<PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
 		<PackageId>SolarCalculator</PackageId>
-		<Version>3.6.0.0</Version>
-		<AssemblyVersion>3.6.0.0</AssemblyVersion>
-		<FileVersion>3.6.0.0</FileVersion>
+		<Version>3.6.1</Version>
+		<AssemblyVersion>3.6.1</AssemblyVersion>
+		<FileVersion>3.6.1</FileVersion>
 		<Authors>Daniel M. Porrey</Authors>
 		<Company>Daniel M. Porrey</Company>
 		<Product>Solar Calculator</Product>
@@ -19,6 +19,7 @@
 		<Summary>This library is a port of the Excel spreadsheet found at NOAA to calculate the sunrise and sunset for a given date and location (using Geographic Coordinates).</Summary>
 		<Description>Calculates the sunrise and sunset for a given date and location (using Geographic Coordinates). This library uses the method outlined NOAA Solar Calculations Day spreadsheet found at http://www.esrl.noaa.gov/gmd/grad/solcalc/calcdetails.html. Calculations are based on the book "Astronomical Algorithms" by Jean Meeus.</Description>
 		<PackageReleaseNotes>
+			v3.6.1 Fix DST transition day sunrise/sunset offset bug. Removed NET 7.
 			v3.6.0 Added net 10.0 support. Removed netstandard 1.3 support.
 			v3.5.0 Added net 9.0 support.
 			v3.4.0 Added net 8.0 support.
