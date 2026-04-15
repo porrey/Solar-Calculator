@@ -45,5 +45,9 @@ namespace Innovative.SolarCalculator.Tests
 		public DateTime SunsetTime { get; set; }
 		public double SunlightDuration { get; set; }
 		public decimal TrueSolarTime { get; set; }
+		public decimal HourAngle { get; set; }
+		public decimal SolarZenithAngle { get; set; }
+		public decimal SolarElevationAngle { get; set; }
+		public decimal SolarAzimuthAngle { get; set; }
 	}
 }
