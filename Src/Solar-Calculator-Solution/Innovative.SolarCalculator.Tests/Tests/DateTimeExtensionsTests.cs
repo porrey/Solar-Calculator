@@ -34,7 +34,7 @@ namespace Innovative.SolarCalculator.Tests
         public void ToOleAutomationDate_Epoch_ReturnsZero()
         {
             // 30 December 1899 is the OLE epoch → 0
-            DateTime epoch = new DateTime(1899, 12, 30);
+            DateTime epoch = new(1899, 12, 30);
             decimal result = epoch.ToOleAutomationDate();
             Assert.That(result, Is.EqualTo(0M));
         }
@@ -43,7 +43,7 @@ namespace Innovative.SolarCalculator.Tests
         public void ToOleAutomationDate_NextDay_ReturnsOne()
         {
             // 31 December 1899 → 1
-            DateTime nextDay = new DateTime(1899, 12, 31);
+            DateTime nextDay = new(1899, 12, 31);
             decimal result = nextDay.ToOleAutomationDate();
             Assert.That(result, Is.EqualTo(1M));
         }
@@ -52,7 +52,7 @@ namespace Innovative.SolarCalculator.Tests
         public void ToOleAutomationDate_Jan1_1900_ReturnsTwo()
         {
             // 1 January 1900 → 2
-            DateTime jan1 = new DateTime(1900, 1, 1);
+            DateTime jan1 = new(1900, 1, 1);
             decimal result = jan1.ToOleAutomationDate();
             Assert.That(result, Is.EqualTo(2M));
         }
@@ -61,7 +61,7 @@ namespace Innovative.SolarCalculator.Tests
         public void ToOleAutomationDate_KnownModernDate_MatchesDotNetOA()
         {
             // Cross-check against DateTime.ToOADate() for a modern date.
-            DateTime date = new DateTime(2024, 6, 21);
+            DateTime date = new(2024, 6, 21);
             decimal expected = (decimal)date.ToOADate();
             decimal actual   = date.ToOleAutomationDate();
             Assert.That(actual, Is.EqualTo(expected).Within(0.000001M));
@@ -71,7 +71,7 @@ namespace Innovative.SolarCalculator.Tests
         public void ToOleAutomationDate_WithTimeComponent_ReturnsFractionalValue()
         {
             // Noon on 30 December 1899 should be 0.5
-            DateTime noon = new DateTime(1899, 12, 30, 12, 0, 0);
+            DateTime noon = new(1899, 12, 30, 12, 0, 0);
             decimal result = noon.ToOleAutomationDate();
             Assert.That(result, Is.EqualTo(0.5M).Within(0.000001M));
         }
