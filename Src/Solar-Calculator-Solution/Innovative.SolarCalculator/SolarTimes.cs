@@ -309,6 +309,7 @@ namespace Innovative.SolarCalculator
 				return returnValue;
 			}
 		}
+		
 		/// <summary>
 		/// The Civil Dawn Time
 		/// This is when the sun is &lt; 6 degrees below the horizon
