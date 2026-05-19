@@ -6,7 +6,9 @@
 
 # Solar Calculator
 
-A .NET library that calculates solar events — sunrise, sunset, dawn, dusk, solar noon, and more — for any date and geographic location. The implementation is a faithful C# port of the [NOAA Solar Calculations Day spreadsheet](http://www.esrl.noaa.gov/gmd/grad/solcalc/calcdetails.html), whose formulas are drawn from *Astronomical Algorithms* by Jean Meeus.
+A .NET library that calculates solar events — sunrise, sunset, dawn, dusk, solar noon, and more — for any date and geographic location. The implementation is a faithful C# port of the [NOAA Solar Calculations Day spreadsheet](http://www.esrl.noaa.gov/gmd/grad/solcalc/calcdetails.html), whose formulas are drawn from *[Astronomical Algorithms](https://amzn.to/42KrxeM)* by Jean Meeus.
+
+[![Astronomical Algorithms](images/book.jpg)](https://amzn.to/42KrxeM)
 
 ## Packages
 
