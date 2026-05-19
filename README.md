@@ -5,10 +5,9 @@
 [![Nuget](https://img.shields.io/nuget/v/SolarCalculator?label=Solar%20Calculator%20-%20NuGet&style=for-the-badge)![Nuget](https://img.shields.io/nuget/dt/SolarCalculator?label=Downloads&style=for-the-badge)](https://www.nuget.org/packages/SolarCalculator/)
 
 # Solar Calculator
-
 A .NET library that calculates solar events — sunrise, sunset, dawn, dusk, solar noon, and more — for any date and geographic location. The implementation is a faithful C# port of the [NOAA Solar Calculations Day spreadsheet](http://www.esrl.noaa.gov/gmd/grad/solcalc/calcdetails.html), whose formulas are drawn from *[Astronomical Algorithms](https://amzn.to/42KrxeM)* by Jean Meeus.
 
-[![Astronomical Algorithms](images/book.jpg)](https://amzn.to/42KrxeM)
+[![Astronomical Algorithms](https://raw.githubusercontent.com/porrey/Solar-Calculator/refs/heads/master/Images/book.jpg)](https://amzn.to/42KrxeM)
 
 ## Packages
 
